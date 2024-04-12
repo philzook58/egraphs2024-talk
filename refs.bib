@@ -1,0 +1,272 @@
+@InProceedings{hornformula,
+author="Claessen, Koen
+and Smallbone, Nicholas",
+editor="Galmiche, Didier
+and Schulz, Stephan
+and Sebastiani, Roberto",
+title="Efficient Encodings of First-Order Horn Formulas in Equational Logic",
+booktitle="Automated Reasoning",
+year="2018",
+publisher="Springer International Publishing",
+address="Cham",
+pages="388--404",
+abstract="We present several translations from first-order Horn formulas to equational logic. The goal of these translations is to allow equational theorem provers to efficiently reason about non-equational problems. Using these translations we were able to solve 37 problems of rating 1.0 (i.e. which had not previously been automatically solved) from the TPTP.",
+isbn="978-3-319-94205-6"
+}
+@article{eggpaper,
+author = {Willsey, Max and Nandi, Chandrakana and Wang, Yisu Remy and Flatt, Oliver and Tatlock, Zachary and Panchekha, Pavel},
+title = {egg: Fast and extensible equality saturation},
+year = {2021},
+issue_date = {January 2021},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+volume = {5},
+number = {POPL},
+url = {https://doi.org/10.1145/3434304},
+doi = {10.1145/3434304},
+abstract = {An e-graph efficiently represents a congruence relation over many expressions. Although they were originally developed in the late 1970s for use in automated theorem provers, a more recent technique known as equality saturation repurposes e-graphs to implement state-of-the-art, rewrite-driven compiler optimizations and program synthesizers. However, e-graphs remain unspecialized for this newer use case. Equality saturation workloads exhibit distinct characteristics and often require ad-hoc e-graph extensions to incorporate transformations beyond purely syntactic rewrites.  This work contributes two techniques that make e-graphs fast and extensible, specializing them to equality saturation. A new amortized invariant restoration technique called rebuilding takes advantage of equality saturation's distinct workload, providing asymptotic speedups over current techniques in practice. A general mechanism called e-class analyses integrates domain-specific analyses into the e-graph, reducing the need for ad hoc manipulation.  We implemented these techniques in a new open-source library called egg. Our case studies on three previously published applications of equality saturation highlight how egg's performance and flexibility enable state-of-the-art results across diverse domains.},
+journal = {Proc. ACM Program. Lang.},
+month = {jan},
+articleno = {23},
+numpages = {29},
+keywords = {e-graphs, equality saturation}
+}
+@misc{singher2023colored,
+      title={Colored E-Graph: Equality Reasoning with Conditions}, 
+      author={Eytan Singher and Shachar Itzhaky},
+      year={2023},
+      eprint={2305.19203},
+      archivePrefix={arXiv},
+      primaryClass={cs.PL}
+} 
+@inproceedings{treeautomata,
+  author    = {Yihong Zhang and Oliver Flatt},
+  title     = {Ensuring the termination of equality saturation for terminating term rewriting systems},
+  booktitle = {E-Graph Research, Applications, Practices, and Human-factors Symposium},
+  year      = {2023},
+  series    = {EGRAPHS 2023},
+  url       = {https://pldi23.sigplan.org/details/egraphs-2023-papers/9/Ensuring-the-termination-of-equality-saturation-for-terminating-term-rewriting-system},
+  publisher = {ACM},
+  address   = {New York, NY, USA},
+}
+@article{braniac,
+author = {Schulz, Stephan},
+title = {E - a brainiac theorem prover},
+year = {2002},
+issue_date = {August 2002},
+publisher = {IOS Press},
+address = {NLD},
+volume = {15},
+number = {2,3},
+issn = {0921-7126},
+abstract = {We describe the superposition-based theorem prover E. E is a sound and complete prover for clausal first order logic with equality. Important properties of the prover include strong redundancy elimination criteria, the DISCOUNT loop proof procedure, a very flexible interface for specifying search control heuristics, and an efficient inference engine. We also discuss strength and weaknesses of the system.},
+journal = {AI Commun.},
+month = {aug},
+pages = {111–126},
+numpages = {16},
+keywords = {E, Theorem proving, rewriting, search control, superposition}
+}
+
+@article{bentkampsuperposition,
+  author    = {Alexander Bentkamp, Jasmin Blanchette, Sophie Tourret, Petar Vukmirović and Uwe Waldmann },
+  title     = {Superposition with Lambdas},
+  journal   = {Journal of Automated Reasoning},
+  volume    = {65},
+  number    = {5},
+  pages     = {893--940},
+  year      = {2021},
+  doi       = {10.1007/s10817-021-09595-y},
+  url       = {https://link.springer.com/article/10.1007/s10817-021-09595-y},
+  note      = {Received: 15 April 2020, Accepted: 24 January 2021, Published: 21 August 2021, Issue Date: October 2021},
+}
+
+@misc{coward2023automating,
+      title={Automating Constraint-Aware Datapath Optimization using E-Graphs}, 
+      author={Samuel Coward and George A. Constantinides and Theo Drane},
+      year={2023},
+      eprint={2303.01839},
+      archivePrefix={arXiv},
+      primaryClass={cs.AR}
+}
+@article{hints,
+  title={Using hints to increase the effectiveness of an automated reasoning program: Case studies},
+  author={Veroff, Robert},
+  journal={Journal of Automated Reasoning},
+  volume={16},
+  number={3},
+  pages={223--239},
+  year={1996},
+  publisher={Springer},
+  doi={10.1007/BF00252178},
+  issn={1573-0670}
+}
+@book{wosautomated,
+  title={Automated Reasoning: Introduction and Applications},
+  author={Larry Wos, Ross Overbeek, Rusty Lusk, and Jim Boyle},
+  isbn={9780079112514},
+  lccn={lc91043171},
+  url={https://books.google.com/books?id=H0g_AQAAIAAJ},
+  year={1992},
+  publisher={McGraw-Hill}
+}
+@book{miller,
+author = {Miller, Dale and Nadathur, Gopalan},
+title = {Programming with Higher-Order Logic},
+year = {2012},
+isbn = {052187940X},
+publisher = {Cambridge University Press},
+address = {USA},
+edition = {1st},
+abstract = {Formal systems that describe computations over syntactic structures occur frequently in computer science. Logic programming provides a natural framework for encoding and animating such systems. However, these systems often embody variable binding, a notion that must be treated carefully at a computational level. This book aims to show that a programming language based on a simply typed version of higher-order logic provides an elegant, declarative means for providing such a treatment. Three broad topics are covered in pursuit of this goal. First, a proof-theoretic framework that supports a general view of logic programming is identified. Second, an actual language called Prolog is developed by applying this view to higher-order logic. Finally, a methodology for programming with specifications is exposed by showing how several computations over formal objects such as logical formulas, functional programs, and -terms and -calculus expressions can be encoded in Prolog.}
+}
+@article{nominal,
+title = {Nominal unification},
+journal = {Theoretical Computer Science},
+volume = {323},
+number = {1},
+pages = {473-497},
+year = {2004},
+issn = {0304-3975},
+doi = {https://doi.org/10.1016/j.tcs.2004.06.016},
+url = {https://www.sciencedirect.com/science/article/pii/S0304397504004013},
+author = {Christian Urban and Andrew M. Pitts and Murdoch J. Gabbay},
+keywords = {Abstract syntax, Alpha-conversion, Binding operations, Unification},
+abstract = {We present a generalisation of first-order unification to the practically important case of equations between terms involving binding operations. A substitution of terms for variables solves such an equation if it makes the equated terms α-equivalent, i.e. equal up to renaming bound names. For the applications we have in mind, we must consider the simple, textual form of substitution in which names occurring in terms may be captured within the scope of binders upon substitution. We are able to take a “nominal” approach to binding in which bound entities are explicitly named (rather than using nameless, de~Bruijn-style representations) and yet get a version of this form of substitution that respects α-equivalence and possesses good algorithmic properties. We achieve this by adapting two existing ideas. The first one is terms involving explicit substitutions of names for names, except that here we only use explicit permutations (bijective substitutions). The second one is that the unification algorithm should solve not only equational problems, but also problems about the freshness of names for terms. There is a simple generalisation of classical first-order unification problems to this setting which retains the latter's pleasant properties: unification problems involving α-equivalence and freshness are decidable; and solvable problems possess most general solutions.}
+}
+
+@article{sketch,
+author = {Kohler, Thomas and Goens, Andr\'{e}s and Bhat, Siddharth and Grosser, Tobias and Trinder, Phil and Steuwer, Michel},
+title = {Guided Equality Saturation},
+year = {2024},
+issue_date = {January 2024},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+volume = {8},
+number = {POPL},
+url = {https://doi.org/10.1145/3632900},
+doi = {10.1145/3632900},
+abstract = {Rewriting is a principled term transformation technique with uses across theorem  
+proving and compilation.  
+In theorem proving, each rewrite is a proof step; in compilation, rewrites optimize a program term.  
+While developing rewrite sequences manually is possible, this process does not  
+scale to larger rewrite sequences. Automated rewriting  
+techniques, like greedy simplification or equality saturation, work well  
+without requiring human input.  
+Yet, they do not scale to large search spaces, limiting the complexity of tasks where automated rewriting is effective,  
+and meaning that just a small increase in term size or rewrite length may result in failure.  
+  
+This paper proposes a semi-automatic rewriting technique as a means to scale rewriting by allowing  
+human insight at key decision points.  
+Specifically, we propose guided equality saturation that embraces human guidance when fully automated equality saturation does not scale.  
+The rewriting is split into two simpler automatic equality saturation steps: from the original term to a human-provided intermediate guide, and from the guide to the target. Complex rewriting tasks may require multiple guides, resulting in a sequence of equality saturation steps.  
+A guide can be a complete term, or a sketch containing undefined elements that are instantiated by the equality saturation search.  
+Such sketches may be far more concise than complete terms.  
+  
+We demonstrate the generality and effectiveness of guided equality saturation using two case studies.  
+First, we integrate guided equality saturation in the Lean 4 proof assistant.  
+Proofs are written in the style of textbook proof sketches, as a series of calculations omitting details and skipping steps.  
+These proofs conclude in less than a second instead of minutes when compared to unguided equality saturation, and can  
+find complex proofs that previously had to be done manually.  
+Second, in the compiler of the Rise array language, where unguided equality saturation fails to perform optimizations within an hour and using 60 GB of memory, guided equality saturation performs the same optimizations with at most 3 guides, within seconds using less than 1 GB memory.},
+journal = {Proc. ACM Program. Lang.},
+month = {jan},
+articleno = {58},
+numpages = {32},
+keywords = {e-graphs, equality saturation, optimizing compilers, theorem provers}
+}
+
+
+@article{egglog,
+author = {Zhang, Yihong and Wang, Yisu Remy and Flatt, Oliver and Cao, David and Zucker, Philip and Rosenthal, Eli and Tatlock, Zachary and Willsey, Max},
+title = {Better Together: Unifying Datalog and Equality Saturation},
+year = {2023},
+issue_date = {June 2023},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+volume = {7},
+number = {PLDI},
+url = {https://doi.org/10.1145/3591239},
+doi = {10.1145/3591239},
+abstract = {We present egglog, a fixpoint reasoning system that unifies Datalog and equality saturation (EqSat). Like Datalog, egglog supports efficient incremental execution, cooperating analyses, and lattice-based reasoning. Like EqSat, egglog supports term rewriting, efficient congruence closure, and extraction of optimized terms.  
+
+We identify two recent applications -- a unification-based pointer analysis in Datalog and an EqSat-based floating-point term rewriter -- that have been hampered by features missing from Datalog but found in EqSat or vice-versa. We evaluate our system by reimplementing those projects in egglog. The resulting systems in egglog are faster, simpler, and fix bugs found in the original systems.},
+journal = {Proc. ACM Program. Lang.},
+month = {jun},
+articleno = {125},
+numpages = {25},
+keywords = {Datalog, Equality saturation, Program optimization, Rewrite systems}
+}
+
+@article{veroff1996using,
+  author    = {Robert Veroff},
+  title     = {Using hints to increase the effectiveness of an automated reasoning program: Case studies},
+  journal   = {Journal of Automated Reasoning},
+  volume    = {16},
+  number    = {3},
+  pages     = {223--239},
+  year      = {1996},
+  month     = {Jun},
+  doi       = {10.1007/BF00252178},
+  url       = {https://doi.org/10.1007/BF00252178},
+  note      = {Received: 06 March 1995, Issue Date: June 1996},
+}
+
+
+
+@article{ottermanual,
+  author    = {William McCune},
+  title     = {OTTER 3.3 Reference Manual},
+  url       = {https://www.mcs.anl.gov/research/projects/AR/otter/otter33.pdf},
+}
+
+@incollection{NIEUWENHUIS2001371,
+title = {Chapter 7 - Paramodulation-Based Theorem Proving},
+editor = {Alan Robinson and Andrei Voronkov},
+booktitle = {Handbook of Automated Reasoning},
+publisher = {North-Holland},
+address = {Amsterdam},
+pages = {371-443},
+year = {2001},
+series = {Handbook of Automated Reasoning},
+isbn = {978-0-444-50813-3},
+doi = {https://doi.org/10.1016/B978-044450813-3/50009-6},
+url = {https://www.sciencedirect.com/science/article/pii/B9780444508133500096},
+author = {Robert Nieuwenhuis and Albert Rubio}
+}
+@book{traatbook,
+author = {Baader, Franz and Nipkow, Tobias},
+title = {Term rewriting and all that},
+year = {1998},
+isbn = {0521455200},
+publisher = {Cambridge University Press},
+address = {USA}
+}
+@incollection{DAVIS20013,
+title = {Chapter 1 - The Early History of Automated Deduction: Dedicated to the memory of Hao Wang},
+editor = {Alan Robinson and Andrei Voronkov},
+booktitle = {Handbook of Automated Reasoning},
+publisher = {North-Holland},
+address = {Amsterdam},
+pages = {3-15},
+year = {2001},
+series = {Handbook of Automated Reasoning},
+isbn = {978-0-444-50813-3},
+doi = {https://doi.org/10.1016/B978-044450813-3/50003-5},
+url = {https://www.sciencedirect.com/science/article/pii/B9780444508133500035},
+author = {Martin Davis}
+}
+
+@misc{groundegraph,
+ title={A Road to Lambda: E-graphs are Ground Completion}, 
+ url={https://www.philipzucker.com/egraph-ground-rewrite/}, 
+ journal={Hey There Buddo!}, 
+ author={Zucker, Philip}, year={2023}, month={May}
+ } 
+
+ @misc{ematchground,
+ title={E-graphs are Ground Rewrite Systems 2: E-matching}, 
+ url={https://www.philipzucker.com/ground-rewrite-2/}, 
+ journal={Hey There Buddo!}, 
+ author={Zucker, Philip}, year={2023}, month={June}
+ } 
+

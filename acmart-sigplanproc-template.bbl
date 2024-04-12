@@ -1,0 +1,328 @@
+%%% -*-BibTeX-*-
+%%% Do NOT edit. File created by BibTeX with style
+%%% ACM-Reference-Format-Journals [18-Jan-2012].
+
+\begin{thebibliography}{19}
+
+%%% ====================================================================
+%%% NOTE TO THE USER: you can override these defaults by providing
+%%% customized versions of any of these macros before the \bibliography
+%%% command.  Each of them MUST provide its own final punctuation,
+%%% except for \shownote{}, \showDOI{}, and \showURL{}.  The latter two
+%%% do not use final punctuation, in order to avoid confusing it with
+%%% the Web address.
+%%%
+%%% To suppress output of a particular field, define its macro to expand
+%%% to an empty string, or better, \unskip, like this:
+%%%
+%%% \newcommand{\showDOI}[1]{\unskip}   % LaTeX syntax
+%%%
+%%% \def \showDOI #1{\unskip}           % plain TeX syntax
+%%%
+%%% ====================================================================
+
+\ifx \showCODEN    \undefined \def \showCODEN     #1{\unskip}     \fi
+\ifx \showDOI      \undefined \def \showDOI       #1{#1}\fi
+\ifx \showISBNx    \undefined \def \showISBNx     #1{\unskip}     \fi
+\ifx \showISBNxiii \undefined \def \showISBNxiii  #1{\unskip}     \fi
+\ifx \showISSN     \undefined \def \showISSN      #1{\unskip}     \fi
+\ifx \showLCCN     \undefined \def \showLCCN      #1{\unskip}     \fi
+\ifx \shownote     \undefined \def \shownote      #1{#1}          \fi
+\ifx \showarticletitle \undefined \def \showarticletitle #1{#1}   \fi
+\ifx \showURL      \undefined \def \showURL       {\relax}        \fi
+% The following commands are used for tagged output and should be
+% invisible to TeX
+\providecommand\bibfield[2]{#2}
+\providecommand\bibinfo[2]{#2}
+\providecommand\natexlab[1]{#1}
+\providecommand\showeprint[2][]{arXiv:#2}
+
+\bibitem[\protect\citeauthoryear{Alexander~Bentkamp and
+  Waldmann}{Alexander~Bentkamp and Waldmann}{2021}]%
+        {bentkampsuperposition}
+\bibfield{author}{\bibinfo{person}{Sophie Tourret Petar~Vukmirović
+  Alexander~Bentkamp, Jasmin~Blanchette} {and} \bibinfo{person}{Uwe Waldmann}.}
+  \bibinfo{year}{2021}\natexlab{}.
+\newblock \showarticletitle{Superposition with Lambdas}.
+\newblock \bibinfo{journal}{\emph{Journal of Automated Reasoning}}
+  \bibinfo{volume}{65}, \bibinfo{number}{5} (\bibinfo{year}{2021}),
+  \bibinfo{pages}{893--940}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1007/s10817-021-09595-y}
+\showDOI{\tempurl}
+\newblock
+\shownote{Received: 15 April 2020, Accepted: 24 January 2021, Published: 21
+  August 2021, Issue Date: October 2021.}
+
+
+\bibitem[\protect\citeauthoryear{Baader and Nipkow}{Baader and Nipkow}{1998}]%
+        {traatbook}
+\bibfield{author}{\bibinfo{person}{Franz Baader} {and} \bibinfo{person}{Tobias
+  Nipkow}.} \bibinfo{year}{1998}\natexlab{}.
+\newblock \bibinfo{booktitle}{\emph{Term rewriting and all that}}.
+\newblock \bibinfo{publisher}{Cambridge University Press},
+  \bibinfo{address}{USA}.
+\newblock
+\showISBNx{0521455200}
+
+
+\bibitem[\protect\citeauthoryear{Claessen and Smallbone}{Claessen and
+  Smallbone}{2018}]%
+        {hornformula}
+\bibfield{author}{\bibinfo{person}{Koen Claessen} {and}
+  \bibinfo{person}{Nicholas Smallbone}.} \bibinfo{year}{2018}\natexlab{}.
+\newblock \showarticletitle{Efficient Encodings of First-Order Horn Formulas in
+  Equational Logic}. In \bibinfo{booktitle}{\emph{Automated Reasoning}},
+  \bibfield{editor}{\bibinfo{person}{Didier Galmiche}, \bibinfo{person}{Stephan
+  Schulz}, {and} \bibinfo{person}{Roberto Sebastiani}} (Eds.).
+  \bibinfo{publisher}{Springer International Publishing},
+  \bibinfo{address}{Cham}, \bibinfo{pages}{388--404}.
+\newblock
+\showISBNx{978-3-319-94205-6}
+
+
+\bibitem[\protect\citeauthoryear{Coward, Constantinides, and Drane}{Coward
+  et~al\mbox{.}}{2023}]%
+        {coward2023automating}
+\bibfield{author}{\bibinfo{person}{Samuel Coward}, \bibinfo{person}{George~A.
+  Constantinides}, {and} \bibinfo{person}{Theo Drane}.}
+  \bibinfo{year}{2023}\natexlab{}.
+\newblock \bibinfo{title}{Automating Constraint-Aware Datapath Optimization
+  using E-Graphs}.
+\newblock
+\newblock
+\showeprint[arxiv]{2303.01839}~[cs.AR]
+
+
+\bibitem[\protect\citeauthoryear{Davis}{Davis}{2001}]%
+        {DAVIS20013}
+\bibfield{author}{\bibinfo{person}{Martin Davis}.}
+  \bibinfo{year}{2001}\natexlab{}.
+\newblock \showarticletitle{Chapter 1 - The Early History of Automated
+  Deduction: Dedicated to the memory of Hao Wang}.
+\newblock In \bibinfo{booktitle}{\emph{Handbook of Automated Reasoning}},
+  \bibfield{editor}{\bibinfo{person}{Alan Robinson} {and}
+  \bibinfo{person}{Andrei Voronkov}} (Eds.).
+  \bibinfo{publisher}{North-Holland}, \bibinfo{address}{Amsterdam},
+  \bibinfo{pages}{3--15}.
+\newblock
+\showISBNx{978-0-444-50813-3}
+\urldef\tempurl%
+\url{https://doi.org/10.1016/B978-044450813-3/50003-5}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Kohler, Goens, Bhat, Grosser, Trinder, and
+  Steuwer}{Kohler et~al\mbox{.}}{2024}]%
+        {sketch}
+\bibfield{author}{\bibinfo{person}{Thomas Kohler}, \bibinfo{person}{Andr\'{e}s
+  Goens}, \bibinfo{person}{Siddharth Bhat}, \bibinfo{person}{Tobias Grosser},
+  \bibinfo{person}{Phil Trinder}, {and} \bibinfo{person}{Michel Steuwer}.}
+  \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{Guided Equality Saturation}.
+\newblock \bibinfo{journal}{\emph{Proc. ACM Program. Lang.}}
+  \bibinfo{volume}{8}, \bibinfo{number}{POPL}, Article \bibinfo{articleno}{58}
+  (\bibinfo{date}{jan} \bibinfo{year}{2024}), \bibinfo{numpages}{32}~pages.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1145/3632900}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Larry~Wos and Boyle}{Larry~Wos and
+  Boyle}{1992}]%
+        {wosautomated}
+\bibfield{author}{\bibinfo{person}{Rusty~Lusk Larry~Wos, Ross~Overbeek} {and}
+  \bibinfo{person}{Jim Boyle}.} \bibinfo{year}{1992}\natexlab{}.
+\newblock \bibinfo{booktitle}{\emph{Automated Reasoning: Introduction and
+  Applications}}.
+\newblock \bibinfo{publisher}{McGraw-Hill}.
+\newblock
+\showISBNx{9780079112514}
+\showLCCN{lc91043171}
+\urldef\tempurl%
+\url{https://books.google.com/books?id=H0g_AQAAIAAJ}
+\showURL{%
+\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{McCune}{McCune}{[n.d.]}]%
+        {ottermanual}
+\bibfield{author}{\bibinfo{person}{William McCune}.}
+  \bibinfo{year}{[n.d.]}\natexlab{}.
+\newblock \showarticletitle{OTTER 3.3 Reference Manual}.
+\newblock  (\bibinfo{year}{[n.\,d.]}).
+\newblock
+\urldef\tempurl%
+\url{https://www.mcs.anl.gov/research/projects/AR/otter/otter33.pdf}
+\showURL{%
+\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Miller and Nadathur}{Miller and
+  Nadathur}{2012}]%
+        {miller}
+\bibfield{author}{\bibinfo{person}{Dale Miller} {and} \bibinfo{person}{Gopalan
+  Nadathur}.} \bibinfo{year}{2012}\natexlab{}.
+\newblock \bibinfo{booktitle}{\emph{Programming with Higher-Order Logic}
+  (\bibinfo{edition}{1st} ed.)}.
+\newblock \bibinfo{publisher}{Cambridge University Press},
+  \bibinfo{address}{USA}.
+\newblock
+\showISBNx{052187940X}
+
+
+\bibitem[\protect\citeauthoryear{Nieuwenhuis and Rubio}{Nieuwenhuis and
+  Rubio}{2001}]%
+        {NIEUWENHUIS2001371}
+\bibfield{author}{\bibinfo{person}{Robert Nieuwenhuis} {and}
+  \bibinfo{person}{Albert Rubio}.} \bibinfo{year}{2001}\natexlab{}.
+\newblock \showarticletitle{Chapter 7 - Paramodulation-Based Theorem Proving}.
+\newblock In \bibinfo{booktitle}{\emph{Handbook of Automated Reasoning}},
+  \bibfield{editor}{\bibinfo{person}{Alan Robinson} {and}
+  \bibinfo{person}{Andrei Voronkov}} (Eds.).
+  \bibinfo{publisher}{North-Holland}, \bibinfo{address}{Amsterdam},
+  \bibinfo{pages}{371--443}.
+\newblock
+\showISBNx{978-0-444-50813-3}
+\urldef\tempurl%
+\url{https://doi.org/10.1016/B978-044450813-3/50009-6}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Schulz}{Schulz}{2002}]%
+        {braniac}
+\bibfield{author}{\bibinfo{person}{Stephan Schulz}.}
+  \bibinfo{year}{2002}\natexlab{}.
+\newblock \showarticletitle{E - a brainiac theorem prover}.
+\newblock \bibinfo{journal}{\emph{AI Commun.}} \bibinfo{volume}{15},
+  \bibinfo{number}{2,3} (\bibinfo{date}{aug} \bibinfo{year}{2002}),
+  \bibinfo{pages}{111–126}.
+\newblock
+\showISSN{0921-7126}
+
+
+\bibitem[\protect\citeauthoryear{Singher and Itzhaky}{Singher and
+  Itzhaky}{2023}]%
+        {singher2023colored}
+\bibfield{author}{\bibinfo{person}{Eytan Singher} {and}
+  \bibinfo{person}{Shachar Itzhaky}.} \bibinfo{year}{2023}\natexlab{}.
+\newblock \bibinfo{title}{Colored E-Graph: Equality Reasoning with Conditions}.
+\newblock
+\newblock
+\showeprint[arxiv]{2305.19203}~[cs.PL]
+
+
+\bibitem[\protect\citeauthoryear{Urban, Pitts, and Gabbay}{Urban
+  et~al\mbox{.}}{2004}]%
+        {nominal}
+\bibfield{author}{\bibinfo{person}{Christian Urban}, \bibinfo{person}{Andrew~M.
+  Pitts}, {and} \bibinfo{person}{Murdoch~J. Gabbay}.}
+  \bibinfo{year}{2004}\natexlab{}.
+\newblock \showarticletitle{Nominal unification}.
+\newblock \bibinfo{journal}{\emph{Theoretical Computer Science}}
+  \bibinfo{volume}{323}, \bibinfo{number}{1} (\bibinfo{year}{2004}),
+  \bibinfo{pages}{473--497}.
+\newblock
+\showISSN{0304-3975}
+\urldef\tempurl%
+\url{https://doi.org/10.1016/j.tcs.2004.06.016}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Veroff}{Veroff}{1996}]%
+        {hints}
+\bibfield{author}{\bibinfo{person}{Robert Veroff}.}
+  \bibinfo{year}{1996}\natexlab{}.
+\newblock \showarticletitle{Using hints to increase the effectiveness of an
+  automated reasoning program: Case studies}.
+\newblock \bibinfo{journal}{\emph{Journal of Automated Reasoning}}
+  \bibinfo{volume}{16}, \bibinfo{number}{3} (\bibinfo{year}{1996}),
+  \bibinfo{pages}{223--239}.
+\newblock
+\showISSN{1573-0670}
+\urldef\tempurl%
+\url{https://doi.org/10.1007/BF00252178}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Willsey, Nandi, Wang, Flatt, Tatlock, and
+  Panchekha}{Willsey et~al\mbox{.}}{2021}]%
+        {eggpaper}
+\bibfield{author}{\bibinfo{person}{Max Willsey}, \bibinfo{person}{Chandrakana
+  Nandi}, \bibinfo{person}{Yisu~Remy Wang}, \bibinfo{person}{Oliver Flatt},
+  \bibinfo{person}{Zachary Tatlock}, {and} \bibinfo{person}{Pavel Panchekha}.}
+  \bibinfo{year}{2021}\natexlab{}.
+\newblock \showarticletitle{egg: Fast and extensible equality saturation}.
+\newblock \bibinfo{journal}{\emph{Proc. ACM Program. Lang.}}
+  \bibinfo{volume}{5}, \bibinfo{number}{POPL}, Article \bibinfo{articleno}{23}
+  (\bibinfo{date}{jan} \bibinfo{year}{2021}), \bibinfo{numpages}{29}~pages.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1145/3434304}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Zhang and Flatt}{Zhang and Flatt}{2023}]%
+        {treeautomata}
+\bibfield{author}{\bibinfo{person}{Yihong Zhang} {and} \bibinfo{person}{Oliver
+  Flatt}.} \bibinfo{year}{2023}\natexlab{}.
+\newblock \showarticletitle{Ensuring the termination of equality saturation for
+  terminating term rewriting systems}. In \bibinfo{booktitle}{\emph{E-Graph
+  Research, Applications, Practices, and Human-factors Symposium}}
+  \emph{(\bibinfo{series}{EGRAPHS 2023})}. \bibinfo{publisher}{ACM},
+  \bibinfo{address}{New York, NY, USA}.
+\newblock
+\urldef\tempurl%
+\url{https://pldi23.sigplan.org/details/egraphs-2023-papers/9/Ensuring-the-termination-of-equality-saturation-for-terminating-term-rewriting-system}
+\showURL{%
+\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Zhang, Wang, Flatt, Cao, Zucker, Rosenthal,
+  Tatlock, and Willsey}{Zhang et~al\mbox{.}}{2023}]%
+        {egglog}
+\bibfield{author}{\bibinfo{person}{Yihong Zhang}, \bibinfo{person}{Yisu~Remy
+  Wang}, \bibinfo{person}{Oliver Flatt}, \bibinfo{person}{David Cao},
+  \bibinfo{person}{Philip Zucker}, \bibinfo{person}{Eli Rosenthal},
+  \bibinfo{person}{Zachary Tatlock}, {and} \bibinfo{person}{Max Willsey}.}
+  \bibinfo{year}{2023}\natexlab{}.
+\newblock \showarticletitle{Better Together: Unifying Datalog and Equality
+  Saturation}.
+\newblock \bibinfo{journal}{\emph{Proc. ACM Program. Lang.}}
+  \bibinfo{volume}{7}, \bibinfo{number}{PLDI}, Article \bibinfo{articleno}{125}
+  (\bibinfo{date}{jun} \bibinfo{year}{2023}), \bibinfo{numpages}{25}~pages.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1145/3591239}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Zucker}{Zucker}{2023a}]%
+        {ematchground}
+\bibfield{author}{\bibinfo{person}{Philip Zucker}.}
+  \bibinfo{year}{2023}\natexlab{a}.
+\newblock \bibinfo{title}{E-graphs are Ground Rewrite Systems 2: E-matching}.
+\newblock
+\newblock
+\urldef\tempurl%
+\url{https://www.philipzucker.com/ground-rewrite-2/}
+\showURL{%
+\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{Zucker}{Zucker}{2023b}]%
+        {groundegraph}
+\bibfield{author}{\bibinfo{person}{Philip Zucker}.}
+  \bibinfo{year}{2023}\natexlab{b}.
+\newblock \bibinfo{title}{A Road to Lambda: E-graphs are Ground Completion}.
+\newblock
+\newblock
+\urldef\tempurl%
+\url{https://www.philipzucker.com/egraph-ground-rewrite/}
+\showURL{%
+\tempurl}
+
+
+\end{thebibliography}

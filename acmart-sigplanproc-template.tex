@@ -1,0 +1,392 @@
+%% For double-blind review submission, w/o CCS and ACM Reference (max submission space)
+\documentclass[sigplan,10pt,review,anonymous]{acmart}
+\usepackage{listings}
+\settopmatter{printfolios=true,printccs=false,printacmref=false}
+%% For double-blind review submission, w/ CCS and ACM Reference
+%\documentclass[sigplan,review,anonymous]{acmart}\settopmatter{printfolios=true}
+%% For single-blind review submission, w/o CCS and ACM Reference (max submission space)
+%\documentclass[sigplan,review]{acmart}\settopmatter{printfolios=true,printccs=false,printacmref=false}
+%% For single-blind review submission, w/ CCS and ACM Reference
+%\documentclass[sigplan,review]{acmart}\settopmatter{printfolios=true}
+%% For final camera-ready submission, w/ required CCS and ACM Reference
+%\documentclass[sigplan]{acmart}\settopmatter{}
+
+
+%% Conference information
+%% Supplied to authors by publisher for camera-ready submission;
+%% use defaults for review submission.
+\acmConference[PL'18]{ACM SIGPLAN Conference on Programming Languages}{January 01--03, 2018}{New York, NY, USA}
+\acmYear{2018}
+\acmISBN{} % \acmISBN{978-x-xxxx-xxxx-x/YY/MM}
+\acmDOI{} % \acmDOI{10.1145/nnnnnnn.nnnnnnn}
+\startPage{1}
+
+%% Copyright information
+%% Supplied to authors (based on authors' rights management selection;
+%% see authors.acm.org) by publisher for camera-ready submission;
+%% use 'none' for review submission.
+\setcopyright{none}
+%\setcopyright{acmcopyright}
+%\setcopyright{acmlicensed}
+%\setcopyright{rightsretained}
+%\copyrightyear{2018}           %% If different from \acmYear
+
+%% Bibliography style
+\bibliographystyle{ACM-Reference-Format}
+%% Citation style
+%\citestyle{acmauthoryear}  %% For author/year citations
+%\citestyle{acmnumeric}     %% For numeric citations
+%\setcitestyle{nosort}      %% With 'acmnumeric', to disable automatic
+                            %% sorting of references within a single citation;
+                            %% e.g., \cite{Smith99,Carpenter05,Baker12}
+                            %% rendered as [14,5,2] rather than [2,5,14].
+%\setcitesyle{nocompress}   %% With 'acmnumeric', to disable automatic
+                            %% compression of sequential references within a
+                            %% single citation;
+                            %% e.g., \cite{Baker12,Baker14,Baker16}
+                            %% rendered as [2,3,4] rather than [2-4].
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Note: Authors migrating a paper from traditional SIGPLAN
+%% proceedings format to PACMPL format must update the
+%% '\documentclass' and topmatter commands above; see
+%% 'acmart-pacmpl-template.tex'.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%% Some recommended packages.
+\usepackage{booktabs}   %% For formal tables:
+                        %% http://ctan.org/pkg/booktabs
+\usepackage{subcaption} %% For complex figures with subfigures/subcaptions
+                        %% http://ctan.org/pkg/subcaption
+
+
+\begin{document}
+
+%% Title information
+\title[Short Title]{E-graphs and Automated Reasoning}         %% [Short Title] is optional;
+                                        %% when present, will be used in
+                                        %% header instead of Full Title.
+%\titlenote{with title note}             %% \titlenote is optional;
+                                        %% can be repeated if necessary;
+                                        %% contents suppressed with 'anonymous'
+\subtitle{Looking back to look forward}                     %% \subtitle is optional
+%\subtitlenote{with subtitle note}       %% \subtitlenote is optional;
+                                        %% can be repeated if necessary;
+                                        %% contents suppressed with 'anonymous'
+
+
+%% Author information
+%% Contents and number of authors suppressed with 'anonymous'.
+%% Each author should be introduced by \author, followed by
+%% \authornote (optional), \orcid (optional), \affiliation, and
+%% \email.
+%% An author may have multiple affiliations and/or emails; repeat the
+%% appropriate command.
+%% Many elements are not rendered, but should be provided for metadata
+%% extraction tools.
+
+%\orcid{nnnn-nnnn-nnnn-nnnn}             %% \orcid is optional
+\affiliation{
+%  \position{Position1}
+ % \department{Department1}              %% \department is recommended
+  \institution{Draper Laboratory}            %% \institution is required
+ % \streetaddress{Street1 Address1}
+ % \city{City1}
+ % \state{State1}
+ % \postcode{Post-Code1}
+ % \country{Country1}                    %% \country is recommended
+}
+\email{pzucker@draper.com}          %% \email is recommended
+
+
+
+
+%% Abstract
+%% Note: \begin{abstract}...\end{abstract} environment must come
+%% before \maketitle command
+\begin{abstract}
+  Automated reasoning \cite{DAVIS20013} is an established field with a long history and many ideas.
+  E-graph rewriting techniques fits into this history. This connection suggests roads to implementing fundamental extensions to e-graph rewriting.
+\end{abstract}
+
+
+%% 2012 ACM Computing Classification System (CSS) concepts
+%% Generate at 'http://dl.acm.org/ccs/ccs.cfm'.
+\begin{CCSXML}
+<ccs2012>
+<concept>
+<concept_id>10011007.10011006.10011008</concept_id>
+<concept_desc>Software and its engineering~General programming languages</concept_desc>
+<concept_significance>500</concept_significance>
+</concept>
+<concept>
+<concept_id>10003456.10003457.10003521.10003525</concept_id>
+<concept_desc>Social and professional topics~History of programming languages</concept_desc>
+<concept_significance>300</concept_significance>
+</concept>
+</ccs2012>
+\end{CCSXML}
+
+\ccsdesc[500]{Software and its engineering~General programming languages}
+\ccsdesc[300]{Social and professional topics~History of programming languages}
+%% End of generated code
+
+
+%% Keywords
+%% comma separated list
+\keywords{e-graphs, automated reasoning}  %% \keywords are mandatory in final camera-ready submission
+
+
+%% \maketitle
+%% Note: \maketitle command must come after title commands, author
+%% commands, abstract environment, Computing Classification System
+%% environment and commands, and keywords command.
+\maketitle
+
+
+\section{Introduction}
+
+Term simplification is a natural and intuitive concept. It can be used to both solve algebra problems and optimize compiler output. 
+
+A first simple but effective impulse is to treat simplification via greedy rewriting.
+
+Like many heuristic greedy methods, it is possible that a locally greedy move can lead to globally suboptimal results. It is sometimes necessary to travel up the mountain to escape the valley. To fix this, some amount of breadth first or backtracking exploration is necessary.
+
+The field of automated reasoning has been aware of and refining these notions for a long time.
+
+%\item Resolution is a breadth first exploration technique for theorem proving
+%\item Demodulation is the AR term for greedy rewriting
+\begin{itemize}
+
+\item Paramodulation \cite{NIEUWENHUIS2001371} is a breadth first technique for (possibly conditional) equational reasoning
+\item Completion\cite{traatbook} is a method to convert an equational system to one with good guaranteed greedy rewriting properties. It can also be seen as equational reasoning with strong redundancy removal principles.
+\item Superposition \cite{braniac} combines properties of completion and paramodulation.
+%\item Term Orderings generalize the notion of "simpler" terms
+
+\end{itemize}
+
+E-graphs \cite{eggpaper} are a compact data structure for representing a collection of ground equations over terms and their congruence closure.
+They are an intuitively appealing technique for theorem proving and simplification. No small part of this intuition is provided by the bipartite graphical diagram of e-classes and e-nodes. There is a lower theoretical and technical barrier to entry in e-graph rewriting than for navigating the complex automated reasoning literature. This conceptual simplicity has been essential for the e-graph's flourishing applications.
+
+There is also a difference in attitude between the mainstream of the automated reasoning community and the e-graphs community. The majority of the literature in automated reasoning is concerned with theorem proving problems. The e-graph literature has a healthy contingent concerned with simplification/optimization/compiler problems. The e-graph community wants a controllable quasi operational view of the search process and desire for completeness of the search does not override pragmatism. This is similar to the viewpoint of the Argonne school of automated reasoning \cite{ottermanual} \cite{wosautomated}, which supported a more tweakable operational approach to automated reasoning.
+
+This talk is about explaining some of the connections between different techniques and how they may give clues to fundamental problems in e-graphs.
+
+%The diagram of the e-graph and the example of bit shifting by 2 are extremely important for getting interest by practitioners. 
+%It is very difficult for one person to become an expert in both the nuts and bolts of building systems and high faluting theory.
+
+%The history of e-graphs is in automated reasoning, but the current branch of literature has grown disconnected.
+
+%Equational simplification can be treated by greedy rewriting, breadth first or backtracking search.
+%All of this has been apparent from even before the dawn of computers.
+
+%In general, the order rewrite rules are applied changes the final result.
+
+%A watershed moment is the introduction of Knuth-Bendix completion. Knuth Bendix completion takes an equational system, orients it and attempts to generate a confluent system.
+% If successful, it creates a decision procedure for determining .
+
+
+\section{Union Finds as Completion}
+The union find is a key component of the e-graph. It can be seen as an instance of completion \cite{groundegraph}. Indeed many algorithms, including Gaussian elimination, Grobner bases, resolution and others, can be viewed in this light.
+
+A union find is a forest of equivalence classes. The pointers in the tree point upward to parents rather than downward to children. This can be viewed as a discrete dynamical system describing a convergent flow to a canonical member of the class. In other words, a convergent rewriting system.
+
+For example, the following rewrite system is a representation of a union find where $b$ and $c$ are children of a canonical member $a$ and $e$ is a child of the canonical member $d$. 
+
+$$b \rightarrow a$$
+$$c \rightarrow a$$
+$$e \rightarrow  d$$
+
+Completion can be described as an inference rule system \cite{traatbook}, orienting equations into rewrite rules and simplifying them. This simplification is a perspective on the path compression step in the union find.
+
+The pieces of a simple union find algorithm can be dignified via reference to these rules.
+
+\begin{lstlisting}[language=Python,  basicstyle=\tiny]
+class UF():
+  def __init__(self):
+      self.rules = {}
+  def find(self, x):
+      # `find` reduces x with respect 
+      # to the current rules (x -R-> retval)
+      while self.rules.get(x) != None:
+          x = self.rules.get(x)
+      return x
+  def union(self, x, y):
+      # Do incremental completion starting with
+      # (E,R) == ({x = y}, self.rules )
+      x1 = self.find(x) # SIMPLIFY  ( {x1 = y} , R)
+      y1 = self.find(y) # SIMPLIFY  ( {x1 = y1}, R)
+      if x1 == y1: # TRIVIAL ({x1 = x1}, R)
+          return x1 # (Empty, self.rules)
+      else:
+          if x1 < y1: # the "term order"
+              x1,y1 = y1,x1 # swap
+          # ORIENT  (empty, R U {x1 -> y1})
+          self.rules[x1] = y1 
+          return y1
+  def canon(self):
+      for lhs,rhs in self.rules.items():
+          self.rules[lhs] = self.find(rhs) # r-simplify
+\end{lstlisting}
+
+%In data structure literature, importance is attached to the path compression and keeping the unino find shallow enough to achieve its asymptotic complexity. 
+%These pieces are not necessary for the data structure's functional correctness.
+
+
+%In completion, it is typical to start with an a priori ordering of terms. The union find uses this freedom to attach shorter trees to longer trees. It is discovering an appropriate term ordering as it goes. It is simpler however to just pick an apriori ordering or use this freedom for other purposes.
+
+% proof producing and the rules?
+% colored union find
+% What about the group union find. 
+
+\section{E-graphs as completion}
+
+Performing a regular completion procedure on ground terms is guaranteed to terminate. By putting the system in a flat canonical form, it is easier to see the correspondence with more familiar e-graph notions.
+
+The flattening transformation can be achieved by creating fresh ground symbols for every function application in the original set of equations. % These fresh symbols are reminiscent of those reulsting from skolemizing a quantified formula
+
+For example,
+
+$$
+foo(biz(baz), bar) = bar
+$$
+
+becomes
+
+$$bar = e1$$
+$$baz = e2$$
+$$biz(e2) = e3$$
+$$foo(e3,e1) = e4$$
+$$e4 = e1$$
+
+%\end{lstlisting}
+
+With an appropriate ground term ordering that puts every $e$ less than any function symbol will orient the system into the form
+
+$$bar \rightarrow e1$$
+$$baz \rightarrow e2$$
+$$biz(e2) \rightarrow  e3$$
+$$foo(e3,e1) \rightarrow e4$$
+$$e4 \rightarrow e1$$
+
+
+Completing a ground system of this sort will put it in a canonical form. The rewrite rules can be separated into two classes, those that rewrite e-nodes to e-classes and those that rewrite e-classes to other e-classes. The first represents the membership of e-nodes to their e-class and the second class represents a union find.
+
+If we write $e$ as $q$, this becomes the definition of a tree automata as has been noted \cite{treeautomata}. Tree automata implicitly describe classes of trees using functional folds over finite state accumulators as acceptor functions, which can be described by tabulatable data. The ground rewriting point of view of e-graphs is the same observation as identifying e-graphs with tree automata but with a different emphasis of ideas.
+
+The flattening transformation is not necessary for ground completion, but it does make the system more uniform. Notions of binding and context can be an impediment to this flattening transformation, so this complication may have a purpose.
+
+\subsection{Extraction}
+The idea of a term ordering has not made an explicit appearance in the modern e-graphs literature to the author's knowledge. Term ordering is a generalization of the notion of comparing terms for simplicity \cite{traatbook}. We typically want to rewrite a big term into a smaller one. With a completed ground rewrite system, running the system against the initial term will compute an equivalent smaller term. This is the analog of the e-graph extraction process, and picking a term order picks the extraction goals. Giving symbols extraction weights corresponds to a similar notion that appears in knuth bendix ordering.
+
+\section{E-matching}
+The first component of e-graph rewriting is to have an e-graph. The second component is e-matching.
+
+An e-graph implicitly represents a possibly infinite set of terms that are equivalent to terms inserted via the ground equations.
+
+A ground completed rewrite system represents a possibly infinite set of terms that rewrites to something that is a right hand side of the system. Alternatively, the set is generated by running the rules backwards.
+
+E-matching is trying to find a term in this set that matches a pattern. This can be described in the terminology of the GRS without explicit reference to e-graphs \cite{ematchground}.
+
+Bottom up e-matching is the simplest naivest method. One makes a nondeterministic guess to fill in variables in the pattern with a choice of right hand side in the GRS. Then one reduces the grounded pattern and see if reduces to a right hand side or not.
+Top down e-matching can be achieved by narrowing the variables in the pattern according to current rewrite system. Every narrowing will ground out the pattern, since the rewrite system is ground.
+
+\section{Saturation}
+Saturation is not a unique property of e-graph rewriting. Traditional automated reasoners are also saturating systems.
+
+It is a known technique in the automated reasoning community that it is useful to separate clauses into at least two groups that are not treated symmetrically. Sometimes these are called unprocessed/processed or usable/set of support \cite{ottermanual}. Naive resolution or paramodulation considers every possibly pair of interaction between currently derived clauses. The given-clause algorithm is a form of semi-naive evaluation that only further processes fresh clauses from the unprocessed set against the processed set.
+
+Something quite similar to e-graph rewriting can be made to occur by restricting a superposition prover to only allow superposition between a ground rewrite rule and a non-ground rewrite rule. This is similar to some mixture of hyper-resolution, UR-resolution, and set of support strategies \cite{wosautomated}.
+
+%The rules corresponding to the e-graph itself go into the unprocessed set.
+%The e-graph rewriting rules go into the processed set.
+
+%E-matching in the e-graph community refers to finding a matching term inside of the e-graph. A more general notion of e-matching is matching modulo an equational theory E.
+
+%By analogy to traditional top-down, bottom-up, or relational e-matching,  the same techniques can be employed.
+
+\section{Hints for a Road Forward}
+There are a number of possible tantalizing expressivity extensions to the e-graph. The extreme sharing and destruction of context in the e-graph make many extensions hard to talk about. The connection back to term rewriting and automated reasoning sheds light on possible implementation methods.
+
+%This talk is intended to invite conversation rather than supply final answers.
+
+\subsection{Context}
+Superposition is a technique for equational theorem proving. It extends Knuth Bendix completion to equational clauses. A clause of terms $a \neq b \vee b = c$ can be seen as an implication $a = b \rightarrow b = c$. 
+
+Horn encodings \cite{hornformula} are a technique for getting context into pure completion solvers. It is similar in character to ASSUME nodes \cite{coward2023automating}.
+
+Another suggested technique for context is colored e-graphs \cite{singher2023colored}. I am not aware of a similar notion in the automated reasoning literature. 
+
+\subsection{Lambda}
+Recently superposition has been extended to support lambda terms \cite{bentkampsuperposition}. A restriction of this capability should be sufficient to implement an analog of e-graph rewriting for lambda terms.
+
+It is not clear that full lambda unification or matching is necessary or desirable. It depends on the application and performance trade offs. More limited but efficient forms of matching that nevertheless treat variable binding correctly such as Nominal unification \cite{nominal} or Miller patterm unification \cite{miller} may be preferred.
+
+\subsection{Backwards Reasoning}
+E-graph saturation is a bottom up technique analogous to datalog. A natural question is raised as to what a natural top down like prolog would look like.
+
+Datalog and prolog can be viewed as incomplete strategies for resolution in a similar way that egglog \cite{egglog} and functional logic programming are incomplete strategies for superposition.
+
+Understanding this connection may be useful in possible applications of e-graph techniques to typeclass or trait resolution.
+
+\subsection{AC}
+The automated reasoning community has been aware of the issue of associativity and commutativity from the beginning. These rewrite rules are difficult to orient, commonplace, and very structural. There is a large literature on this subproblem and modern automated theorem such as E and Vampire have some intrinsic support for this. 
+
+\subsection{Eager Rewriting}
+Demodulation is terminology used for eager rewriting in theorem provers. The ground rewrite system perspective of e-graphs lends some clarity to the lack of completeness that may result.
+
+E-matching in the e-graph's community refers to matching over an e-graph. E-matching in the automated reasoning community refers to the more general mechanism of matching with regards to a background equational theory, often theories that are confluent and terminating. This is another approach to building in rewriting with respect to an a priori well behaved set of rewrite rules.
+
+\subsection{Universal Variables}
+Proving universal goals using e-graphs requires some slight of hand and preprocessing. Standard automated reasoning techniques support true unification variables, which are an assertion of the universal applicability of the fact derived. They are scoped to their clause and are alpha renameable, which makes them distinct from the e-graph's equational constant symbols. Some degree of inter-emulation is possible.
+
+\subsection{Sketches and Hints}
+The two communities have separately invented similar notions of sketches \cite{sketch} and hints \cite{hints}.
+
+%\subsection{Tree Automata}
+
+%The formal description of a tree automata amounts to a functional program definition of a tree acceptor predicate by folding over finite state.
+
+%It amounts to an identical description as that of the flasttened e-graph. This has been noted and lends an alternativew perpsective a curious ideas. The relationship between ground completion is more direct and subjectively less esoteric.
+
+\section{Conclusion}
+E-graph rewriting and other automated reasoning techniques are deeply interconnected. Neither is strictly better than the other and lessons can flow in both ways. The e-graph has a intuitive appeal and by focusing on a subproblem is simpler to implement and hence fast. Automated reasoning systems implementing completion or superposition have a long history of theoretical and implementation refinement. It is seemingly conceptually simpler to extend these systems than to extend the highly shared and context destroying e-graph, but perhaps a new efficient and expressive perspective can emerge by pumping insight between the two.
+
+\bibliography{refs}
+
+
+
+
+%% Acknowledgments
+\begin{acks}                            %% acks environment is optional
+                                        %% contents suppressed with 'anonymous'
+  %% Commands \grantsponsor{<sponsorID>}{<name>}{<url>} and
+  %% \grantnum[<url>]{<sponsorID>}{<number>} should be used to
+  %% acknowledge financial support and will be used by metadata
+  %% extraction tools.
+  This material is based upon work supported by the
+  \grantsponsor{GS100000001}{National Science
+    Foundation}{http://dx.doi.org/10.13039/100000001} under Grant
+  No.~\grantnum{GS100000001}{nnnnnnn} and Grant
+  No.~\grantnum{GS100000001}{mmmmmmm}.  Any opinions, findings, and
+  conclusions or recommendations expressed in this material are
+   those
+  of the author and do not necessarily reflect the views of the
+  National Science Foundation.
+\end{acks}
+
+
+%% Bibliography
+%\bibliography{bibfile}
+%% Bibliography
+
+
+%% Appendix
+%\appendix
+%\section{Appendix}
+
+%Text of appendix \ldots
+
+\end{document}

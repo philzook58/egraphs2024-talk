@@ -1,0 +1,93 @@
+This is BibTeX, Version 0.99d (TeX Live 2022/dev/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: acmart-sigplanproc-template.aux
+The style file: ACM-Reference-Format.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Database file #1: refs.bib
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Name 1 in "Larry Wos, Ross Overbeek, Rusty Lusk, and Jim Boyle" has a comma at the end for entry wosautomated
+while executing---line 2802 of file ACM-Reference-Format.bst
+Name 1 in "Larry Wos, Ross Overbeek, Rusty Lusk, and Jim Boyle" has a comma at the end for entry wosautomated
+while executing---line 2802 of file ACM-Reference-Format.bst
+Name 1 in "Larry Wos, Ross Overbeek, Rusty Lusk, and Jim Boyle" has a comma at the end for entry wosautomated
+while executing---line 2802 of file ACM-Reference-Format.bst
+Too many commas in name 1 of "Alexander Bentkamp, Jasmin Blanchette, Sophie Tourret, Petar Vukmirović and Uwe Waldmann" for entry bentkampsuperposition
+while executing---line 2802 of file ACM-Reference-Format.bst
+Too many commas in name 1 of "Alexander Bentkamp, Jasmin Blanchette, Sophie Tourret, Petar Vukmirović and Uwe Waldmann" for entry bentkampsuperposition
+while executing---line 2802 of file ACM-Reference-Format.bst
+Too many commas in name 1 of "Alexander Bentkamp, Jasmin Blanchette, Sophie Tourret, Petar Vukmirović and Uwe Waldmann" for entry bentkampsuperposition
+while executing---line 2802 of file ACM-Reference-Format.bst
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
+Reallocated global_strs (elt_size=200001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
+Too many commas in name 1 of "Alexander Bentkamp, Jasmin Blanchette, Sophie Tourret, Petar Vukmirović and Uwe Waldmann" for entry bentkampsuperposition
+while executing---line 2863 of file ACM-Reference-Format.bst
+Too many commas in name 1 of "Alexander Bentkamp, Jasmin Blanchette, Sophie Tourret, Petar Vukmirović and Uwe Waldmann" for entry bentkampsuperposition
+while executing---line 2863 of file ACM-Reference-Format.bst
+Name 1 in "Larry Wos, Ross Overbeek, Rusty Lusk, and Jim Boyle" has a comma at the end for entry wosautomated
+while executing---line 2863 of file ACM-Reference-Format.bst
+Name 1 in "Larry Wos, Ross Overbeek, Rusty Lusk, and Jim Boyle" has a comma at the end for entry wosautomated
+while executing---line 2863 of file ACM-Reference-Format.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Too many commas in name 1 of "Alexander Bentkamp, Jasmin Blanchette, Sophie Tourret, Petar Vukmirović and Uwe Waldmann" for entry bentkampsuperposition
+while executing---line 2961 of file ACM-Reference-Format.bst
+Too many commas in name 1 of "Alexander Bentkamp, Jasmin Blanchette, Sophie Tourret, Petar Vukmirović and Uwe Waldmann" for entry bentkampsuperposition
+while executing---line 2961 of file ACM-Reference-Format.bst
+Too many commas in name 1 of "Alexander Bentkamp, Jasmin Blanchette, Sophie Tourret, Petar Vukmirović and Uwe Waldmann" for entry bentkampsuperposition
+while executing---line 2961 of file ACM-Reference-Format.bst
+Name 1 in "Larry Wos, Ross Overbeek, Rusty Lusk, and Jim Boyle" has a comma at the end for entry wosautomated
+while executing---line 2961 of file ACM-Reference-Format.bst
+Name 1 in "Larry Wos, Ross Overbeek, Rusty Lusk, and Jim Boyle" has a comma at the end for entry wosautomated
+while executing---line 2961 of file ACM-Reference-Format.bst
+Name 1 in "Larry Wos, Ross Overbeek, Rusty Lusk, and Jim Boyle" has a comma at the end for entry wosautomated
+while executing---line 2961 of file ACM-Reference-Format.bst
+Warning--empty address in wosautomated
+Warning--empty year in ottermanual
+Warning--no journal in ottermanual
+Warning--no number and no volume in ottermanual
+Warning--page numbers missing in both pages and numpages fields in ottermanual
+Warning--page numbers missing in both pages and numpages fields in treeautomata
+You've used 19 entries,
+            5959 wiz_defined-function locations,
+            1477 strings with 18565 characters,
+and the built_in function-call counts, 20878 in all, are:
+= -- 2654
+> -- 775
+< -- 0
++ -- 253
+- -- 316
+* -- 1515
+:= -- 2243
+add.period$ -- 101
+call.type$ -- 19
+change.case$ -- 127
+chr.to.int$ -- 18
+cite$ -- 25
+duplicate$ -- 1732
+empty$ -- 1230
+format.name$ -- 338
+if$ -- 4863
+int.to.chr$ -- 3
+int.to.str$ -- 1
+missing$ -- 47
+newline$ -- 248
+num.names$ -- 157
+pop$ -- 580
+preamble$ -- 1
+purify$ -- 287
+quote$ -- 0
+skip$ -- 620
+stack$ -- 0
+substring$ -- 1502
+swap$ -- 176
+text.length$ -- 57
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 407
+warning$ -- 6
+while$ -- 153
+width$ -- 0
+write$ -- 424
+(There were 16 error messages)
