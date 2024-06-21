@@ -7452,6 +7452,23 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="The-Main-Points-of-The-Talk">The Main Points of The Talk<a class="anchor-link" href="#The-Main-Points-of-The-Talk">¶</a></h1><ul>
+<li><b>Simplification &amp; Completion</b></li>
+<li>Union-find is Ground Atomic Completion</li>
+<li>E-Graph is Ground Term Completion</li>
+<li>? is Lambda, Context, Destructive</li>
+<li>Compilers from Automated Reasoners</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>In the Beginning...</p>
 </div>
 </div>
@@ -7491,46 +7508,6 @@ main {
 </div>
 </div>
 </div>
-</div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">simplify1</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">match</span> <span class="n">x</span><span class="p">:</span>
-        <span class="k">case</span> <span class="p">(</span><span class="s2">"add"</span><span class="p">,</span> <span class="p">(</span><span class="s2">"const"</span><span class="p">,</span> <span class="n">m</span><span class="p">),</span> <span class="p">(</span><span class="s2">"const"</span><span class="p">,</span> <span class="n">n</span><span class="p">)):</span>
-            <span class="k">return</span> <span class="p">(</span><span class="s2">"const"</span><span class="p">,</span> <span class="n">m</span> <span class="o">+</span> <span class="n">n</span><span class="p">)</span>
-        <span class="k">case</span> <span class="p">(</span><span class="s2">"add"</span><span class="p">,</span> <span class="p">(</span><span class="s2">"const"</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">y</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="s2">"add"</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="p">(</span><span class="s2">"const"</span><span class="p">,</span> <span class="mi">0</span><span class="p">)):</span>
-            <span class="k">return</span> <span class="n">y</span>
-        <span class="k">case</span><span class="w"> </span><span class="k">_</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">x</span>
-<span class="k">def</span> <span class="nf">simplify</span><span class="p">(</span><span class="n">expr</span><span class="p">):</span>
-    <span class="k">match</span> <span class="n">expr</span><span class="p">:</span>
-        <span class="k">case</span> <span class="p">(</span><span class="s2">"add"</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-            <span class="k">return</span> <span class="n">simplify1</span><span class="p">((</span><span class="s2">"add"</span><span class="p">,</span> <span class="n">simplify</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">simplify</span><span class="p">(</span><span class="n">y</span><span class="p">)))</span>
-        <span class="k">case</span><span class="w"> </span><span class="k">_</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">simplify1</span><span class="p">(</span><span class="n">expr</span><span class="p">)</span>
-<span class="n">simplify</span><span class="p">((</span><span class="s2">"add"</span><span class="p">,</span> <span class="p">(</span><span class="s2">"const"</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="s2">"const"</span><span class="p">,</span> <span class="mi">4</span><span class="p">)))</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[16]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>('const', 7)</pre>
-</div>
-</div>
-</div>
-</div>
 </div></section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -7563,8 +7540,8 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><img alt="" src="https://egraphs-good.github.io/assets/egraphs.svg"/>
-$$ (a * 2) / 2 = a \ll 1 $$
+<center><img alt="No description has been provided for this image" src="./egraphs.svg" width="50%"/></center>
+<p>$$ a * 2 = a \ll 1 $$
 $$ (a * 2) / 2 = a *(2 / 2) = a * 1 = a $$</p>
 </div>
 </div>
@@ -7584,23 +7561,7 @@ $$ (a * 2) / 2 = a *(2 / 2) = a * 1 = a $$</p>
 </div>
 </div>
 </div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="The-Main-Points-of-The-Talk">The Main Points of The Talk<a class="anchor-link" href="#The-Main-Points-of-The-Talk">¶</a></h1><ul>
-<li>Union find ~ Ground Atomic Completion</li>
-<li>E-Graph ~ Ground Term Completion</li>
-<li>Clues: Lambda, Context, Destructive</li>
-<li>Automated Reasoning $\rightarrow$ Compilers</li>
-</ul>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
+</div></section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7634,7 +7595,7 @@ $$ (a * 2) / 2 = a *(2 / 2) = a * 1 = a $$</p>
 $$[A + 0 = A] \Rightarrow \{A + 0 \rightarrow A\}$$</li>
 <li>Add critical pairs (CPs) as equations
 $$\{foo(bar(X)) \rightarrow biz(X);  bar(X) \rightarrow baz(X)\} \Rightarrow $$
-$$ [foo(biz(X)) = foo(baz(X))]$$</li>
+$$ [biz(X) = foo(baz(X))]$$</li>
 <li>Reduce Equations
 $$[a = b], \{a \rightarrow c\} \Rightarrow [c = b], \{a \rightarrow c\}$$</li>
 <li>Repeat</li>
@@ -7682,10 +7643,6 @@ $$[a = b], \{a \rightarrow c\} \Rightarrow [c = b], \{a \rightarrow c\}$$</li>
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">%%file</span> /tmp/shift.p
 <span class="n">fof</span><span class="p">(</span><span class="n">shift</span><span class="p">,</span> <span class="n">axiom</span><span class="p">,</span> <span class="err">!</span><span class="p">[</span><span class="n">X</span><span class="p">]</span> <span class="p">:</span> <span class="n">mul</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">two</span><span class="p">)</span> <span class="o">=</span> <span class="n">shift</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">one</span><span class="p">))</span><span class="o">.</span>
 <span class="n">fof</span><span class="p">(</span><span class="n">cancel</span><span class="p">,</span> <span class="n">axiom</span><span class="p">,</span> <span class="err">!</span><span class="p">[</span><span class="n">X</span><span class="p">,</span><span class="n">N</span><span class="p">]</span> <span class="p">:</span> <span class="n">div</span><span class="p">(</span><span class="n">mul</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">N</span><span class="p">),</span><span class="n">N</span><span class="p">)</span> <span class="o">=</span> <span class="n">X</span><span class="p">)</span><span class="o">.</span>
-
-<span class="o">%</span><span class="n">fof</span><span class="p">(</span><span class="n">assoc</span><span class="p">,</span> <span class="n">axiom</span><span class="p">,</span> <span class="err">!</span><span class="p">[</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">,</span><span class="n">Z</span><span class="p">]:</span> <span class="n">div</span><span class="p">(</span><span class="n">mul</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">),</span> <span class="n">Z</span><span class="p">)</span> <span class="o">=</span> <span class="n">mul</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">div</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span><span class="n">Z</span><span class="p">)))</span><span class="o">.</span>
-<span class="o">%</span><span class="n">fof</span><span class="p">(</span><span class="n">cancel</span><span class="p">,</span> <span class="n">axiom</span><span class="p">,</span> <span class="err">!</span><span class="p">[</span><span class="n">X</span><span class="p">]:</span> <span class="n">div</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">X</span><span class="p">)</span> <span class="o">=</span> <span class="n">one</span><span class="p">)</span><span class="o">.</span>
-<span class="o">%</span><span class="n">fof</span><span class="p">(</span><span class="n">mul_one</span><span class="p">,</span> <span class="n">axiom</span><span class="p">,</span> <span class="err">!</span><span class="p">[</span><span class="n">X</span><span class="p">]:</span> <span class="n">mul</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">one</span><span class="p">)</span> <span class="o">=</span> <span class="n">X</span><span class="p">)</span><span class="o">.</span>
 
 <span class="n">fof</span><span class="p">(</span><span class="n">goal</span><span class="p">,</span> <span class="n">conjecture</span><span class="p">,</span> <span class="n">true</span> <span class="o">=</span> <span class="n">false</span><span class="p">)</span><span class="o">.</span>
 </pre></div>
@@ -7755,6 +7712,23 @@ RESULT: CounterSatisfiable (the conjecture is false).
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="The-Main-Points-of-The-Talk">The Main Points of The Talk<a class="anchor-link" href="#The-Main-Points-of-The-Talk">¶</a></h1><ul>
+<li>Simplification &amp; Completion</li>
+<li><b>Union-find is Ground Atomic Completion</b></li>
+<li>E-Graph is Ground Term Completion</li>
+<li>? is Lambda, Context, Destructive</li>
+<li>Compilers from Automated Reasoners</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h1 id="Union-Finds-as-Atomic-Rewrite-Systems">Union Finds as Atomic Rewrite Systems<a class="anchor-link" href="#Union-Finds-as-Atomic-Rewrite-Systems">¶</a></h1><ul>
 <li>Egraph ~ union find + hash cons</li>
 <li>Union find<ul>
@@ -7775,6 +7749,7 @@ RESULT: CounterSatisfiable (the conjecture is false).
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<font size="10">
 <table>
 <thead>
 <tr>
@@ -7801,42 +7776,7 @@ RESULT: CounterSatisfiable (the conjecture is false).
 </tr>
 </tbody>
 </table>
-</div>
-</div>
-</div>
-</div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">UF</span><span class="p">():</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">rules</span> <span class="o">=</span> <span class="p">{}</span>
-    <span class="k">def</span> <span class="nf">find</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
-        <span class="c1"># `find` reduces x with respect to the current rules (x -R-&gt; retval)</span>
-        <span class="k">while</span> <span class="bp">self</span><span class="o">.</span><span class="n">rules</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rules</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">x</span>
-    <span class="k">def</span> <span class="nf">union</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-        <span class="c1"># Do incremental completion starting with</span>
-        <span class="c1"># (E,R) == ({x = y}, self.rules )</span>
-        <span class="n">x1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># SIMPLIFY  ( {x1 = y} , R)</span>
-        <span class="n">y1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="c1"># SIMPLIFY  ( {x1 = y1}, R)</span>
-        <span class="k">if</span> <span class="n">x1</span> <span class="o">==</span> <span class="n">y1</span><span class="p">:</span> <span class="c1"># TRIVIAL ({x1 = x1}, R)</span>
-            <span class="k">return</span> <span class="n">x1</span> <span class="c1"># (Empty, self.rules)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">x1</span> <span class="o">&lt;</span> <span class="n">y1</span><span class="p">:</span> <span class="c1"># the "term order"</span>
-                <span class="n">x1</span><span class="p">,</span><span class="n">y1</span> <span class="o">=</span> <span class="n">y1</span><span class="p">,</span><span class="n">x1</span> <span class="c1"># swap</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">rules</span><span class="p">[</span><span class="n">x1</span><span class="p">]</span> <span class="o">=</span> <span class="n">y1</span> <span class="c1"># ORIENT  (empty, R U {x1 -&gt; y1})</span>
-            <span class="k">return</span> <span class="n">y1</span>
-    <span class="k">def</span> <span class="nf">canon</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">lhs</span><span class="p">,</span><span class="n">rhs</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">rules</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">rules</span><span class="p">[</span><span class="n">lhs</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">rhs</span><span class="p">)</span> <span class="c1"># r-simplify</span>
-</pre></div>
-</div>
+</font>
 </div>
 </div>
 </div>
@@ -7845,7 +7785,7 @@ RESULT: CounterSatisfiable (the conjecture is false).
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">%%file</span> /tmp/unionfind.p
@@ -7855,7 +7795,7 @@ RESULT: CounterSatisfiable (the conjecture is false).
 <span class="n">cnf</span><span class="p">(</span><span class="n">ax4</span><span class="p">,</span> <span class="n">axiom</span><span class="p">,</span> <span class="n">d</span> <span class="o">=</span> <span class="n">e</span><span class="p">)</span><span class="o">.</span>
 <span class="n">cnf</span><span class="p">(</span><span class="n">ax5</span><span class="p">,</span> <span class="n">axiom</span><span class="p">,</span> <span class="n">f</span> <span class="o">=</span> <span class="n">g</span><span class="p">)</span><span class="o">.</span>
 
-<span class="n">cnf</span><span class="p">(</span><span class="n">false</span><span class="p">,</span> <span class="n">conjecture</span><span class="p">,</span> <span class="n">true</span> <span class="o">=</span> <span class="n">false</span><span class="p">)</span><span class="o">.</span> <span class="o">%</span> <span class="n">Show</span> <span class="n">proofs</span> <span class="n">a</span> <span class="o">=</span> <span class="n">e</span>
+<span class="n">cnf</span><span class="p">(</span><span class="n">false</span><span class="p">,</span> <span class="n">conjecture</span><span class="p">,</span> <span class="n">true</span> <span class="o">=</span> <span class="n">false</span><span class="p">)</span><span class="o">.</span>
 </pre></div>
 </div>
 </div>
@@ -7879,7 +7819,7 @@ RESULT: CounterSatisfiable (the conjecture is false).
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>twee<span class="w"> </span>/tmp/unionfind.p
@@ -7928,7 +7868,7 @@ RESULT: CounterSatisfiable (the conjecture is false).
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">R</span> <span class="o">=</span> <span class="p">[</span>
@@ -7949,10 +7889,121 @@ RESULT: CounterSatisfiable (the conjecture is false).
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[12]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[8]:</div>
 <div class="jp-RenderedSVG jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="image/svg+xml" tabindex="0">
 <img alt="No description has been provided for this image" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIKICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPgo8IS0tIEdlbmVyYXRlZCBieSBncmFwaHZpeiB2ZXJzaW9uIDIuNDMuMCAoMCkKIC0tPgo8IS0tIFRpdGxlOiAlMyBQYWdlczogMSAtLT4KPHN2ZyB3aWR0aD0iMzUwcHQiIGhlaWdodD0iMTE4cHQiCiB2aWV3Qm94PSIwLjAwIDAuMDAgMzUwLjAwIDExOC4wMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CjxnIGlkPSJncmFwaDAiIGNsYXNzPSJncmFwaCIgdHJhbnNmb3JtPSJzY2FsZSgxIDEpIHJvdGF0ZSgwKSB0cmFuc2xhdGUoNCAxMTQpIj4KPHRpdGxlPiUzPC90aXRsZT4KPHBvbHlnb24gZmlsbD0id2hpdGUiIHN0cm9rZT0idHJhbnNwYXJlbnQiIHBvaW50cz0iLTQsNCAtNCwtMTE0IDM0NiwtMTE0IDM0Niw0IC00LDQiLz4KPCEtLSA2IC0tPgo8ZyBpZD0ibm9kZTEiIGNsYXNzPSJub2RlIj4KPHRpdGxlPjY8L3RpdGxlPgo8cGF0aCBmaWxsPSJub25lIiBzdHJva2U9ImJsYWNrIiBkPSJNMTIsLTczLjVDMTIsLTczLjUgNDIsLTczLjUgNDIsLTczLjUgNDgsLTczLjUgNTQsLTc5LjUgNTQsLTg1LjUgNTQsLTg1LjUgNTQsLTk3LjUgNTQsLTk3LjUgNTQsLTEwMy41IDQ4LC0xMDkuNSA0MiwtMTA5LjUgNDIsLTEwOS41IDEyLC0xMDkuNSAxMiwtMTA5LjUgNiwtMTA5LjUgMCwtMTAzLjUgMCwtOTcuNSAwLC05Ny41IDAsLTg1LjUgMCwtODUuNSAwLC03OS41IDYsLTczLjUgMTIsLTczLjUiLz4KPHRleHQgdGV4dC1hbmNob3I9Im1pZGRsZSIgeD0iMjciIHk9Ii04Ny44IiBmb250LWZhbWlseT0iVGltZXMsc2VyaWYiIGZvbnQtc2l6ZT0iMTQuMDAiPmI8L3RleHQ+CjwvZz4KPCEtLSA1IC0tPgo8ZyBpZD0ibm9kZTIiIGNsYXNzPSJub2RlIj4KPHRpdGxlPjU8L3RpdGxlPgo8cGF0aCBmaWxsPSJub25lIiBzdHJva2U9ImJsYWNrIiBkPSJNMTIwLC0wLjVDMTIwLC0wLjUgMTUwLC0wLjUgMTUwLC0wLjUgMTU2LC0wLjUgMTYyLC02LjUgMTYyLC0xMi41IDE2MiwtMTIuNSAxNjIsLTI0LjUgMTYyLC0yNC41IDE2MiwtMzAuNSAxNTYsLTM2LjUgMTUwLC0zNi41IDE1MCwtMzYuNSAxMjAsLTM2LjUgMTIwLC0zNi41IDExNCwtMzYuNSAxMDgsLTMwLjUgMTA4LC0yNC41IDEwOCwtMjQuNSAxMDgsLTEyLjUgMTA4LC0xMi41IDEwOCwtNi41IDExNCwtMC41IDEyMCwtMC41Ii8+Cjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjEzNSIgeT0iLTE0LjgiIGZvbnQtZmFtaWx5PSJUaW1lcyxzZXJpZiIgZm9udC1zaXplPSIxNC4wMCI+YTwvdGV4dD4KPC9nPgo8IS0tIDYmIzQ1OyZndDs1IC0tPgo8ZyBpZD0iZWRnZTEiIGNsYXNzPSJlZGdlIj4KPHRpdGxlPjY6aGVhZCYjNDU7Jmd0OzU6aGVhZDwvdGl0bGU+CjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0icmVkIiBzdHJva2UtZGFzaGFycmF5PSI1LDIiIGQ9Ik01My40MywtNzMuMzhDNTMuNjIsLTczLjI2IDUzLjgxLC03My4xMyA1NCwtNzMgNzQuOTEsLTU4Ljg3IDgyLjI3LC01NC4yNyAxMDAuMTgsLTQyLjI2Ii8+Cjxwb2x5Z29uIGZpbGw9InJlZCIgc3Ryb2tlPSJyZWQiIHBvaW50cz0iMTAyLjIzLC00NS4xMSAxMDguNTcsLTM2LjYyIDk4LjMyLC0zOS4zIDEwMi4yMywtNDUuMTEiLz4KPC9nPgo8IS0tIDcgLS0+CjxnIGlkPSJub2RlMyIgY2xhc3M9Im5vZGUiPgo8dGl0bGU+NzwvdGl0bGU+CjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iYmxhY2siIGQ9Ik04NCwtNzMuNUM4NCwtNzMuNSAxMTQsLTczLjUgMTE0LC03My41IDEyMCwtNzMuNSAxMjYsLTc5LjUgMTI2LC04NS41IDEyNiwtODUuNSAxMjYsLTk3LjUgMTI2LC05Ny41IDEyNiwtMTAzLjUgMTIwLC0xMDkuNSAxMTQsLTEwOS41IDExNCwtMTA5LjUgODQsLTEwOS41IDg0LC0xMDkuNSA3OCwtMTA5LjUgNzIsLTEwMy41IDcyLC05Ny41IDcyLC05Ny41IDcyLC04NS41IDcyLC04NS41IDcyLC03OS41IDc4LC03My41IDg0LC03My41Ii8+Cjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9Ijk5IiB5PSItODcuOCIgZm9udC1mYW1pbHk9IlRpbWVzLHNlcmlmIiBmb250LXNpemU9IjE0LjAwIj5jPC90ZXh0Pgo8L2c+CjwhLS0gNyYjNDU7Jmd0OzUgLS0+CjxnIGlkPSJlZGdlMiIgY2xhc3M9ImVkZ2UiPgo8dGl0bGU+NzpoZWFkJiM0NTsmZ3Q7NTpoZWFkPC90aXRsZT4KPHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZWQiIHN0cm9rZS1kYXNoYXJyYXk9IjUsMiIgZD0iTTEwNy45LC03My40NkMxMTIuMDEsLTY1LjEyIDExNi45OCwtNTUuMDQgMTIxLjUzLC00NS44Ii8+Cjxwb2x5Z29uIGZpbGw9InJlZCIgc3Ryb2tlPSJyZWQiIHBvaW50cz0iMTI0Ljc5LC00Ny4xMSAxMjYuMDgsLTM2LjU5IDExOC41MiwtNDQuMDEgMTI0Ljc5LC00Ny4xMSIvPgo8L2c+CjwhLS0gOCAtLT4KPGcgaWQ9Im5vZGU0IiBjbGFzcz0ibm9kZSI+Cjx0aXRsZT44PC90aXRsZT4KPHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSJibGFjayIgZD0iTTE1NiwtNzMuNUMxNTYsLTczLjUgMTg2LC03My41IDE4NiwtNzMuNSAxOTIsLTczLjUgMTk4LC03OS41IDE5OCwtODUuNSAxOTgsLTg1LjUgMTk4LC05Ny41IDE5OCwtOTcuNSAxOTgsLTEwMy41IDE5MiwtMTA5LjUgMTg2LC0xMDkuNSAxODYsLTEwOS41IDE1NiwtMTA5LjUgMTU2LC0xMDkuNSAxNTAsLTEwOS41IDE0NCwtMTAzLjUgMTQ0LC05Ny41IDE0NCwtOTcuNSAxNDQsLTg1LjUgMTQ0LC04NS41IDE0NCwtNzkuNSAxNTAsLTczLjUgMTU2LC03My41Ii8+Cjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjE3MSIgeT0iLTg3LjgiIGZvbnQtZmFtaWx5PSJUaW1lcyxzZXJpZiIgZm9udC1zaXplPSIxNC4wMCI+ZDwvdGV4dD4KPC9nPgo8IS0tIDgmIzQ1OyZndDs1IC0tPgo8ZyBpZD0iZWRnZTMiIGNsYXNzPSJlZGdlIj4KPHRpdGxlPjg6aGVhZCYjNDU7Jmd0OzU6aGVhZDwvdGl0bGU+CjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0icmVkIiBzdHJva2UtZGFzaGFycmF5PSI1LDIiIGQ9Ik0xNjIuMSwtNzMuNDZDMTU3Ljk5LC02NS4xMiAxNTMuMDIsLTU1LjA0IDE0OC40NywtNDUuOCIvPgo8cG9seWdvbiBmaWxsPSJyZWQiIHN0cm9rZT0icmVkIiBwb2ludHM9IjE1MS40OCwtNDQuMDEgMTQzLjkyLC0zNi41OSAxNDUuMjEsLTQ3LjExIDE1MS40OCwtNDQuMDEiLz4KPC9nPgo8IS0tIDkgLS0+CjxnIGlkPSJub2RlNSIgY2xhc3M9Im5vZGUiPgo8dGl0bGU+OTwvdGl0bGU+CjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iYmxhY2siIGQ9Ik0yMjgsLTczLjVDMjI4LC03My41IDI1OCwtNzMuNSAyNTgsLTczLjUgMjY0LC03My41IDI3MCwtNzkuNSAyNzAsLTg1LjUgMjcwLC04NS41IDI3MCwtOTcuNSAyNzAsLTk3LjUgMjcwLC0xMDMuNSAyNjQsLTEwOS41IDI1OCwtMTA5LjUgMjU4LC0xMDkuNSAyMjgsLTEwOS41IDIyOCwtMTA5LjUgMjIyLC0xMDkuNSAyMTYsLTEwMy41IDIxNiwtOTcuNSAyMTYsLTk3LjUgMjE2LC04NS41IDIxNiwtODUuNSAyMTYsLTc5LjUgMjIyLC03My41IDIyOCwtNzMuNSIvPgo8dGV4dCB0ZXh0LWFuY2hvcj0ibWlkZGxlIiB4PSIyNDMiIHk9Ii04Ny44IiBmb250LWZhbWlseT0iVGltZXMsc2VyaWYiIGZvbnQtc2l6ZT0iMTQuMDAiPmU8L3RleHQ+CjwvZz4KPCEtLSA5JiM0NTsmZ3Q7NSAtLT4KPGcgaWQ9ImVkZ2U0IiBjbGFzcz0iZWRnZSI+Cjx0aXRsZT45OmhlYWQmIzQ1OyZndDs1OmhlYWQ8L3RpdGxlPgo8cGF0aCBmaWxsPSJub25lIiBzdHJva2U9InJlZCIgc3Ryb2tlLWRhc2hhcnJheT0iNSwyIiBkPSJNMjE2LjU3LC03My4zOEMyMTYuMzgsLTczLjI2IDIxNi4xOSwtNzMuMTMgMjE2LC03MyAxOTUuMDksLTU4Ljg3IDE4Ny43MywtNTQuMjcgMTY5LjgyLC00Mi4yNiIvPgo8cG9seWdvbiBmaWxsPSJyZWQiIHN0cm9rZT0icmVkIiBwb2ludHM9IjE3MS42OCwtMzkuMyAxNjEuNDMsLTM2LjYyIDE2Ny43NywtNDUuMTEgMTcxLjY4LC0zOS4zIi8+CjwvZz4KPCEtLSAxMSAtLT4KPGcgaWQ9Im5vZGU2IiBjbGFzcz0ibm9kZSI+Cjx0aXRsZT4xMTwvdGl0bGU+CjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iYmxhY2siIGQ9Ik0zMDAsLTczLjVDMzAwLC03My41IDMzMCwtNzMuNSAzMzAsLTczLjUgMzM2LC03My41IDM0MiwtNzkuNSAzNDIsLTg1LjUgMzQyLC04NS41IDM0MiwtOTcuNSAzNDIsLTk3LjUgMzQyLC0xMDMuNSAzMzYsLTEwOS41IDMzMCwtMTA5LjUgMzMwLC0xMDkuNSAzMDAsLTEwOS41IDMwMCwtMTA5LjUgMjk0LC0xMDkuNSAyODgsLTEwMy41IDI4OCwtOTcuNSAyODgsLTk3LjUgMjg4LC04NS41IDI4OCwtODUuNSAyODgsLTc5LjUgMjk0LC03My41IDMwMCwtNzMuNSIvPgo8dGV4dCB0ZXh0LWFuY2hvcj0ibWlkZGxlIiB4PSIzMTUiIHk9Ii04Ny44IiBmb250LWZhbWlseT0iVGltZXMsc2VyaWYiIGZvbnQtc2l6ZT0iMTQuMDAiPmc8L3RleHQ+CjwvZz4KPCEtLSAxMCAtLT4KPGcgaWQ9Im5vZGU3IiBjbGFzcz0ibm9kZSI+Cjx0aXRsZT4xMDwvdGl0bGU+CjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iYmxhY2siIGQ9Ik0zMDAsLTAuNUMzMDAsLTAuNSAzMzAsLTAuNSAzMzAsLTAuNSAzMzYsLTAuNSAzNDIsLTYuNSAzNDIsLTEyLjUgMzQyLC0xMi41IDM0MiwtMjQuNSAzNDIsLTI0LjUgMzQyLC0zMC41IDMzNiwtMzYuNSAzMzAsLTM2LjUgMzMwLC0zNi41IDMwMCwtMzYuNSAzMDAsLTM2LjUgMjk0LC0zNi41IDI4OCwtMzAuNSAyODgsLTI0LjUgMjg4LC0yNC41IDI4OCwtMTIuNSAyODgsLTEyLjUgMjg4LC02LjUgMjk0LC0wLjUgMzAwLC0wLjUiLz4KPHRleHQgdGV4dC1hbmNob3I9Im1pZGRsZSIgeD0iMzE1IiB5PSItMTQuOCIgZm9udC1mYW1pbHk9IlRpbWVzLHNlcmlmIiBmb250LXNpemU9IjE0LjAwIj5mPC90ZXh0Pgo8L2c+CjwhLS0gMTEmIzQ1OyZndDsxMCAtLT4KPGcgaWQ9ImVkZ2U1IiBjbGFzcz0iZWRnZSI+Cjx0aXRsZT4xMTpoZWFkJiM0NTsmZ3Q7MTA6aGVhZDwvdGl0bGU+CjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0icmVkIiBzdHJva2UtZGFzaGFycmF5PSI1LDIiIGQ9Ik0zMTUsLTczLjQ2QzMxNSwtNjUuMzggMzE1LC01NS42OCAzMTUsLTQ2LjY4Ii8+Cjxwb2x5Z29uIGZpbGw9InJlZCIgc3Ryb2tlPSJyZWQiIHBvaW50cz0iMzE4LjUsLTQ2LjU5IDMxNSwtMzYuNTkgMzExLjUsLTQ2LjU5IDMxOC41LC00Ni41OSIvPgo8L2c+CjwvZz4KPC9zdmc+Cg=="/>
 </div>
+</div>
+</div>
+</div>
+</div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%%file</span> /tmp/unionfind.p
+<span class="n">cnf</span><span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">axiom</span><span class="p">,</span> <span class="n">a</span> <span class="o">=</span> <span class="n">b</span><span class="p">)</span><span class="o">.</span>
+<span class="n">cnf</span><span class="p">(</span><span class="n">ax2</span><span class="p">,</span> <span class="n">axiom</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">c</span><span class="p">)</span><span class="o">.</span>
+<span class="n">cnf</span><span class="p">(</span><span class="n">ax3</span><span class="p">,</span> <span class="n">axiom</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">d</span><span class="p">)</span><span class="o">.</span>
+<span class="n">cnf</span><span class="p">(</span><span class="n">ax4</span><span class="p">,</span> <span class="n">axiom</span><span class="p">,</span> <span class="n">d</span> <span class="o">=</span> <span class="n">e</span><span class="p">)</span><span class="o">.</span>
+<span class="n">cnf</span><span class="p">(</span><span class="n">ax5</span><span class="p">,</span> <span class="n">axiom</span><span class="p">,</span> <span class="n">f</span> <span class="o">=</span> <span class="n">g</span><span class="p">)</span><span class="o">.</span>
+
+<span class="n">cnf</span><span class="p">(</span><span class="n">false</span><span class="p">,</span> <span class="n">conjecture</span><span class="p">,</span> <span class="n">a</span> <span class="o">=</span> <span class="n">e</span><span class="p">)</span><span class="o">.</span> <span class="o">%</span> <span class="n">Show</span> <span class="n">proofs</span> <span class="n">a</span> <span class="o">=</span> <span class="n">e</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Overwriting /tmp/unionfind.p
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>twee<span class="w"> </span>/tmp/unionfind.p
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Here is the input problem:
+  Axiom 1 (ax5): f = g.
+  Axiom 2 (ax1): a = b.
+  Axiom 3 (ax2): b = c.
+  Axiom 4 (ax3): c = d.
+  Axiom 5 (ax4): d = e.
+  Goal 1 (false): a = e.
+
+1. g -&gt; f
+2. b -&gt; a
+3. c -&gt; a
+4. d -&gt; a
+5. e -&gt; a
+
+The conjecture is true! Here is a proof.
+
+Axiom 1 (ax1): a = b.
+Axiom 2 (ax2): b = c.
+Axiom 3 (ax3): c = d.
+Axiom 4 (ax4): d = e.
+
+Goal 1 (false): a = e.
+Proof:
+  <span class="ansi-green-fg">a</span>
+= <span class="ansi-bold">{ by axiom 1 (ax1) }</span>
+  <span class="ansi-green-fg">b</span>
+= <span class="ansi-bold">{ by axiom 2 (ax2) }</span>
+  <span class="ansi-green-fg">c</span>
+= <span class="ansi-bold">{ by axiom 3 (ax3) }</span>
+  <span class="ansi-green-fg">d</span>
+= <span class="ansi-bold">{ by axiom 4 (ax4) }</span>
+  e
+
+RESULT: Theorem (the conjecture is true).
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="The-Main-Points-of-The-Talk">The Main Points of The Talk<a class="anchor-link" href="#The-Main-Points-of-The-Talk">¶</a></h1><ul>
+<li>Simplification &amp; Completion</li>
+<li>Union-find is Ground Atomic Completion</li>
+<li><b>E-Graph is Ground Term Completion</b></li>
+<li>? is Lambda, Context, Destructive</li>
+<li>Compilers from Automated Reasoners</li>
+</ul>
 </div>
 </div>
 </div>
@@ -7965,10 +8016,52 @@ RESULT: CounterSatisfiable (the conjecture is false).
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h1 id="Extending-To-Terms">Extending To Terms<a class="anchor-link" href="#Extending-To-Terms">¶</a></h1><ul>
 <li>Egraph = Completed Reduced Ground Rewrite System</li>
-<li>Ground completion turns ground equalities into</li>
-<li>Fact: Ground completion terminates (with appropriate term order)</li>
+<li>Ground completion "solves" ground equalities</li>
+<li>E-graph "solves" ground equalities</li>
 </ul>
 </div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<font size="10">
+<table>
+<thead>
+<tr>
+<th>TRS</th>
+<th>Egraph</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Canonical Term</td>
+<td>EClass</td>
+</tr>
+<tr>
+<td>R/L-simplify</td>
+<td>Canonization</td>
+</tr>
+<tr>
+<td>Run Rules</td>
+<td>Extract</td>
+</tr>
+<tr>
+<td>Term Orders</td>
+<td>Extract Objective</td>
+</tr>
+<tr>
+<td>KBO Weights</td>
+<td>Weights</td>
+</tr>
+</tbody>
+</table>
+<font size="10">
+</font></font></div>
 </div>
 </div>
 </div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
@@ -7976,14 +8069,14 @@ RESULT: CounterSatisfiable (the conjecture is false).
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [32]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">%%file</span> /tmp/groundshift.p
 <span class="n">fof</span><span class="p">(</span><span class="n">shift</span><span class="p">,</span> <span class="n">axiom</span><span class="p">,</span> <span class="n">mul</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">two</span><span class="p">)</span> <span class="o">=</span> <span class="n">shift</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">one</span><span class="p">))</span><span class="o">.</span>
 <span class="n">fof</span><span class="p">(</span><span class="n">assoc</span><span class="p">,</span> <span class="n">axiom</span><span class="p">,</span> <span class="n">div</span><span class="p">(</span><span class="n">mul</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">two</span><span class="p">),</span><span class="n">two</span><span class="p">)</span> <span class="o">=</span> <span class="n">mul</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">div</span><span class="p">(</span><span class="n">two</span><span class="p">,</span><span class="n">two</span><span class="p">)))</span><span class="o">.</span>
 <span class="n">fof</span><span class="p">(</span><span class="n">cancel</span><span class="p">,</span> <span class="n">axiom</span><span class="p">,</span> <span class="n">div</span><span class="p">(</span><span class="n">two</span><span class="p">,</span><span class="n">two</span><span class="p">)</span> <span class="o">=</span> <span class="n">one</span><span class="p">)</span><span class="o">.</span>
-<span class="n">fof</span><span class="p">(</span><span class="n">unit_mul</span><span class="p">,</span> <span class="n">axiom</span><span class="p">,</span> <span class="n">mul</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">one</span><span class="p">)</span> <span class="o">=</span> <span class="n">a</span><span class="p">)</span><span class="o">.</span>
+<span class="n">fof</span><span class="p">(</span><span class="n">unit_mul</span><span class="p">,</span> <span class="n">axiom</span><span class="p">,</span> <span class="n">mul</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">one</span><span class="p">)</span> <span class="o">=</span> <span class="n">a</span><span class="p">)</span><span class="o">.</span> 
 <span class="n">fof</span><span class="p">(</span><span class="n">cancel</span><span class="p">,</span> <span class="n">axiom</span><span class="p">,</span> <span class="n">start_term</span><span class="p">(</span><span class="n">q</span><span class="p">,</span><span class="n">q</span><span class="p">,</span><span class="n">q</span><span class="p">,</span><span class="n">q</span><span class="p">,</span><span class="n">q</span><span class="p">,</span><span class="n">q</span><span class="p">,</span><span class="n">q</span><span class="p">)</span> <span class="o">=</span> <span class="n">div</span><span class="p">(</span><span class="n">mul</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">two</span><span class="p">),</span> <span class="n">two</span><span class="p">))</span><span class="o">.</span>
 
 <span class="n">fof</span><span class="p">(</span><span class="n">goal</span><span class="p">,</span> <span class="n">conjecture</span><span class="p">,</span> <span class="n">true</span> <span class="o">=</span> <span class="n">false</span><span class="p">)</span><span class="o">.</span>
@@ -8010,7 +8103,7 @@ RESULT: CounterSatisfiable (the conjecture is false).
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [33]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>twee<span class="w"> </span>/tmp/groundshift.p
@@ -8054,45 +8147,6 @@ RESULT: CounterSatisfiable (the conjecture is false).
 </div>
 </div>
 </div>
-</div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">BV</span> <span class="o">=</span> <span class="n">DeclareSort</span><span class="p">(</span><span class="s2">"BV"</span><span class="p">)</span>
-<span class="n">mul</span> <span class="o">=</span> <span class="n">Function</span><span class="p">(</span><span class="s2">"*"</span><span class="p">,</span> <span class="n">BV</span><span class="p">,</span> <span class="n">BV</span><span class="p">,</span> <span class="n">BV</span><span class="p">)</span>
-<span class="n">shift</span> <span class="o">=</span> <span class="n">Function</span><span class="p">(</span><span class="s2">"\&lt;\&lt;"</span><span class="p">,</span> <span class="n">BV</span><span class="p">,</span> <span class="n">BV</span><span class="p">,</span> <span class="n">BV</span><span class="p">)</span>
-<span class="n">div</span> <span class="o">=</span> <span class="n">Function</span><span class="p">(</span><span class="s2">"/"</span><span class="p">,</span> <span class="n">BV</span><span class="p">,</span> <span class="n">BV</span><span class="p">,</span> <span class="n">BV</span><span class="p">)</span>
-<span class="n">a</span><span class="p">,</span><span class="n">one</span><span class="p">,</span><span class="n">two</span><span class="o">=</span> <span class="n">Consts</span><span class="p">(</span><span class="s2">"a 1 2"</span><span class="p">,</span> <span class="n">BV</span><span class="p">)</span>
-<span class="n">start</span> <span class="o">=</span> <span class="n">Const</span><span class="p">(</span><span class="s2">"start"</span><span class="p">,</span> <span class="n">BV</span><span class="p">)</span>
-<span class="n">R</span> <span class="o">=</span> <span class="p">[</span>
-  <span class="p">(</span><span class="n">mul</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">two</span><span class="p">)</span> <span class="p">,</span> <span class="n">shift</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">one</span><span class="p">)),</span>
-  <span class="p">(</span><span class="n">mul</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">one</span><span class="p">)</span> <span class="p">,</span> <span class="n">a</span><span class="p">),</span>
-  <span class="p">(</span><span class="n">div</span><span class="p">(</span><span class="n">two</span><span class="p">,</span> <span class="n">two</span><span class="p">)</span> <span class="p">,</span> <span class="n">one</span><span class="p">),</span>
-  <span class="p">(</span><span class="n">div</span><span class="p">(</span><span class="n">shift</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">one</span><span class="p">),</span> <span class="n">two</span><span class="p">)</span> <span class="p">,</span> <span class="n">a</span><span class="p">),</span>
-  <span class="c1">#(start , a)</span>
-<span class="p">]</span>
-<span class="n">show_rewrite</span><span class="p">(</span><span class="n">R</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[13]:</div>
-<div class="jp-RenderedSVG jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="image/svg+xml" tabindex="0">
-<img alt="No description has been provided for this image" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIKICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPgo8IS0tIEdlbmVyYXRlZCBieSBncmFwaHZpeiB2ZXJzaW9uIDIuNDMuMCAoMCkKIC0tPgo8IS0tIFRpdGxlOiAlMyBQYWdlczogMSAtLT4KPHN2ZyB3aWR0aD0iMjk1cHQiIGhlaWdodD0iMjExcHQiCiB2aWV3Qm94PSIwLjAwIDAuMDAgMjk1LjIwIDIxMS4wMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CjxnIGlkPSJncmFwaDAiIGNsYXNzPSJncmFwaCIgdHJhbnNmb3JtPSJzY2FsZSgxIDEpIHJvdGF0ZSgwKSB0cmFuc2xhdGUoNCAyMDcpIj4KPHRpdGxlPiUzPC90aXRsZT4KPHBvbHlnb24gZmlsbD0id2hpdGUiIHN0cm9rZT0idHJhbnNwYXJlbnQiIHBvaW50cz0iLTQsNCAtNCwtMjA3IDI5MS4yLC0yMDcgMjkxLjIsNCAtNCw0Ii8+CjwhLS0gMTYgLS0+CjxnIGlkPSJub2RlMSIgY2xhc3M9Im5vZGUiPgo8dGl0bGU+MTY8L3RpdGxlPgo8cGF0aCBmaWxsPSJub25lIiBzdHJva2U9ImJsYWNrIiBkPSJNMTQzLjIsLTE1Ni41QzE0My4yLC0xNTYuNSAxNzMuMiwtMTU2LjUgMTczLjIsLTE1Ni41IDE3OS4yLC0xNTYuNSAxODUuMiwtMTYyLjUgMTg1LjIsLTE2OC41IDE4NS4yLC0xNjguNSAxODUuMiwtMTkwLjUgMTg1LjIsLTE5MC41IDE4NS4yLC0xOTYuNSAxNzkuMiwtMjAyLjUgMTczLjIsLTIwMi41IDE3My4yLC0yMDIuNSAxNDMuMiwtMjAyLjUgMTQzLjIsLTIwMi41IDEzNy4yLC0yMDIuNSAxMzEuMiwtMTk2LjUgMTMxLjIsLTE5MC41IDEzMS4yLC0xOTAuNSAxMzEuMiwtMTY4LjUgMTMxLjIsLTE2OC41IDEzMS4yLC0xNjIuNSAxMzcuMiwtMTU2LjUgMTQzLjIsLTE1Ni41Ii8+Cjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjE1OC4yIiB5PSItMTg3LjMiIGZvbnQtZmFtaWx5PSJUaW1lcyxzZXJpZiIgZm9udC1zaXplPSIxNC4wMCI+KjwvdGV4dD4KPHBvbHlsaW5lIGZpbGw9Im5vbmUiIHN0cm9rZT0iYmxhY2siIHBvaW50cz0iMTMxLjIsLTE3OS41IDE4NS4yLC0xNzkuNSAiLz4KPHRleHQgdGV4dC1hbmNob3I9Im1pZGRsZSIgeD0iMTQ0LjciIHk9Ii0xNjQuMyIgZm9udC1mYW1pbHk9IlRpbWVzLHNlcmlmIiBmb250LXNpemU9IjE0LjAwIj4gPC90ZXh0Pgo8cG9seWxpbmUgZmlsbD0ibm9uZSIgc3Ryb2tlPSJibGFjayIgcG9pbnRzPSIxNTguMiwtMTU2LjUgMTU4LjIsLTE3OS41ICIvPgo8dGV4dCB0ZXh0LWFuY2hvcj0ibWlkZGxlIiB4PSIxNzEuNyIgeT0iLTE2NC4zIiBmb250LWZhbWlseT0iVGltZXMsc2VyaWYiIGZvbnQtc2l6ZT0iMTQuMDAiPiA8L3RleHQ+CjwvZz4KPCEtLSAxNyAtLT4KPGcgaWQ9Im5vZGUyIiBjbGFzcz0ibm9kZSI+Cjx0aXRsZT4xNzwvdGl0bGU+CjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iYmxhY2siIGQ9Ik0xMzYuMiwtNzMuNUMxMzYuMiwtNzMuNSAxNjYuMiwtNzMuNSAxNjYuMiwtNzMuNSAxNzIuMiwtNzMuNSAxNzguMiwtNzkuNSAxNzguMiwtODUuNSAxNzguMiwtODUuNSAxNzguMiwtMTA3LjUgMTc4LjIsLTEwNy41IDE3OC4yLC0xMTMuNSAxNzIuMiwtMTE5LjUgMTY2LjIsLTExOS41IDE2Ni4yLC0xMTkuNSAxMzYuMiwtMTE5LjUgMTM2LjIsLTExOS41IDEzMC4yLC0xMTkuNSAxMjQuMiwtMTEzLjUgMTI0LjIsLTEwNy41IDEyNC4yLC0xMDcuNSAxMjQuMiwtODUuNSAxMjQuMiwtODUuNSAxMjQuMiwtNzkuNSAxMzAuMiwtNzMuNSAxMzYuMiwtNzMuNSIvPgo8dGV4dCB0ZXh0LWFuY2hvcj0ibWlkZGxlIiB4PSIxNTEuMiIgeT0iLTEwNC4zIiBmb250LWZhbWlseT0iVGltZXMsc2VyaWYiIGZvbnQtc2l6ZT0iMTQuMDAiPiZsdDsmbHQ7PC90ZXh0Pgo8cG9seWxpbmUgZmlsbD0ibm9uZSIgc3Ryb2tlPSJibGFjayIgcG9pbnRzPSIxMjQuMiwtOTYuNSAxNzguMiwtOTYuNSAiLz4KPHRleHQgdGV4dC1hbmNob3I9Im1pZGRsZSIgeD0iMTM3LjciIHk9Ii04MS4zIiBmb250LWZhbWlseT0iVGltZXMsc2VyaWYiIGZvbnQtc2l6ZT0iMTQuMDAiPiA8L3RleHQ+Cjxwb2x5bGluZSBmaWxsPSJub25lIiBzdHJva2U9ImJsYWNrIiBwb2ludHM9IjE1MS4yLC03My41IDE1MS4yLC05Ni41ICIvPgo8dGV4dCB0ZXh0LWFuY2hvcj0ibWlkZGxlIiB4PSIxNjQuNyIgeT0iLTgxLjMiIGZvbnQtZmFtaWx5PSJUaW1lcyxzZXJpZiIgZm9udC1zaXplPSIxNC4wMCI+IDwvdGV4dD4KPC9nPgo8IS0tIDE2JiM0NTsmZ3Q7MTcgLS0+CjxnIGlkPSJlZGdlMSIgY2xhc3M9ImVkZ2UiPgo8dGl0bGU+MTY6aGVhZCYjNDU7Jmd0OzE3OmhlYWQ8L3RpdGxlPgo8cGF0aCBmaWxsPSJub25lIiBzdHJva2U9InJlZCIgc3Ryb2tlLWRhc2hhcnJheT0iNSwyIiBkPSJNMTMwLjIsLTE5MS41QzExNC40MSwtMTkxLjUgMTI3LjAyLC0xNzEuMjIgMTMxLjIsLTE1NiAxMzQuOTQsLTE0Mi4zNSAxNDQuODYsLTEzOS4yMyAxNDkuMTYsLTEzMC4wNSIvPgo8cG9seWdvbiBmaWxsPSJyZWQiIHN0cm9rZT0icmVkIiBwb2ludHM9IjE1Mi42NCwtMTMwLjUgMTUxLjIsLTEyMCAxNDUuNzgsLTEyOS4xIDE1Mi42NCwtMTMwLjUiLz4KPC9nPgo8IS0tIDEyIC0tPgo8ZyBpZD0ibm9kZTMiIGNsYXNzPSJub2RlIj4KPHRpdGxlPjEyPC90aXRsZT4KPHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSJibGFjayIgZD0iTTUwLjIsLTAuNUM1MC4yLC0wLjUgODAuMiwtMC41IDgwLjIsLTAuNSA4Ni4yLC0wLjUgOTIuMiwtNi41IDkyLjIsLTEyLjUgOTIuMiwtMTIuNSA5Mi4yLC0yNC41IDkyLjIsLTI0LjUgOTIuMiwtMzAuNSA4Ni4yLC0zNi41IDgwLjIsLTM2LjUgODAuMiwtMzYuNSA1MC4yLC0zNi41IDUwLjIsLTM2LjUgNDQuMiwtMzYuNSAzOC4yLC0zMC41IDM4LjIsLTI0LjUgMzguMiwtMjQuNSAzOC4yLC0xMi41IDM4LjIsLTEyLjUgMzguMiwtNi41IDQ0LjIsLTAuNSA1MC4yLC0wLjUiLz4KPHRleHQgdGV4dC1hbmNob3I9Im1pZGRsZSIgeD0iNjUuMiIgeT0iLTE0LjgiIGZvbnQtZmFtaWx5PSJUaW1lcyxzZXJpZiIgZm9udC1zaXplPSIxNC4wMCI+YTwvdGV4dD4KPC9nPgo8IS0tIDE2JiM0NTsmZ3Q7MTIgLS0+CjxnIGlkPSJlZGdlMiIgY2xhc3M9ImVkZ2UiPgo8dGl0bGU+MTY6cDAmIzQ1OyZndDsxMjpoZWFkPC90aXRsZT4KPHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSJibGFjayIgZD0iTTEzMC4yLC0xNjcuNUMxMjMuOTcsLTE2Ny41IDEyNi45OCwtMTU5Ljk5IDEyMi4yLC0xNTYgOTIuNTcsLTEzMS4yOCA2NC4wNywtMTUyLjQ1IDQzLjIsLTEyMCAyOC44NCwtOTcuNjggMzguMjcsLTY3LjQ2IDQ4Ljg4LC00NS44MSIvPgo8cG9seWdvbiBmaWxsPSJibGFjayIgc3Ryb2tlPSJibGFjayIgcG9pbnRzPSI1Mi4wNSwtNDcuMyA1My41OSwtMzYuODIgNDUuODUsLTQ0LjA1IDUyLjA1LC00Ny4zIi8+CjwvZz4KPCEtLSAxNCAtLT4KPGcgaWQ9Im5vZGU0IiBjbGFzcz0ibm9kZSI+Cjx0aXRsZT4xNDwvdGl0bGU+CjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iYmxhY2siIGQ9Ik0yMDguMiwtNzguNUMyMDguMiwtNzguNSAyMzguMiwtNzguNSAyMzguMiwtNzguNSAyNDQuMiwtNzguNSAyNTAuMiwtODQuNSAyNTAuMiwtOTAuNSAyNTAuMiwtOTAuNSAyNTAuMiwtMTAyLjUgMjUwLjIsLTEwMi41IDI1MC4yLC0xMDguNSAyNDQuMiwtMTE0LjUgMjM4LjIsLTExNC41IDIzOC4yLC0xMTQuNSAyMDguMiwtMTE0LjUgMjA4LjIsLTExNC41IDIwMi4yLC0xMTQuNSAxOTYuMiwtMTA4LjUgMTk2LjIsLTEwMi41IDE5Ni4yLC0xMDIuNSAxOTYuMiwtOTAuNSAxOTYuMiwtOTAuNSAxOTYuMiwtODQuNSAyMDIuMiwtNzguNSAyMDguMiwtNzguNSIvPgo8dGV4dCB0ZXh0LWFuY2hvcj0ibWlkZGxlIiB4PSIyMjMuMiIgeT0iLTkyLjgiIGZvbnQtZmFtaWx5PSJUaW1lcyxzZXJpZiIgZm9udC1zaXplPSIxNC4wMCI+MjwvdGV4dD4KPC9nPgo8IS0tIDE2JiM0NTsmZ3Q7MTQgLS0+CjxnIGlkPSJlZGdlMyIgY2xhc3M9ImVkZ2UiPgo8dGl0bGU+MTY6cDEmIzQ1OyZndDsxNDpoZWFkPC90aXRsZT4KPHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSJibGFjayIgZD0iTTE3Mi4yLC0xNTZDMTcyLjIsLTE0Ny43OCAxODMuNTcsLTEzNC4wNSAxOTUuNTgsLTEyMS44NSIvPgo8cG9seWdvbiBmaWxsPSJibGFjayIgc3Ryb2tlPSJibGFjayIgcG9pbnRzPSIxOTguMzYsLTEyNC4wMiAyMDMuMDQsLTExNC41MSAxOTMuNDYsLTExOS4wMyAxOTguMzYsLTEyNC4wMiIvPgo8L2c+CjwhLS0gMTcmIzQ1OyZndDsxMiAtLT4KPGcgaWQ9ImVkZ2U0IiBjbGFzcz0iZWRnZSI+Cjx0aXRsZT4xNzpwMCYjNDU7Jmd0OzEyOmhlYWQ8L3RpdGxlPgo8cGF0aCBmaWxsPSJub25lIiBzdHJva2U9ImJsYWNrIiBkPSJNMTIzLjIsLTg0LjVDMTE2Ljk3LC04NC41IDExOS4wOSwtNzcuODYgMTE1LjIsLTczIDEwNy4zOCwtNjMuMjMgOTguMjYsLTUzIDg5Ljk4LC00NC4wOCIvPgo8cG9seWdvbiBmaWxsPSJibGFjayIgc3Ryb2tlPSJibGFjayIgcG9pbnRzPSI5Mi4zNiwtNDEuNSA4Mi45NiwtMzYuNjIgODcuMjYsLTQ2LjMgOTIuMzYsLTQxLjUiLz4KPC9nPgo8IS0tIDEzIC0tPgo8ZyBpZD0ibm9kZTUiIGNsYXNzPSJub2RlIj4KPHRpdGxlPjEzPC90aXRsZT4KPHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSJibGFjayIgZD0iTTE1MC4yLC0wLjVDMTUwLjIsLTAuNSAxODAuMiwtMC41IDE4MC4yLC0wLjUgMTg2LjIsLTAuNSAxOTIuMiwtNi41IDE5Mi4yLC0xMi41IDE5Mi4yLC0xMi41IDE5Mi4yLC0yNC41IDE5Mi4yLC0yNC41IDE5Mi4yLC0zMC41IDE4Ni4yLC0zNi41IDE4MC4yLC0zNi41IDE4MC4yLC0zNi41IDE1MC4yLC0zNi41IDE1MC4yLC0zNi41IDE0NC4yLC0zNi41IDEzOC4yLC0zMC41IDEzOC4yLC0yNC41IDEzOC4yLC0yNC41IDEzOC4yLC0xMi41IDEzOC4yLC0xMi41IDEzOC4yLC02LjUgMTQ0LjIsLTAuNSAxNTAuMiwtMC41Ii8+Cjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjE2NS4yIiB5PSItMTQuOCIgZm9udC1mYW1pbHk9IlRpbWVzLHNlcmlmIiBmb250LXNpemU9IjE0LjAwIj4xPC90ZXh0Pgo8L2c+CjwhLS0gMTcmIzQ1OyZndDsxMyAtLT4KPGcgaWQ9ImVkZ2U1IiBjbGFzcz0iZWRnZSI+Cjx0aXRsZT4xNzpwMSYjNDU7Jmd0OzEzOmhlYWQ8L3RpdGxlPgo8cGF0aCBmaWxsPSJub25lIiBzdHJva2U9ImJsYWNrIiBkPSJNMTY1LjIsLTczQzE2NS4yLC02NC40OCAxNjUuMiwtNTUuMjIgMTY1LjIsLTQ2Ljc5Ii8+Cjxwb2x5Z29uIGZpbGw9ImJsYWNrIiBzdHJva2U9ImJsYWNrIiBwb2ludHM9IjE2OC43LC00Ni42NyAxNjUuMiwtMzYuNjcgMTYxLjcsLTQ2LjY3IDE2OC43LC00Ni42NyIvPgo8L2c+CjwhLS0gMTggLS0+CjxnIGlkPSJub2RlNiIgY2xhc3M9Im5vZGUiPgo8dGl0bGU+MTg8L3RpdGxlPgo8cGF0aCBmaWxsPSJub25lIiBzdHJva2U9ImJsYWNrIiBkPSJNNjQuMiwtNzMuNUM2NC4yLC03My41IDk0LjIsLTczLjUgOTQuMiwtNzMuNSAxMDAuMiwtNzMuNSAxMDYuMiwtNzkuNSAxMDYuMiwtODUuNSAxMDYuMiwtODUuNSAxMDYuMiwtMTA3LjUgMTA2LjIsLTEwNy41IDEwNi4yLC0xMTMuNSAxMDAuMiwtMTE5LjUgOTQuMiwtMTE5LjUgOTQuMiwtMTE5LjUgNjQuMiwtMTE5LjUgNjQuMiwtMTE5LjUgNTguMiwtMTE5LjUgNTIuMiwtMTEzLjUgNTIuMiwtMTA3LjUgNTIuMiwtMTA3LjUgNTIuMiwtODUuNSA1Mi4yLC04NS41IDUyLjIsLTc5LjUgNTguMiwtNzMuNSA2NC4yLC03My41Ii8+Cjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9Ijc5LjIiIHk9Ii0xMDQuMyIgZm9udC1mYW1pbHk9IlRpbWVzLHNlcmlmIiBmb250LXNpemU9IjE0LjAwIj4qPC90ZXh0Pgo8cG9seWxpbmUgZmlsbD0ibm9uZSIgc3Ryb2tlPSJibGFjayIgcG9pbnRzPSI1Mi4yLC05Ni41IDEwNi4yLC05Ni41ICIvPgo8dGV4dCB0ZXh0LWFuY2hvcj0ibWlkZGxlIiB4PSI2NS43IiB5PSItODEuMyIgZm9udC1mYW1pbHk9IlRpbWVzLHNlcmlmIiBmb250LXNpemU9IjE0LjAwIj4gPC90ZXh0Pgo8cG9seWxpbmUgZmlsbD0ibm9uZSIgc3Ryb2tlPSJibGFjayIgcG9pbnRzPSI3OS4yLC03My41IDc5LjIsLTk2LjUgIi8+Cjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjkyLjciIHk9Ii04MS4zIiBmb250LWZhbWlseT0iVGltZXMsc2VyaWYiIGZvbnQtc2l6ZT0iMTQuMDAiPiA8L3RleHQ+CjwvZz4KPCEtLSAxOCYjNDU7Jmd0OzEyIC0tPgo8ZyBpZD0iZWRnZTYiIGNsYXNzPSJlZGdlIj4KPHRpdGxlPjE4OmhlYWQmIzQ1OyZndDsxMjpoZWFkPC90aXRsZT4KPHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZWQiIHN0cm9rZS1kYXNoYXJyYXk9IjUsMiIgZD0iTTUxLjIsLTEwOC41QzM4LjQ0LC0xMDguNSA0Ny4zMywtNzIuNzMgNTUuNjQsLTQ2LjI5Ii8+Cjxwb2x5Z29uIGZpbGw9InJlZCIgc3Ryb2tlPSJyZWQiIHBvaW50cz0iNTksLTQ3LjMgNTguNzYsLTM2LjcxIDUyLjM0LC00NS4xNCA1OSwtNDcuMyIvPgo8L2c+CjwhLS0gMTgmIzQ1OyZndDsxMiAtLT4KPGcgaWQ9ImVkZ2U3IiBjbGFzcz0iZWRnZSI+Cjx0aXRsZT4xODpwMCYjNDU7Jmd0OzEyOmhlYWQ8L3RpdGxlPgo8cGF0aCBmaWxsPSJub25lIiBzdHJva2U9ImJsYWNrIiBkPSJNNjUuMiwtNzNDNjUuMiwtNjQuNDggNjUuMiwtNTUuMjIgNjUuMiwtNDYuNzkiLz4KPHBvbHlnb24gZmlsbD0iYmxhY2siIHN0cm9rZT0iYmxhY2siIHBvaW50cz0iNjguNywtNDYuNjcgNjUuMiwtMzYuNjcgNjEuNywtNDYuNjcgNjguNywtNDYuNjciLz4KPC9nPgo8IS0tIDE4JiM0NTsmZ3Q7MTMgLS0+CjxnIGlkPSJlZGdlOCIgY2xhc3M9ImVkZ2UiPgo8dGl0bGU+MTg6cDEmIzQ1OyZndDsxMzpoZWFkPC90aXRsZT4KPHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSJibGFjayIgZD0iTTEwNy4yLC04NC41QzExMy40MiwtODQuNSAxMTEuMzEsLTc3Ljg2IDExNS4yLC03MyAxMjMuMDIsLTYzLjIzIDEzMi4xMywtNTMgMTQwLjQyLC00NC4wOCIvPgo8cG9seWdvbiBmaWxsPSJibGFjayIgc3Ryb2tlPSJibGFjayIgcG9pbnRzPSIxNDMuMTMsLTQ2LjMgMTQ3LjQzLC0zNi42MiAxMzguMDMsLTQxLjUgMTQzLjEzLC00Ni4zIi8+CjwvZz4KPCEtLSAxOSAtLT4KPGcgaWQ9Im5vZGU3IiBjbGFzcz0ibm9kZSI+Cjx0aXRsZT4xOTwvdGl0bGU+CjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iYmxhY2siIGQ9Ik0yMjIuMiwtMTU2LjVDMjIyLjIsLTE1Ni41IDI1Mi4yLC0xNTYuNSAyNTIuMiwtMTU2LjUgMjU4LjIsLTE1Ni41IDI2NC4yLC0xNjIuNSAyNjQuMiwtMTY4LjUgMjY0LjIsLTE2OC41IDI2NC4yLC0xOTAuNSAyNjQuMiwtMTkwLjUgMjY0LjIsLTE5Ni41IDI1OC4yLC0yMDIuNSAyNTIuMiwtMjAyLjUgMjUyLjIsLTIwMi41IDIyMi4yLC0yMDIuNSAyMjIuMiwtMjAyLjUgMjE2LjIsLTIwMi41IDIxMC4yLC0xOTYuNSAyMTAuMiwtMTkwLjUgMjEwLjIsLTE5MC41IDIxMC4yLC0xNjguNSAyMTAuMiwtMTY4LjUgMjEwLjIsLTE2Mi41IDIxNi4yLC0xNTYuNSAyMjIuMiwtMTU2LjUiLz4KPHRleHQgdGV4dC1hbmNob3I9Im1pZGRsZSIgeD0iMjM3LjIiIHk9Ii0xODcuMyIgZm9udC1mYW1pbHk9IlRpbWVzLHNlcmlmIiBmb250LXNpemU9IjE0LjAwIj4vPC90ZXh0Pgo8cG9seWxpbmUgZmlsbD0ibm9uZSIgc3Ryb2tlPSJibGFjayIgcG9pbnRzPSIyMTAuMiwtMTc5LjUgMjY0LjIsLTE3OS41ICIvPgo8dGV4dCB0ZXh0LWFuY2hvcj0ibWlkZGxlIiB4PSIyMjMuNyIgeT0iLTE2NC4zIiBmb250LWZhbWlseT0iVGltZXMsc2VyaWYiIGZvbnQtc2l6ZT0iMTQuMDAiPiA8L3RleHQ+Cjxwb2x5bGluZSBmaWxsPSJub25lIiBzdHJva2U9ImJsYWNrIiBwb2ludHM9IjIzNy4yLC0xNTYuNSAyMzcuMiwtMTc5LjUgIi8+Cjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjI1MC43IiB5PSItMTY0LjMiIGZvbnQtZmFtaWx5PSJUaW1lcyxzZXJpZiIgZm9udC1zaXplPSIxNC4wMCI+IDwvdGV4dD4KPC9nPgo8IS0tIDE5JiM0NTsmZ3Q7MTQgLS0+CjxnIGlkPSJlZGdlMTAiIGNsYXNzPSJlZGdlIj4KPHRpdGxlPjE5OnAwJiM0NTsmZ3Q7MTQ6aGVhZDwvdGl0bGU+CjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iYmxhY2siIGQ9Ik0yMjMuMiwtMTU2QzIyMy4yLC0xNDUuODMgMjIzLjIsLTEzNC42OSAyMjMuMiwtMTI0LjgzIi8+Cjxwb2x5Z29uIGZpbGw9ImJsYWNrIiBzdHJva2U9ImJsYWNrIiBwb2ludHM9IjIyNi43LC0xMjQuNzMgMjIzLjIsLTExNC43MyAyMTkuNywtMTI0LjczIDIyNi43LC0xMjQuNzMiLz4KPC9nPgo8IS0tIDE5JiM0NTsmZ3Q7MTQgLS0+CjxnIGlkPSJlZGdlMTEiIGNsYXNzPSJlZGdlIj4KPHRpdGxlPjE5OnAxJiM0NTsmZ3Q7MTQ6aGVhZDwvdGl0bGU+CjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iYmxhY2siIGQ9Ik0yNTEuMiwtMTU2QzI1MS4yLC0xNDQuNjcgMjQ2Ljk5LC0xMzMuMTggMjQxLjgzLC0xMjMuMzUiLz4KPHBvbHlnb24gZmlsbD0iYmxhY2siIHN0cm9rZT0iYmxhY2siIHBvaW50cz0iMjQ0Ljc1LC0xMjEuNCAyMzYuNzEsLTExNC41MSAyMzguNjksLTEyNC45MSAyNDQuNzUsLTEyMS40Ii8+CjwvZz4KPCEtLSAxOSYjNDU7Jmd0OzEzIC0tPgo8ZyBpZD0iZWRnZTkiIGNsYXNzPSJlZGdlIj4KPHRpdGxlPjE5OmhlYWQmIzQ1OyZndDsxMzpoZWFkPC90aXRsZT4KPHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZWQiIHN0cm9rZS1kYXNoYXJyYXk9IjUsMiIgZD0iTTI2NS4yLC0xOTEuNUMyODUuNDQsLTE5MS41IDMwNC41MywtMTQzLjg5IDI1OS4yLC03MyAyNDIuOTEsLTQ3LjUyIDIyNS4yNSwtNTIuODkgMjAwLjYyLC00MS40NiIvPgo8cG9seWdvbiBmaWxsPSJyZWQiIHN0cm9rZT0icmVkIiBwb2ludHM9IjIwMi4wOCwtMzguMjcgMTkxLjYxLC0zNi42NCAxOTguNzgsLTQ0LjQ1IDIwMi4wOCwtMzguMjciLz4KPC9nPgo8IS0tIDIwIC0tPgo8ZyBpZD0ibm9kZTgiIGNsYXNzPSJub2RlIj4KPHRpdGxlPjIwPC90aXRsZT4KPHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSJibGFjayIgZD0iTTcxLjIsLTE1Ni41QzcxLjIsLTE1Ni41IDEwMS4yLC0xNTYuNSAxMDEuMiwtMTU2LjUgMTA3LjIsLTE1Ni41IDExMy4yLC0xNjIuNSAxMTMuMiwtMTY4LjUgMTEzLjIsLTE2OC41IDExMy4yLC0xOTAuNSAxMTMuMiwtMTkwLjUgMTEzLjIsLTE5Ni41IDEwNy4yLC0yMDIuNSAxMDEuMiwtMjAyLjUgMTAxLjIsLTIwMi41IDcxLjIsLTIwMi41IDcxLjIsLTIwMi41IDY1LjIsLTIwMi41IDU5LjIsLTE5Ni41IDU5LjIsLTE5MC41IDU5LjIsLTE5MC41IDU5LjIsLTE2OC41IDU5LjIsLTE2OC41IDU5LjIsLTE2Mi41IDY1LjIsLTE1Ni41IDcxLjIsLTE1Ni41Ii8+Cjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9Ijg2LjIiIHk9Ii0xODcuMyIgZm9udC1mYW1pbHk9IlRpbWVzLHNlcmlmIiBmb250LXNpemU9IjE0LjAwIj4vPC90ZXh0Pgo8cG9seWxpbmUgZmlsbD0ibm9uZSIgc3Ryb2tlPSJibGFjayIgcG9pbnRzPSI1OS4yLC0xNzkuNSAxMTMuMiwtMTc5LjUgIi8+Cjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjcyLjciIHk9Ii0xNjQuMyIgZm9udC1mYW1pbHk9IlRpbWVzLHNlcmlmIiBmb250LXNpemU9IjE0LjAwIj4gPC90ZXh0Pgo8cG9seWxpbmUgZmlsbD0ibm9uZSIgc3Ryb2tlPSJibGFjayIgcG9pbnRzPSI4Ni4yLC0xNTYuNSA4Ni4yLC0xNzkuNSAiLz4KPHRleHQgdGV4dC1hbmNob3I9Im1pZGRsZSIgeD0iOTkuNyIgeT0iLTE2NC4zIiBmb250LWZhbWlseT0iVGltZXMsc2VyaWYiIGZvbnQtc2l6ZT0iMTQuMDAiPiA8L3RleHQ+CjwvZz4KPCEtLSAyMCYjNDU7Jmd0OzE3IC0tPgo8ZyBpZD0iZWRnZTEzIiBjbGFzcz0iZWRnZSI+Cjx0aXRsZT4yMDpwMCYjNDU7Jmd0OzE3OmhlYWQ8L3RpdGxlPgo8cGF0aCBmaWxsPSJub25lIiBzdHJva2U9ImJsYWNrIiBkPSJNNzIuMiwtMTU2QzcyLjIsLTEzMS4wOCA5OC4zOCwtMTM4LjM5IDExNS4yLC0xMjAgMTE2LjEyLC0xMTguOTkgMTE2LjcyLC0xMTcuODggMTE3LjE2LC0xMTYuNzUiLz4KPHBvbHlnb24gZmlsbD0iYmxhY2siIHN0cm9rZT0iYmxhY2siIHBvaW50cz0iMTIwLjEyLC0xMTguNjQgMTIzLjIsLTEwOC41IDExNC40NywtMTE0LjUgMTIwLjEyLC0xMTguNjQiLz4KPC9nPgo8IS0tIDIwJiM0NTsmZ3Q7MTIgLS0+CjxnIGlkPSJlZGdlMTIiIGNsYXNzPSJlZGdlIj4KPHRpdGxlPjIwOmhlYWQmIzQ1OyZndDsxMjpoZWFkPC90aXRsZT4KPHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZWQiIHN0cm9rZS1kYXNoYXJyYXk9IjUsMiIgZD0iTTU4LjIsLTE5MS41QzEuMzcsLTE5MS41IC0xMS42NywtMTI1LjQ1IDEwLjIsLTczIDE0Ljg0LC02MS44NyAyMi45OCwtNTEuODQgMzEuNiwtNDMuNTIiLz4KPHBvbHlnb24gZmlsbD0icmVkIiBzdHJva2U9InJlZCIgcG9pbnRzPSIzNC4xNCwtNDUuOTUgMzkuMjIsLTM2LjY2IDI5LjQ1LC00MC43NSAzNC4xNCwtNDUuOTUiLz4KPC9nPgo8IS0tIDIwJiM0NTsmZ3Q7MTQgLS0+CjxnIGlkPSJlZGdlMTQiIGNsYXNzPSJlZGdlIj4KPHRpdGxlPjIwOnAxJiM0NTsmZ3Q7MTQ6aGVhZDwvdGl0bGU+CjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iYmxhY2siIGQ9Ik0xMTQuMiwtMTY3LjVDMTIwLjQyLC0xNjcuNSAxMTcuNTgsLTE2MC4xNyAxMjIuMiwtMTU2IDE0Ny40OSwtMTMzLjE3IDE2MS40NSwtMTM0LjI5IDE4OC4wOCwtMTE5LjcxIi8+Cjxwb2x5Z29uIGZpbGw9ImJsYWNrIiBzdHJva2U9ImJsYWNrIiBwb2ludHM9IjE4OS45LC0xMjIuNyAxOTYuNzgsLTExNC42NCAxODYuMzgsLTExNi42NSAxODkuOSwtMTIyLjciLz4KPC9nPgo8L2c+Cjwvc3ZnPgo="/>
-</div>
-</div>
-</div>
-</div>
 </div></section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -8100,17 +8154,9 @@ RESULT: CounterSatisfiable (the conjecture is false).
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Term-Orderings">Term Orderings<a class="anchor-link" href="#Term-Orderings">¶</a></h1><ul>
-<li>KBO ~ Smaller is better</li>
-<li>Union Find Tie Breaking
-| TRS | Egraph |
-|------|--------|
-| Term Orders | Extract Objective |
-| KBO Weights  |  Weights |
-| Run Rules | Extract |
-| Canonical Term | EClass |
-| R/L-simplify | Canonization |</li>
-</ul>
+<center> <img alt="No description has been provided for this image" src="./egraph2.svg"/>
+<img alt="No description has been provided for this image" src="./egraphs_1.svg"/>
+</center>
 </div>
 </div>
 </div>
@@ -8181,27 +8227,9 @@ $$e4 \rightarrow e1$$</p>
 <li>Observations:<ul>
 <li><em>Not</em> obviously possible for scoped terms. Slots? $e1(X,Y)$</li>
 <li>Completion <em>is</em> an egraph with Universal (forall) variables / first class rules</li>
+<li>Tree Automata $cons(q1, q2) \rightarrow q2$</li>
 </ul>
 </li>
-</ul>
-</div>
-</div>
-</div>
-</div></section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Tree-Automata">Tree Automata<a class="anchor-link" href="#Tree-Automata">¶</a></h1><ul>
-<li>Strings ~ single argument terms</li>
-<li>Term rewriting formulation of DFA<ul>
-<li>$a^*b^* = \{a(q1) \rightarrow q1, a(q0) \rightarrow q1, b(q0) \rightarrow q0\}$</li>
-<li>$a(a(a(a(b(b(q0)))))) \rightarrow^? q1$</li>
-</ul>
-</li>
-<li>Generalizes to Tree. Finite State Folds</li>
 </ul>
 </div>
 </div>
@@ -8215,7 +8243,7 @@ $$e4 \rightarrow e1$$</p>
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h1 id="E-matching">E-matching<a class="anchor-link" href="#E-matching">¶</a></h1><ul>
 <li>Equality saturation<ul>
-<li>Ematch into egraphs</li>
+<li>E-match into egraphs</li>
 <li>Add new equality</li>
 </ul>
 </li>
@@ -8239,9 +8267,9 @@ $$e4 \rightarrow e1$$</p>
 </ul>
 </li>
 <li>Plays nicer<ul>
-<li>Theories (Commutatrivity via sorting)</li>
+<li>Theories (Commutativity via sorting)</li>
 <li>Containers</li>
-<li>Grobner bases</li>
+<li>Grobner bases?</li>
 <li>Destructive rules?</li>
 </ul>
 </li>
@@ -8257,38 +8285,26 @@ $$e4 \rightarrow e1$$</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Strategies">Strategies<a class="anchor-link" href="#Strategies">¶</a></h1><p>Resolution<br/>
-$\frac{A \lor B \quad \neg A \lor C}{B \lor C} $</p>
+<h1 id="Strategies">Strategies<a class="anchor-link" href="#Strategies">¶</a></h1><center> $\frac{A \lor B \quad \neg A \lor C}{B \lor C} $ </center>
 <ul>
 <li>Incomplete but pragmatic limitations on resolution<ul>
 <li>Set of Support - Rules vs EGraph</li>
-<li>Hyperresolution</li>
-<li>UR-resolution</li>
+<li>Prolog</li>
+<li>Datalog ~ Hyperresolution + UR-resolution</li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 </div>
-</div><div class="fragment">
+</div></section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<pre><code>+ Prolog
-+ Datalog</code></pre>
-</div>
-</div>
-</div>
-</div></div></section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<font size="5">
 <table>
 <thead>
 <tr>
@@ -8322,6 +8338,10 @@ $\frac{A \lor B \quad \neg A \lor C}{B \lor C} $</p>
 <td>Egglog</td>
 </tr>
 <tr>
+<td>ASP</td>
+<td>?</td>
+</tr>
+<tr>
 <td>Lambda Prolog</td>
 <td>?</td>
 </tr>
@@ -8335,6 +8355,24 @@ $\frac{A \lor B \quad \neg A \lor C}{B \lor C} $</p>
 </tr>
 </tbody>
 </table>
+</font>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="The-Main-Points-of-The-Talk">The Main Points of The Talk<a class="anchor-link" href="#The-Main-Points-of-The-Talk">¶</a></h1><ul>
+<li>Simplification &amp; Completion</li>
+<li>Union-find is Ground Atomic Completion</li>
+<li>E-Graph is Ground Term Completion</li>
+<li><b>? is Lambda, Context, Destructive</b></li>
+<li>Compilers from Automated Reasoners</li>
+</ul>
 </div>
 </div>
 </div>
@@ -8373,17 +8411,6 @@ $\frac{A \lor B \quad \neg A \lor C}{B \lor C} $</p>
 </div>
 </div>
 </div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><a href="https://events.model.in.tum.de/mod23/blanchette/Lecture3-Lambda-Superposition.pdf">https://events.model.in.tum.de/mod23/blanchette/Lecture3-Lambda-Superposition.pdf</a></p>
-</div>
-</div>
-</div>
 </div></section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -8400,7 +8427,7 @@ $\frac{A \lor B \quad \neg A \lor C}{B \lor C} $</p>
 <li>Vampire</li>
 </ul>
 </li>
-<li>LFHOL</li>
+<li>Lambda Free Higher Order Logic (LFHOL)</li>
 </ul>
 </div>
 </div>
@@ -8458,12 +8485,318 @@ $\frac{A \lor B \quad \neg A \lor C}{B \lor C} $</p>
 </ul>
 </li>
 <li>References<ul>
-<li>TRAAT</li>
+<li>Term Rewriting and All That (TRAAT)</li>
 <li>Handbook of Automated Reasoning</li>
 <li>Automated Reasoning: Introduction and Applications</li>
 </ul>
 </li>
 </ul>
+</div>
+</div>
+</div>
+</div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">simplify1</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">match</span> <span class="n">x</span><span class="p">:</span>
+        <span class="k">case</span> <span class="p">(</span><span class="s2">"add"</span><span class="p">,</span> <span class="p">(</span><span class="s2">"const"</span><span class="p">,</span> <span class="n">m</span><span class="p">),</span> <span class="p">(</span><span class="s2">"const"</span><span class="p">,</span> <span class="n">n</span><span class="p">)):</span>
+            <span class="k">return</span> <span class="p">(</span><span class="s2">"const"</span><span class="p">,</span> <span class="n">m</span> <span class="o">+</span> <span class="n">n</span><span class="p">)</span>
+        <span class="k">case</span> <span class="p">(</span><span class="s2">"add"</span><span class="p">,</span> <span class="p">(</span><span class="s2">"const"</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">y</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="s2">"add"</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="p">(</span><span class="s2">"const"</span><span class="p">,</span> <span class="mi">0</span><span class="p">)):</span>
+            <span class="k">return</span> <span class="n">y</span>
+        <span class="k">case</span><span class="w"> </span><span class="k">_</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">x</span>
+<span class="k">def</span> <span class="nf">simplify</span><span class="p">(</span><span class="n">expr</span><span class="p">):</span>
+    <span class="k">match</span> <span class="n">expr</span><span class="p">:</span>
+        <span class="k">case</span> <span class="p">(</span><span class="s2">"add"</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">simplify1</span><span class="p">((</span><span class="s2">"add"</span><span class="p">,</span> <span class="n">simplify</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">simplify</span><span class="p">(</span><span class="n">y</span><span class="p">)))</span>
+        <span class="k">case</span><span class="w"> </span><span class="k">_</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">simplify1</span><span class="p">(</span><span class="n">expr</span><span class="p">)</span>
+<span class="n">simplify</span><span class="p">((</span><span class="s2">"add"</span><span class="p">,</span> <span class="p">(</span><span class="s2">"const"</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="s2">"const"</span><span class="p">,</span> <span class="mi">4</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[14]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>('const', 7)</pre>
+</div>
+</div>
+</div>
+</div>
+</div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [15]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">UF</span><span class="p">():</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rules</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">def</span> <span class="nf">find</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="c1"># `find` reduces x with respect to the current rules (x -R-&gt; retval)</span>
+        <span class="k">while</span> <span class="bp">self</span><span class="o">.</span><span class="n">rules</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rules</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">x</span>
+    <span class="k">def</span> <span class="nf">union</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="c1"># Do incremental completion starting with</span>
+        <span class="c1"># (E,R) == ({x = y}, self.rules )</span>
+        <span class="n">x1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># SIMPLIFY  ( {x1 = y} , R)</span>
+        <span class="n">y1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="c1"># SIMPLIFY  ( {x1 = y1}, R)</span>
+        <span class="k">if</span> <span class="n">x1</span> <span class="o">==</span> <span class="n">y1</span><span class="p">:</span> <span class="c1"># TRIVIAL ({x1 = x1}, R)</span>
+            <span class="k">return</span> <span class="n">x1</span> <span class="c1"># (Empty, self.rules)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">x1</span> <span class="o">&lt;</span> <span class="n">y1</span><span class="p">:</span> <span class="c1"># the "term order"</span>
+                <span class="n">x1</span><span class="p">,</span><span class="n">y1</span> <span class="o">=</span> <span class="n">y1</span><span class="p">,</span><span class="n">x1</span> <span class="c1"># swap</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">rules</span><span class="p">[</span><span class="n">x1</span><span class="p">]</span> <span class="o">=</span> <span class="n">y1</span> <span class="c1"># ORIENT  (empty, R U {x1 -&gt; y1})</span>
+            <span class="k">return</span> <span class="n">y1</span>
+    <span class="k">def</span> <span class="nf">canon</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">lhs</span><span class="p">,</span><span class="n">rhs</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">rules</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">rules</span><span class="p">[</span><span class="n">lhs</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">rhs</span><span class="p">)</span> <span class="c1"># r-simplify</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="Tree-Automata">Tree Automata<a class="anchor-link" href="#Tree-Automata">¶</a></h1><ul>
+<li>Strings ~ single argument terms $aaabb = a(a(a(a(b(b(\epsilon))))))$</li>
+<li>Term rewriting formulation of DFA<ul>
+<li>$a^*b^* = \{a(q1) \rightarrow q1, a(q0) \rightarrow q1, b(q0) \rightarrow q0\}$</li>
+<li>$a(a(a(a(b(b(q0)))))) \rightarrow^? q1$</li>
+</ul>
+</li>
+<li>Generalizes to Tree. Finite State Folds</li>
+<li>Call $q1$ $e1$ and we have a flattened egraph</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><img alt="" src="./res_cube.png">
+Src: <a href="https://events.model.in.tum.de/mod23/blanchette/Lecture3-Lambda-Superposition.pdf">Blanchette</a></img></p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%%file</span> /tmp/groundshift.p
+<span class="n">fof</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">axiom</span><span class="p">,</span> <span class="n">a</span> <span class="o">=</span> <span class="n">e0</span><span class="p">)</span><span class="o">.</span>
+<span class="n">fof</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">axiom</span><span class="p">,</span> <span class="n">two</span> <span class="o">=</span> <span class="n">e1</span><span class="p">)</span><span class="o">.</span>
+<span class="n">fof</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">axiom</span><span class="p">,</span> <span class="n">mul</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">two</span><span class="p">)</span> <span class="o">=</span> <span class="n">e2</span><span class="p">)</span><span class="o">.</span>
+<span class="n">fof</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">axiom</span><span class="p">,</span> <span class="n">div</span><span class="p">(</span><span class="n">mul</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">two</span><span class="p">),</span><span class="n">two</span><span class="p">)</span> <span class="o">=</span> <span class="n">e3</span><span class="p">)</span><span class="o">.</span>
+<span class="n">fof</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">axiom</span><span class="p">,</span> <span class="n">one</span> <span class="o">=</span> <span class="n">e4</span><span class="p">)</span><span class="o">.</span>
+<span class="n">fof</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">axiom</span><span class="p">,</span> <span class="n">shift</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">one</span><span class="p">)</span> <span class="o">=</span> <span class="n">e5</span><span class="p">)</span><span class="o">.</span>
+<span class="n">fof</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">axiom</span><span class="p">,</span> <span class="n">div</span><span class="p">(</span><span class="n">two</span><span class="p">,</span><span class="n">two</span><span class="p">)</span> <span class="o">=</span> <span class="n">e6</span><span class="p">)</span><span class="o">.</span>
+<span class="n">fof</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">axiom</span><span class="p">,</span> <span class="n">mul</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">one</span><span class="p">)</span> <span class="o">=</span> <span class="n">e7</span><span class="p">)</span><span class="o">.</span>
+
+<span class="n">fof</span><span class="p">(</span><span class="n">shift</span><span class="p">,</span> <span class="n">axiom</span><span class="p">,</span> <span class="n">mul</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">two</span><span class="p">)</span> <span class="o">=</span> <span class="n">shift</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">one</span><span class="p">))</span><span class="o">.</span>
+<span class="n">fof</span><span class="p">(</span><span class="n">assoc</span><span class="p">,</span> <span class="n">axiom</span><span class="p">,</span> <span class="n">div</span><span class="p">(</span><span class="n">mul</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">two</span><span class="p">),</span><span class="n">two</span><span class="p">)</span> <span class="o">=</span> <span class="n">mul</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">div</span><span class="p">(</span><span class="n">two</span><span class="p">,</span><span class="n">two</span><span class="p">)))</span><span class="o">.</span>
+<span class="n">fof</span><span class="p">(</span><span class="n">cancel</span><span class="p">,</span> <span class="n">axiom</span><span class="p">,</span> <span class="n">div</span><span class="p">(</span><span class="n">two</span><span class="p">,</span><span class="n">two</span><span class="p">)</span> <span class="o">=</span> <span class="n">one</span><span class="p">)</span><span class="o">.</span>
+<span class="n">fof</span><span class="p">(</span><span class="n">unit_mul</span><span class="p">,</span> <span class="n">axiom</span><span class="p">,</span> <span class="n">mul</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">one</span><span class="p">)</span> <span class="o">=</span> <span class="n">a</span><span class="p">)</span><span class="o">.</span> 
+<span class="n">fof</span><span class="p">(</span><span class="n">cancel</span><span class="p">,</span> <span class="n">axiom</span><span class="p">,</span> <span class="n">start_term</span><span class="p">(</span><span class="n">q</span><span class="p">,</span><span class="n">q</span><span class="p">,</span><span class="n">q</span><span class="p">,</span><span class="n">q</span><span class="p">,</span><span class="n">q</span><span class="p">,</span><span class="n">q</span><span class="p">,</span><span class="n">q</span><span class="p">)</span> <span class="o">=</span> <span class="n">div</span><span class="p">(</span><span class="n">mul</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">two</span><span class="p">),</span> <span class="n">two</span><span class="p">))</span><span class="o">.</span>
+
+<span class="n">fof</span><span class="p">(</span><span class="n">goal</span><span class="p">,</span> <span class="n">conjecture</span><span class="p">,</span> <span class="n">true</span> <span class="o">=</span> <span class="n">false</span><span class="p">)</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Overwriting /tmp/groundshift.p
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [17]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>twee<span class="w"> </span>/tmp/groundshift.p
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Here is the input problem:
+  Axiom 1 (e): one = e4.
+  Axiom 2 (e): a = e0.
+  Axiom 3 (e): two = e1.
+  Axiom 4 (e): shift(a, one) = e5.
+  Axiom 5 (e): div(two, two) = e6.
+  Axiom 6 (cancel): div(two, two) = one.
+  Axiom 7 (e): mul(a, one) = e7.
+  Axiom 8 (unit_mul): mul(a, one) = a.
+  Axiom 9 (e): mul(a, two) = e2.
+  Axiom 10 (shift): mul(a, two) = shift(a, one).
+  Axiom 11 (e): div(mul(a, two), two) = e3.
+  Axiom 12 (assoc): div(mul(a, two), two) = mul(a, div(two, two)).
+  Axiom 13 (cancel): start_term(q, q, q, q, q, q, q) = div(mul(a, two), two).
+  Goal 1 (goal): true = false.
+
+1. one -&gt; e4
+2. a -&gt; e0
+3. two -&gt; e1
+4. shift(e0, e4) -&gt; e5
+5. div(e1, e1) -&gt; e6
+6. e6 -&gt; e4
+7. mul(e0, e4) -&gt; e7
+8. e7 -&gt; e0
+9. mul(e0, e1) -&gt; e2
+10. e5 -&gt; e2
+11. div(e2, e1) -&gt; e3
+12. e3 -&gt; e0
+13. start_term(q, q, q, q, q, q, q) -&gt; e0
+
+Ran out of critical pairs. This means the conjecture is not true.
+Here is the final rewrite system:
+  a -&gt; e0
+  two -&gt; e1
+  e3 -&gt; e0
+  one -&gt; e4
+  e5 -&gt; e2
+  e6 -&gt; e4
+  e7 -&gt; e0
+  mul(e0, e1) -&gt; e2
+  mul(e0, e4) -&gt; e0
+  div(e1, e1) -&gt; e4
+  div(e2, e1) -&gt; e0
+  shift(e0, e4) -&gt; e2
+  start_term(q, q, q, q, q, q, q) -&gt; e0
+
+RESULT: CounterSatisfiable (the conjecture is false).
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">BV</span> <span class="o">=</span> <span class="n">DeclareSort</span><span class="p">(</span><span class="s2">"BV"</span><span class="p">)</span>
+<span class="n">mul</span> <span class="o">=</span> <span class="n">Function</span><span class="p">(</span><span class="s2">"*"</span><span class="p">,</span> <span class="n">BV</span><span class="p">,</span> <span class="n">BV</span><span class="p">,</span> <span class="n">BV</span><span class="p">)</span>
+<span class="n">shift</span> <span class="o">=</span> <span class="n">Function</span><span class="p">(</span><span class="s2">"\&lt;\&lt;"</span><span class="p">,</span> <span class="n">BV</span><span class="p">,</span> <span class="n">BV</span><span class="p">,</span> <span class="n">BV</span><span class="p">)</span>
+<span class="n">div</span> <span class="o">=</span> <span class="n">Function</span><span class="p">(</span><span class="s2">"/"</span><span class="p">,</span> <span class="n">BV</span><span class="p">,</span> <span class="n">BV</span><span class="p">,</span> <span class="n">BV</span><span class="p">)</span>
+<span class="n">a</span><span class="p">,</span><span class="n">one</span><span class="p">,</span><span class="n">two</span><span class="o">=</span> <span class="n">Consts</span><span class="p">(</span><span class="s2">"a 1 2"</span><span class="p">,</span> <span class="n">BV</span><span class="p">)</span>
+<span class="n">e0</span><span class="p">,</span><span class="n">e1</span><span class="p">,</span><span class="n">e2</span><span class="p">,</span><span class="n">e3</span><span class="p">,</span><span class="n">e4</span><span class="p">,</span><span class="n">e5</span><span class="p">,</span><span class="n">e6</span><span class="p">,</span><span class="n">e7</span> <span class="o">=</span> <span class="n">Consts</span><span class="p">(</span><span class="s2">"e0 e1 e2 e3 e4 e5 e6 e7"</span><span class="p">,</span> <span class="n">BV</span><span class="p">)</span>
+<span class="n">start</span> <span class="o">=</span> <span class="n">Const</span><span class="p">(</span><span class="s2">"start"</span><span class="p">,</span> <span class="n">BV</span><span class="p">)</span>
+<span class="n">R</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">e0</span><span class="p">),</span>
+    <span class="p">(</span><span class="n">two</span><span class="p">,</span> <span class="n">e1</span><span class="p">),</span>
+    <span class="p">(</span><span class="n">e3</span><span class="p">,</span> <span class="n">e0</span><span class="p">),</span>
+    <span class="p">(</span><span class="n">one</span><span class="p">,</span><span class="n">e4</span><span class="p">),</span>
+    <span class="p">(</span><span class="n">e5</span><span class="p">,</span><span class="n">e2</span><span class="p">),</span>
+    <span class="p">(</span><span class="n">e6</span><span class="p">,</span><span class="n">e4</span><span class="p">),</span>
+    <span class="p">(</span><span class="n">e7</span><span class="p">,</span><span class="n">e0</span><span class="p">),</span>
+    <span class="p">(</span><span class="n">mul</span><span class="p">(</span><span class="n">e0</span><span class="p">,</span><span class="n">e1</span><span class="p">),</span><span class="n">e2</span><span class="p">),</span>
+    <span class="p">(</span><span class="n">mul</span><span class="p">(</span><span class="n">e0</span><span class="p">,</span><span class="n">e4</span><span class="p">),</span> <span class="n">e0</span><span class="p">),</span>
+    <span class="p">(</span><span class="n">div</span><span class="p">(</span><span class="n">e1</span><span class="p">,</span><span class="n">e1</span><span class="p">),</span><span class="n">e4</span><span class="p">),</span>
+    <span class="p">(</span><span class="n">div</span><span class="p">(</span><span class="n">e2</span><span class="p">,</span><span class="n">e1</span><span class="p">),</span> <span class="n">e0</span><span class="p">),</span>
+    <span class="p">(</span><span class="n">shift</span><span class="p">(</span><span class="n">e0</span><span class="p">,</span><span class="n">e4</span><span class="p">),</span> <span class="n">e2</span><span class="p">),</span>
+    <span class="c1">#(start, e0)</span>
+<span class="p">]</span>
+<span class="n">show_rewrite</span><span class="p">(</span><span class="n">R</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[18]:</div>
+<div class="jp-RenderedSVG jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="image/svg+xml" tabindex="0">
+<img alt="No description has been provided for this image" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIKICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPgo8IS0tIEdlbmVyYXRlZCBieSBncmFwaHZpeiB2ZXJzaW9uIDIuNDMuMCAoMCkKIC0tPgo8IS0tIFRpdGxlOiAlMyBQYWdlczogMSAtLT4KPHN2ZyB3aWR0aD0iODU0cHQiIGhlaWdodD0iMTI4cHQiCiB2aWV3Qm94PSIwLjAwIDAuMDAgODU0LjAwIDEyOC4wMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CjxnIGlkPSJncmFwaDAiIGNsYXNzPSJncmFwaCIgdHJhbnNmb3JtPSJzY2FsZSgxIDEpIHJvdGF0ZSgwKSB0cmFuc2xhdGUoNCAxMjQpIj4KPHRpdGxlPiUzPC90aXRsZT4KPHBvbHlnb24gZmlsbD0id2hpdGUiIHN0cm9rZT0idHJhbnNwYXJlbnQiIHBvaW50cz0iLTQsNCAtNCwtMTI0IDg1MCwtMTI0IDg1MCw0IC00LDQiLz4KPCEtLSAxMiAtLT4KPGcgaWQ9Im5vZGUxIiBjbGFzcz0ibm9kZSI+Cjx0aXRsZT4xMjwvdGl0bGU+CjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iYmxhY2siIGQ9Ik0xMiwtNzguNUMxMiwtNzguNSA0MiwtNzguNSA0MiwtNzguNSA0OCwtNzguNSA1NCwtODQuNSA1NCwtOTAuNSA1NCwtOTAuNSA1NCwtMTAyLjUgNTQsLTEwMi41IDU0LC0xMDguNSA0OCwtMTE0LjUgNDIsLTExNC41IDQyLC0xMTQuNSAxMiwtMTE0LjUgMTIsLTExNC41IDYsLTExNC41IDAsLTEwOC41IDAsLTEwMi41IDAsLTEwMi41IDAsLTkwLjUgMCwtOTAuNSAwLC04NC41IDYsLTc4LjUgMTIsLTc4LjUiLz4KPHRleHQgdGV4dC1hbmNob3I9Im1pZGRsZSIgeD0iMjciIHk9Ii05Mi44IiBmb250LWZhbWlseT0iVGltZXMsc2VyaWYiIGZvbnQtc2l6ZT0iMTQuMDAiPmE8L3RleHQ+CjwvZz4KPCEtLSA1IC0tPgo8ZyBpZD0ibm9kZTIiIGNsYXNzPSJub2RlIj4KPHRpdGxlPjU8L3RpdGxlPgo8cGF0aCBmaWxsPSJub25lIiBzdHJva2U9ImJsYWNrIiBkPSJNMjIxLC0wLjVDMjIxLC0wLjUgMjUxLC0wLjUgMjUxLC0wLjUgMjU3LC0wLjUgMjYzLC02LjUgMjYzLC0xMi41IDI2MywtMTIuNSAyNjMsLTI0LjUgMjYzLC0yNC41IDI2MywtMzAuNSAyNTcsLTM2LjUgMjUxLC0zNi41IDI1MSwtMzYuNSAyMjEsLTM2LjUgMjIxLC0zNi41IDIxNSwtMzYuNSAyMDksLTMwLjUgMjA5LC0yNC41IDIwOSwtMjQuNSAyMDksLTEyLjUgMjA5LC0xMi41IDIwOSwtNi41IDIxNSwtMC41IDIyMSwtMC41Ii8+Cjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjIzNiIgeT0iLTE0LjgiIGZvbnQtZmFtaWx5PSJUaW1lcyxzZXJpZiIgZm9udC1zaXplPSIxNC4wMCI+ZTA8L3RleHQ+CjwvZz4KPCEtLSAxMiYjNDU7Jmd0OzUgLS0+CjxnIGlkPSJlZGdlMSIgY2xhc3M9ImVkZ2UiPgo8dGl0bGU+MTI6aGVhZCYjNDU7Jmd0OzU6aGVhZDwvdGl0bGU+CjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0icmVkIiBzdHJva2UtZGFzaGFycmF5PSI1LDIiIGQ9Ik01MS44NiwtNzguNDVDNTUuNDgsLTc2LjM3IDU5LjI1LC03NC40NyA2MywtNzMgMTIxLjkyLC00OS44NSAxNDUuNDksLTYyLjc4IDIwMC40NSwtNDAuNjEiLz4KPHBvbHlnb24gZmlsbD0icmVkIiBzdHJva2U9InJlZCIgcG9pbnRzPSIyMDIuMTEsLTQzLjcxIDIwOS45MywtMzYuNTcgMTk5LjM2LC0zNy4yNyAyMDIuMTEsLTQzLjcxIi8+CjwvZz4KPCEtLSAxNCAtLT4KPGcgaWQ9Im5vZGUzIiBjbGFzcz0ibm9kZSI+Cjx0aXRsZT4xNDwvdGl0bGU+CjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iYmxhY2siIGQ9Ik01ODgsLTc4LjVDNTg4LC03OC41IDYxOCwtNzguNSA2MTgsLTc4LjUgNjI0LC03OC41IDYzMCwtODQuNSA2MzAsLTkwLjUgNjMwLC05MC41IDYzMCwtMTAyLjUgNjMwLC0xMDIuNSA2MzAsLTEwOC41IDYyNCwtMTE0LjUgNjE4LC0xMTQuNSA2MTgsLTExNC41IDU4OCwtMTE0LjUgNTg4LC0xMTQuNSA1ODIsLTExNC41IDU3NiwtMTA4LjUgNTc2LC0xMDIuNSA1NzYsLTEwMi41IDU3NiwtOTAuNSA1NzYsLTkwLjUgNTc2LC04NC41IDU4MiwtNzguNSA1ODgsLTc4LjUiLz4KPHRleHQgdGV4dC1hbmNob3I9Im1pZGRsZSIgeD0iNjAzIiB5PSItOTIuOCIgZm9udC1mYW1pbHk9IlRpbWVzLHNlcmlmIiBmb250LXNpemU9IjE0LjAwIj4yPC90ZXh0Pgo8L2c+CjwhLS0gMjEgLS0+CjxnIGlkPSJub2RlNCIgY2xhc3M9Im5vZGUiPgo8dGl0bGU+MjE8L3RpdGxlPgo8cGF0aCBmaWxsPSJub25lIiBzdHJva2U9ImJsYWNrIiBkPSJNNTg4LC0wLjVDNTg4LC0wLjUgNjE4LC0wLjUgNjE4LC0wLjUgNjI0LC0wLjUgNjMwLC02LjUgNjMwLC0xMi41IDYzMCwtMTIuNSA2MzAsLTI0LjUgNjMwLC0yNC41IDYzMCwtMzAuNSA2MjQsLTM2LjUgNjE4LC0zNi41IDYxOCwtMzYuNSA1ODgsLTM2LjUgNTg4LC0zNi41IDU4MiwtMzYuNSA1NzYsLTMwLjUgNTc2LC0yNC41IDU3NiwtMjQuNSA1NzYsLTEyLjUgNTc2LC0xMi41IDU3NiwtNi41IDU4MiwtMC41IDU4OCwtMC41Ii8+Cjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjYwMyIgeT0iLTE0LjgiIGZvbnQtZmFtaWx5PSJUaW1lcyxzZXJpZiIgZm9udC1zaXplPSIxNC4wMCI+ZTE8L3RleHQ+CjwvZz4KPCEtLSAxNCYjNDU7Jmd0OzIxIC0tPgo8ZyBpZD0iZWRnZTIiIGNsYXNzPSJlZGdlIj4KPHRpdGxlPjE0OmhlYWQmIzQ1OyZndDsyMTpoZWFkPC90aXRsZT4KPHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZWQiIHN0cm9rZS1kYXNoYXJyYXk9IjUsMiIgZD0iTTYwMywtNzguNDFDNjAzLC02OS4wMyA2MDMsLTU3LjM1IDYwMywtNDYuOCIvPgo8cG9seWdvbiBmaWxsPSJyZWQiIHN0cm9rZT0icmVkIiBwb2ludHM9IjYwNi41LC00Ni43NiA2MDMsLTM2Ljc2IDU5OS41LC00Ni43NiA2MDYuNSwtNDYuNzYiLz4KPC9nPgo8IS0tIDIzIC0tPgo8ZyBpZD0ibm9kZTUiIGNsYXNzPSJub2RlIj4KPHRpdGxlPjIzPC90aXRsZT4KPHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSJibGFjayIgZD0iTTg0LC03OC41Qzg0LC03OC41IDExNCwtNzguNSAxMTQsLTc4LjUgMTIwLC03OC41IDEyNiwtODQuNSAxMjYsLTkwLjUgMTI2LC05MC41IDEyNiwtMTAyLjUgMTI2LC0xMDIuNSAxMjYsLTEwOC41IDEyMCwtMTE0LjUgMTE0LC0xMTQuNSAxMTQsLTExNC41IDg0LC0xMTQuNSA4NCwtMTE0LjUgNzgsLTExNC41IDcyLC0xMDguNSA3MiwtMTAyLjUgNzIsLTEwMi41IDcyLC05MC41IDcyLC05MC41IDcyLC04NC41IDc4LC03OC41IDg0LC03OC41Ii8+Cjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9Ijk5IiB5PSItOTIuOCIgZm9udC1mYW1pbHk9IlRpbWVzLHNlcmlmIiBmb250LXNpemU9IjE0LjAwIj5lMzwvdGV4dD4KPC9nPgo8IS0tIDIzJiM0NTsmZ3Q7NSAtLT4KPGcgaWQ9ImVkZ2UzIiBjbGFzcz0iZWRnZSI+Cjx0aXRsZT4yMzpoZWFkJiM0NTsmZ3Q7NTpoZWFkPC90aXRsZT4KPHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZWQiIHN0cm9rZS1kYXNoYXJyYXk9IjUsMiIgZD0iTTEyNS40MiwtNzguMzZDMTI1LjYxLC03OC4yNCAxMjUuODEsLTc4LjEyIDEyNiwtNzggMTU3Ljk4LC01OC4yMiAxNzEuMTMsLTU3LjYzIDIwMC43NiwtNDEuNjEiLz4KPHBvbHlnb24gZmlsbD0icmVkIiBzdHJva2U9InJlZCIgcG9pbnRzPSIyMDIuNTgsLTQ0LjYgMjA5LjU5LC0zNi42NSAxOTkuMTYsLTM4LjUgMjAyLjU4LC00NC42Ii8+CjwvZz4KPCEtLSAxMyAtLT4KPGcgaWQ9Im5vZGU2IiBjbGFzcz0ibm9kZSI+Cjx0aXRsZT4xMzwvdGl0bGU+CjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iYmxhY2siIGQ9Ik03MzIsLTc4LjVDNzMyLC03OC41IDc2MiwtNzguNSA3NjIsLTc4LjUgNzY4LC03OC41IDc3NCwtODQuNSA3NzQsLTkwLjUgNzc0LC05MC41IDc3NCwtMTAyLjUgNzc0LC0xMDIuNSA3NzQsLTEwOC41IDc2OCwtMTE0LjUgNzYyLC0xMTQuNSA3NjIsLTExNC41IDczMiwtMTE0LjUgNzMyLC0xMTQuNSA3MjYsLTExNC41IDcyMCwtMTA4LjUgNzIwLC0xMDIuNSA3MjAsLTEwMi41IDcyMCwtOTAuNSA3MjAsLTkwLjUgNzIwLC04NC41IDcyNiwtNzguNSA3MzIsLTc4LjUiLz4KPHRleHQgdGV4dC1hbmNob3I9Im1pZGRsZSIgeD0iNzQ3IiB5PSItOTIuOCIgZm9udC1mYW1pbHk9IlRpbWVzLHNlcmlmIiBmb250LXNpemU9IjE0LjAwIj4xPC90ZXh0Pgo8L2c+CjwhLS0gMjQgLS0+CjxnIGlkPSJub2RlNyIgY2xhc3M9Im5vZGUiPgo8dGl0bGU+MjQ8L3RpdGxlPgo8cGF0aCBmaWxsPSJub25lIiBzdHJva2U9ImJsYWNrIiBkPSJNNjYwLC0wLjVDNjYwLC0wLjUgNjkwLC0wLjUgNjkwLC0wLjUgNjk2LC0wLjUgNzAyLC02LjUgNzAyLC0xMi41IDcwMiwtMTIuNSA3MDIsLTI0LjUgNzAyLC0yNC41IDcwMiwtMzAuNSA2OTYsLTM2LjUgNjkwLC0zNi41IDY5MCwtMzYuNSA2NjAsLTM2LjUgNjYwLC0zNi41IDY1NCwtMzYuNSA2NDgsLTMwLjUgNjQ4LC0yNC41IDY0OCwtMjQuNSA2NDgsLTEyLjUgNjQ4LC0xMi41IDY0OCwtNi41IDY1NCwtMC41IDY2MCwtMC41Ii8+Cjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjY3NSIgeT0iLTE0LjgiIGZvbnQtZmFtaWx5PSJUaW1lcyxzZXJpZiIgZm9udC1zaXplPSIxNC4wMCI+ZTQ8L3RleHQ+CjwvZz4KPCEtLSAxMyYjNDU7Jmd0OzI0IC0tPgo8ZyBpZD0iZWRnZTQiIGNsYXNzPSJlZGdlIj4KPHRpdGxlPjEzOmhlYWQmIzQ1OyZndDsyNDpoZWFkPC90aXRsZT4KPHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZWQiIHN0cm9rZS1kYXNoYXJyYXk9IjUsMiIgZD0iTTczMC4zLC03OC40MUM3MjAuOTIsLTY4LjI0IDcwOS4wNSwtNTUuMzkgNjk4LjcyLC00NC4xOSIvPgo8cG9seWdvbiBmaWxsPSJyZWQiIHN0cm9rZT0icmVkIiBwb2ludHM9IjcwMS4yMSwtNDEuNzQgNjkxLjg2LC0zNi43NiA2OTYuMDcsLTQ2LjQ4IDcwMS4yMSwtNDEuNzQiLz4KPC9nPgo8IS0tIDI1IC0tPgo8ZyBpZD0ibm9kZTgiIGNsYXNzPSJub2RlIj4KPHRpdGxlPjI1PC90aXRsZT4KPHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSJibGFjayIgZD0iTTQ0NCwtNzguNUM0NDQsLTc4LjUgNDc0LC03OC41IDQ3NCwtNzguNSA0ODAsLTc4LjUgNDg2LC04NC41IDQ4NiwtOTAuNSA0ODYsLTkwLjUgNDg2LC0xMDIuNSA0ODYsLTEwMi41IDQ4NiwtMTA4LjUgNDgwLC0xMTQuNSA0NzQsLTExNC41IDQ3NCwtMTE0LjUgNDQ0LC0xMTQuNSA0NDQsLTExNC41IDQzOCwtMTE0LjUgNDMyLC0xMDguNSA0MzIsLTEwMi41IDQzMiwtMTAyLjUgNDMyLC05MC41IDQzMiwtOTAuNSA0MzIsLTg0LjUgNDM4LC03OC41IDQ0NCwtNzguNSIvPgo8dGV4dCB0ZXh0LWFuY2hvcj0ibWlkZGxlIiB4PSI0NTkiIHk9Ii05Mi44IiBmb250LWZhbWlseT0iVGltZXMsc2VyaWYiIGZvbnQtc2l6ZT0iMTQuMDAiPmU1PC90ZXh0Pgo8L2c+CjwhLS0gMjIgLS0+CjxnIGlkPSJub2RlOSIgY2xhc3M9Im5vZGUiPgo8dGl0bGU+MjI8L3RpdGxlPgo8cGF0aCBmaWxsPSJub25lIiBzdHJva2U9ImJsYWNrIiBkPSJNNDA4LC0wLjVDNDA4LC0wLjUgNDM4LC0wLjUgNDM4LC0wLjUgNDQ0LC0wLjUgNDUwLC02LjUgNDUwLC0xMi41IDQ1MCwtMTIuNSA0NTAsLTI0LjUgNDUwLC0yNC41IDQ1MCwtMzAuNSA0NDQsLTM2LjUgNDM4LC0zNi41IDQzOCwtMzYuNSA0MDgsLTM2LjUgNDA4LC0zNi41IDQwMiwtMzYuNSAzOTYsLTMwLjUgMzk2LC0yNC41IDM5NiwtMjQuNSAzOTYsLTEyLjUgMzk2LC0xMi41IDM5NiwtNi41IDQwMiwtMC41IDQwOCwtMC41Ii8+Cjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjQyMyIgeT0iLTE0LjgiIGZvbnQtZmFtaWx5PSJUaW1lcyxzZXJpZiIgZm9udC1zaXplPSIxNC4wMCI+ZTI8L3RleHQ+CjwvZz4KPCEtLSAyNSYjNDU7Jmd0OzIyIC0tPgo8ZyBpZD0iZWRnZTUiIGNsYXNzPSJlZGdlIj4KPHRpdGxlPjI1OmhlYWQmIzQ1OyZndDsyMjpoZWFkPC90aXRsZT4KPHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZWQiIHN0cm9rZS1kYXNoYXJyYXk9IjUsMiIgZD0iTTQ1MC42NSwtNzguNDFDNDQ2LjIzLC02OC44MyA0NDAuNzEsLTU2Ljg2IDQzNS43NiwtNDYuMTUiLz4KPHBvbHlnb24gZmlsbD0icmVkIiBzdHJva2U9InJlZCIgcG9pbnRzPSI0MzguOCwtNDQuMzggNDMxLjQzLC0zNi43NiA0MzIuNDQsLTQ3LjMxIDQzOC44LC00NC4zOCIvPgo8L2c+CjwhLS0gMjYgLS0+CjxnIGlkPSJub2RlMTAiIGNsYXNzPSJub2RlIj4KPHRpdGxlPjI2PC90aXRsZT4KPHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSJibGFjayIgZD0iTTgwNCwtNzguNUM4MDQsLTc4LjUgODM0LC03OC41IDgzNCwtNzguNSA4NDAsLTc4LjUgODQ2LC04NC41IDg0NiwtOTAuNSA4NDYsLTkwLjUgODQ2LC0xMDIuNSA4NDYsLTEwMi41IDg0NiwtMTA4LjUgODQwLC0xMTQuNSA4MzQsLTExNC41IDgzNCwtMTE0LjUgODA0LC0xMTQuNSA4MDQsLTExNC41IDc5OCwtMTE0LjUgNzkyLC0xMDguNSA3OTIsLTEwMi41IDc5MiwtMTAyLjUgNzkyLC05MC41IDc5MiwtOTAuNSA3OTIsLTg0LjUgNzk4LC03OC41IDgwNCwtNzguNSIvPgo8dGV4dCB0ZXh0LWFuY2hvcj0ibWlkZGxlIiB4PSI4MTkiIHk9Ii05Mi44IiBmb250LWZhbWlseT0iVGltZXMsc2VyaWYiIGZvbnQtc2l6ZT0iMTQuMDAiPmU2PC90ZXh0Pgo8L2c+CjwhLS0gMjYmIzQ1OyZndDsyNCAtLT4KPGcgaWQ9ImVkZ2U2IiBjbGFzcz0iZWRnZSI+Cjx0aXRsZT4yNjpoZWFkJiM0NTsmZ3Q7MjQ6aGVhZDwvdGl0bGU+CjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0icmVkIiBzdHJva2UtZGFzaGFycmF5PSI1LDIiIGQ9Ik03OTIuNTgsLTc4LjM2Qzc5Mi4zOSwtNzguMjQgNzkyLjE5LC03OC4xMiA3OTIsLTc4IDc1Ny42OCwtNTYuNzggNzQyLjg3LC01OC4wMyA3MTAuNTIsLTQxLjU0Ii8+Cjxwb2x5Z29uIGZpbGw9InJlZCIgc3Ryb2tlPSJyZWQiIHBvaW50cz0iNzExLjg3LC0zOC4yOSA3MDEuNCwtMzYuNjYgNzA4LjU3LC00NC40NyA3MTEuODcsLTM4LjI5Ii8+CjwvZz4KPCEtLSAyNyAtLT4KPGcgaWQ9Im5vZGUxMSIgY2xhc3M9Im5vZGUiPgo8dGl0bGU+Mjc8L3RpdGxlPgo8cGF0aCBmaWxsPSJub25lIiBzdHJva2U9ImJsYWNrIiBkPSJNMTU2LC03OC41QzE1NiwtNzguNSAxODYsLTc4LjUgMTg2LC03OC41IDE5MiwtNzguNSAxOTgsLTg0LjUgMTk4LC05MC41IDE5OCwtOTAuNSAxOTgsLTEwMi41IDE5OCwtMTAyLjUgMTk4LC0xMDguNSAxOTIsLTExNC41IDE4NiwtMTE0LjUgMTg2LC0xMTQuNSAxNTYsLTExNC41IDE1NiwtMTE0LjUgMTUwLC0xMTQuNSAxNDQsLTEwOC41IDE0NCwtMTAyLjUgMTQ0LC0xMDIuNSAxNDQsLTkwLjUgMTQ0LC05MC41IDE0NCwtODQuNSAxNTAsLTc4LjUgMTU2LC03OC41Ii8+Cjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjE3MSIgeT0iLTkyLjgiIGZvbnQtZmFtaWx5PSJUaW1lcyxzZXJpZiIgZm9udC1zaXplPSIxNC4wMCI+ZTc8L3RleHQ+CjwvZz4KPCEtLSAyNyYjNDU7Jmd0OzUgLS0+CjxnIGlkPSJlZGdlNyIgY2xhc3M9ImVkZ2UiPgo8dGl0bGU+Mjc6aGVhZCYjNDU7Jmd0OzU6aGVhZDwvdGl0bGU+CjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0icmVkIiBzdHJva2UtZGFzaGFycmF5PSI1LDIiIGQ9Ik0xODYuMDgsLTc4LjQxQzE5NC40NywtNjguMzQgMjA1LjA1LC01NS42MyAyMTQuMzIsLTQ0LjUyIi8+Cjxwb2x5Z29uIGZpbGw9InJlZCIgc3Ryb2tlPSJyZWQiIHBvaW50cz0iMjE3LjA3LC00Ni42OSAyMjAuNzgsLTM2Ljc2IDIxMS42OSwtNDIuMiAyMTcuMDcsLTQ2LjY5Ii8+CjwvZz4KPCEtLSAyOCAtLT4KPGcgaWQ9Im5vZGUxMiIgY2xhc3M9Im5vZGUiPgo8dGl0bGU+Mjg8L3RpdGxlPgo8cGF0aCBmaWxsPSJub25lIiBzdHJva2U9ImJsYWNrIiBkPSJNMzcyLC03My41QzM3MiwtNzMuNSA0MDIsLTczLjUgNDAyLC03My41IDQwOCwtNzMuNSA0MTQsLTc5LjUgNDE0LC04NS41IDQxNCwtODUuNSA0MTQsLTEwNy41IDQxNCwtMTA3LjUgNDE0LC0xMTMuNSA0MDgsLTExOS41IDQwMiwtMTE5LjUgNDAyLC0xMTkuNSAzNzIsLTExOS41IDM3MiwtMTE5LjUgMzY2LC0xMTkuNSAzNjAsLTExMy41IDM2MCwtMTA3LjUgMzYwLC0xMDcuNSAzNjAsLTg1LjUgMzYwLC04NS41IDM2MCwtNzkuNSAzNjYsLTczLjUgMzcyLC03My41Ii8+Cjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjM4NyIgeT0iLTEwNC4zIiBmb250LWZhbWlseT0iVGltZXMsc2VyaWYiIGZvbnQtc2l6ZT0iMTQuMDAiPio8L3RleHQ+Cjxwb2x5bGluZSBmaWxsPSJub25lIiBzdHJva2U9ImJsYWNrIiBwb2ludHM9IjM2MCwtOTYuNSA0MTQsLTk2LjUgIi8+Cjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjM3My41IiB5PSItODEuMyIgZm9udC1mYW1pbHk9IlRpbWVzLHNlcmlmIiBmb250LXNpemU9IjE0LjAwIj4gPC90ZXh0Pgo8cG9seWxpbmUgZmlsbD0ibm9uZSIgc3Ryb2tlPSJibGFjayIgcG9pbnRzPSIzODcsLTczLjUgMzg3LC05Ni41ICIvPgo8dGV4dCB0ZXh0LWFuY2hvcj0ibWlkZGxlIiB4PSI0MDAuNSIgeT0iLTgxLjMiIGZvbnQtZmFtaWx5PSJUaW1lcyxzZXJpZiIgZm9udC1zaXplPSIxNC4wMCI+IDwvdGV4dD4KPC9nPgo8IS0tIDI4JiM0NTsmZ3Q7NSAtLT4KPGcgaWQ9ImVkZ2U5IiBjbGFzcz0iZWRnZSI+Cjx0aXRsZT4yODpwMCYjNDU7Jmd0OzU6aGVhZDwvdGl0bGU+CjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iYmxhY2siIGQ9Ik0zNTksLTg0LjVDMzUyLjc3LC04NC41IDM1NS44NiwtNzYuODkgMzUxLC03MyAzMjAuNzMsLTQ4Ljc0IDMwMy4yMiwtNTUuNTggMjcxLjA4LC00MC45NyIvPgo8cG9seWdvbiBmaWxsPSJibGFjayIgc3Ryb2tlPSJibGFjayIgcG9pbnRzPSIyNzIuNjEsLTM3LjgzIDI2Mi4xLC0zNi41MSAyNjkuNDksLTQ0LjA5IDI3Mi42MSwtMzcuODMiLz4KPC9nPgo8IS0tIDI4JiM0NTsmZ3Q7MjEgLS0+CjxnIGlkPSJlZGdlMTAiIGNsYXNzPSJlZGdlIj4KPHRpdGxlPjI4OnAxJiM0NTsmZ3Q7MjE6aGVhZDwvdGl0bGU+CjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iYmxhY2siIGQ9Ik00MTUsLTg0LjVDNDIxLjIzLC04NC41IDQxNy44NSwtNzYuNSA0MjMsLTczIDQ3Ny45NSwtMzUuNjQgNTA4Ljk4LC02Mi4zMiA1NjcuNjcsLTQwLjM2Ii8+Cjxwb2x5Z29uIGZpbGw9ImJsYWNrIiBzdHJva2U9ImJsYWNrIiBwb2ludHM9IjU2OSwtNDMuNiA1NzYuOTQsLTM2LjU4IDU2Ni4zNSwtMzcuMTEgNTY5LC00My42Ii8+CjwvZz4KPCEtLSAyOCYjNDU7Jmd0OzIyIC0tPgo8ZyBpZD0iZWRnZTgiIGNsYXNzPSJlZGdlIj4KPHRpdGxlPjI4OmhlYWQmIzQ1OyZndDsyMjpoZWFkPC90aXRsZT4KPHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZWQiIHN0cm9rZS1kYXNoYXJyYXk9IjUsMiIgZD0iTTQxNSwtMTA4LjVDNDIxLjI3LC0xMDguNSA0MjIuODMsLTczLjM2IDQyMy4xMiwtNDciLz4KPHBvbHlnb24gZmlsbD0icmVkIiBzdHJva2U9InJlZCIgcG9pbnRzPSI0MjYuNjIsLTQ2LjczIDQyMy4xNywtMzYuNzEgNDE5LjYyLC00Ni42OSA0MjYuNjIsLTQ2LjczIi8+CjwvZz4KPCEtLSAyOSAtLT4KPGcgaWQ9Im5vZGUxMyIgY2xhc3M9Im5vZGUiPgo8dGl0bGU+Mjk8L3RpdGxlPgo8cGF0aCBmaWxsPSJub25lIiBzdHJva2U9ImJsYWNrIiBkPSJNMjI4LC03My41QzIyOCwtNzMuNSAyNTgsLTczLjUgMjU4LC03My41IDI2NCwtNzMuNSAyNzAsLTc5LjUgMjcwLC04NS41IDI3MCwtODUuNSAyNzAsLTEwNy41IDI3MCwtMTA3LjUgMjcwLC0xMTMuNSAyNjQsLTExOS41IDI1OCwtMTE5LjUgMjU4LC0xMTkuNSAyMjgsLTExOS41IDIyOCwtMTE5LjUgMjIyLC0xMTkuNSAyMTYsLTExMy41IDIxNiwtMTA3LjUgMjE2LC0xMDcuNSAyMTYsLTg1LjUgMjE2LC04NS41IDIxNiwtNzkuNSAyMjIsLTczLjUgMjI4LC03My41Ii8+Cjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjI0MyIgeT0iLTEwNC4zIiBmb250LWZhbWlseT0iVGltZXMsc2VyaWYiIGZvbnQtc2l6ZT0iMTQuMDAiPio8L3RleHQ+Cjxwb2x5bGluZSBmaWxsPSJub25lIiBzdHJva2U9ImJsYWNrIiBwb2ludHM9IjIxNiwtOTYuNSAyNzAsLTk2LjUgIi8+Cjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjIyOS41IiB5PSItODEuMyIgZm9udC1mYW1pbHk9IlRpbWVzLHNlcmlmIiBmb250LXNpemU9IjE0LjAwIj4gPC90ZXh0Pgo8cG9seWxpbmUgZmlsbD0ibm9uZSIgc3Ryb2tlPSJibGFjayIgcG9pbnRzPSIyNDMsLTczLjUgMjQzLC05Ni41ICIvPgo8dGV4dCB0ZXh0LWFuY2hvcj0ibWlkZGxlIiB4PSIyNTYuNSIgeT0iLTgxLjMiIGZvbnQtZmFtaWx5PSJUaW1lcyxzZXJpZiIgZm9udC1zaXplPSIxNC4wMCI+IDwvdGV4dD4KPC9nPgo8IS0tIDI5JiM0NTsmZ3Q7NSAtLT4KPGcgaWQ9ImVkZ2UxMSIgY2xhc3M9ImVkZ2UiPgo8dGl0bGU+Mjk6aGVhZCYjNDU7Jmd0OzU6aGVhZDwvdGl0bGU+CjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0icmVkIiBzdHJva2UtZGFzaGFycmF5PSI1LDIiIGQ9Ik0yMTUsLTEwOC41QzIwMi4wNSwtMTA4LjUgMjEzLjc4LC03Mi43MyAyMjQuMjEsLTQ2LjI5Ii8+Cjxwb2x5Z29uIGZpbGw9InJlZCIgc3Ryb2tlPSJyZWQiIHBvaW50cz0iMjI3LjU4LC00Ny4zIDIyOC4wOSwtMzYuNzEgMjIxLjA5LC00NC42NyAyMjcuNTgsLTQ3LjMiLz4KPC9nPgo8IS0tIDI5JiM0NTsmZ3Q7NSAtLT4KPGcgaWQ9ImVkZ2UxMiIgY2xhc3M9ImVkZ2UiPgo8dGl0bGU+Mjk6cDAmIzQ1OyZndDs1OmhlYWQ8L3RpdGxlPgo8cGF0aCBmaWxsPSJub25lIiBzdHJva2U9ImJsYWNrIiBkPSJNMjI5LC03M0MyMjksLTY0LjQxIDIyOS44NywtNTUuMTMgMjMwLjk5LC00Ni43Ii8+Cjxwb2x5Z29uIGZpbGw9ImJsYWNrIiBzdHJva2U9ImJsYWNrIiBwb2ludHM9IjIzNC40OCwtNDcgMjMyLjUsLTM2LjU5IDIyNy41NiwtNDUuOTYgMjM0LjQ4LC00NyIvPgo8L2c+CjwhLS0gMjkmIzQ1OyZndDsyNCAtLT4KPGcgaWQ9ImVkZ2UxMyIgY2xhc3M9ImVkZ2UiPgo8dGl0bGU+Mjk6cDEmIzQ1OyZndDsyNDpoZWFkPC90aXRsZT4KPHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSJibGFjayIgZD0iTTI3MSwtODQuNUMyNzcuMjMsLTg0LjUgMjczLjYzLC03Ni4xNSAyNzksLTczIDQxOC4yNSw4LjYxIDQ5MC4xNywtODkuMTcgNjM5Ljc4LC0zOS44MSIvPgo8cG9seWdvbiBmaWxsPSJibGFjayIgc3Ryb2tlPSJibGFjayIgcG9pbnRzPSI2NDAuOTgsLTQzLjA5IDY0OS4yOCwtMzYuNTEgNjM4LjY5LC0zNi40OCA2NDAuOTgsLTQzLjA5Ii8+CjwvZz4KPCEtLSAzMCAtLT4KPGcgaWQ9Im5vZGUxNCIgY2xhc3M9Im5vZGUiPgo8dGl0bGU+MzA8L3RpdGxlPgo8cGF0aCBmaWxsPSJub25lIiBzdHJva2U9ImJsYWNrIiBkPSJNNjYwLC03My41QzY2MCwtNzMuNSA2OTAsLTczLjUgNjkwLC03My41IDY5NiwtNzMuNSA3MDIsLTc5LjUgNzAyLC04NS41IDcwMiwtODUuNSA3MDIsLTEwNy41IDcwMiwtMTA3LjUgNzAyLC0xMTMuNSA2OTYsLTExOS41IDY5MCwtMTE5LjUgNjkwLC0xMTkuNSA2NjAsLTExOS41IDY2MCwtMTE5LjUgNjU0LC0xMTkuNSA2NDgsLTExMy41IDY0OCwtMTA3LjUgNjQ4LC0xMDcuNSA2NDgsLTg1LjUgNjQ4LC04NS41IDY0OCwtNzkuNSA2NTQsLTczLjUgNjYwLC03My41Ii8+Cjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjY3NSIgeT0iLTEwNC4zIiBmb250LWZhbWlseT0iVGltZXMsc2VyaWYiIGZvbnQtc2l6ZT0iMTQuMDAiPi88L3RleHQ+Cjxwb2x5bGluZSBmaWxsPSJub25lIiBzdHJva2U9ImJsYWNrIiBwb2ludHM9IjY0OCwtOTYuNSA3MDIsLTk2LjUgIi8+Cjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjY2MS41IiB5PSItODEuMyIgZm9udC1mYW1pbHk9IlRpbWVzLHNlcmlmIiBmb250LXNpemU9IjE0LjAwIj4gPC90ZXh0Pgo8cG9seWxpbmUgZmlsbD0ibm9uZSIgc3Ryb2tlPSJibGFjayIgcG9pbnRzPSI2NzUsLTczLjUgNjc1LC05Ni41ICIvPgo8dGV4dCB0ZXh0LWFuY2hvcj0ibWlkZGxlIiB4PSI2ODguNSIgeT0iLTgxLjMiIGZvbnQtZmFtaWx5PSJUaW1lcyxzZXJpZiIgZm9udC1zaXplPSIxNC4wMCI+IDwvdGV4dD4KPC9nPgo8IS0tIDMwJiM0NTsmZ3Q7MjEgLS0+CjxnIGlkPSJlZGdlMTUiIGNsYXNzPSJlZGdlIj4KPHRpdGxlPjMwOnAwJiM0NTsmZ3Q7MjE6aGVhZDwvdGl0bGU+CjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iYmxhY2siIGQ9Ik02NjEsLTczQzY2MSwtNjUuMTYgNjQ5LjYxLC01My41NyA2MzYuOTIsLTQzLjA4Ii8+Cjxwb2x5Z29uIGZpbGw9ImJsYWNrIiBzdHJva2U9ImJsYWNrIiBwb2ludHM9IjYzOC45NSwtNDAuMjMgNjI4Ljk1LC0zNi43NSA2MzQuNiwtNDUuNzEgNjM4Ljk1LC00MC4yMyIvPgo8L2c+CjwhLS0gMzAmIzQ1OyZndDsyMSAtLT4KPGcgaWQ9ImVkZ2UxNiIgY2xhc3M9ImVkZ2UiPgo8dGl0bGU+MzA6cDEmIzQ1OyZndDsyMTpoZWFkPC90aXRsZT4KPHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSJibGFjayIgZD0iTTY4OSwtNzNDNjg5LC00NS42NCA2NjIuNjYsLTUxLjcgNjM4LjI3LC00MS4zIi8+Cjxwb2x5Z29uIGZpbGw9ImJsYWNrIiBzdHJva2U9ImJsYWNrIiBwb2ludHM9IjYzOS45LC0zOC4yIDYyOS40MywtMzYuNjMgNjM2LjY0LC00NC4zOSA2MzkuOSwtMzguMiIvPgo8L2c+CjwhLS0gMzAmIzQ1OyZndDsyNCAtLT4KPGcgaWQ9ImVkZ2UxNCIgY2xhc3M9ImVkZ2UiPgo8dGl0bGU+MzA6aGVhZCYjNDU7Jmd0OzI0OmhlYWQ8L3RpdGxlPgo8cGF0aCBmaWxsPSJub25lIiBzdHJva2U9InJlZCIgc3Ryb2tlLWRhc2hhcnJheT0iNSwyIiBkPSJNNzAzLC0xMDguNUM3MTguNzgsLTEwOC41IDcwNS44MSwtODguMzIgNzAyLC03MyA2OTkuNywtNjMuNzcgNjk1LjY4LC01NC4yOCA2OTEuNDMsLTQ1Ljg3Ii8+Cjxwb2x5Z29uIGZpbGw9InJlZCIgc3Ryb2tlPSJyZWQiIHBvaW50cz0iNjk0LjQyLC00NC4wNSA2ODYuNjEsLTM2Ljg5IDY4OC4yNSwtNDcuMzYgNjk0LjQyLC00NC4wNSIvPgo8L2c+CjwhLS0gMzEgLS0+CjxnIGlkPSJub2RlMTUiIGNsYXNzPSJub2RlIj4KPHRpdGxlPjMxPC90aXRsZT4KPHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSJibGFjayIgZD0iTTMwMCwtNzMuNUMzMDAsLTczLjUgMzMwLC03My41IDMzMCwtNzMuNSAzMzYsLTczLjUgMzQyLC03OS41IDM0MiwtODUuNSAzNDIsLTg1LjUgMzQyLC0xMDcuNSAzNDIsLTEwNy41IDM0MiwtMTEzLjUgMzM2LC0xMTkuNSAzMzAsLTExOS41IDMzMCwtMTE5LjUgMzAwLC0xMTkuNSAzMDAsLTExOS41IDI5NCwtMTE5LjUgMjg4LC0xMTMuNSAyODgsLTEwNy41IDI4OCwtMTA3LjUgMjg4LC04NS41IDI4OCwtODUuNSAyODgsLTc5LjUgMjk0LC03My41IDMwMCwtNzMuNSIvPgo8dGV4dCB0ZXh0LWFuY2hvcj0ibWlkZGxlIiB4PSIzMTUiIHk9Ii0xMDQuMyIgZm9udC1mYW1pbHk9IlRpbWVzLHNlcmlmIiBmb250LXNpemU9IjE0LjAwIj4vPC90ZXh0Pgo8cG9seWxpbmUgZmlsbD0ibm9uZSIgc3Ryb2tlPSJibGFjayIgcG9pbnRzPSIyODgsLTk2LjUgMzQyLC05Ni41ICIvPgo8dGV4dCB0ZXh0LWFuY2hvcj0ibWlkZGxlIiB4PSIzMDEuNSIgeT0iLTgxLjMiIGZvbnQtZmFtaWx5PSJUaW1lcyxzZXJpZiIgZm9udC1zaXplPSIxNC4wMCI+IDwvdGV4dD4KPHBvbHlsaW5lIGZpbGw9Im5vbmUiIHN0cm9rZT0iYmxhY2siIHBvaW50cz0iMzE1LC03My41IDMxNSwtOTYuNSAiLz4KPHRleHQgdGV4dC1hbmNob3I9Im1pZGRsZSIgeD0iMzI4LjUiIHk9Ii04MS4zIiBmb250LWZhbWlseT0iVGltZXMsc2VyaWYiIGZvbnQtc2l6ZT0iMTQuMDAiPiA8L3RleHQ+CjwvZz4KPCEtLSAzMSYjNDU7Jmd0OzUgLS0+CjxnIGlkPSJlZGdlMTciIGNsYXNzPSJlZGdlIj4KPHRpdGxlPjMxOmhlYWQmIzQ1OyZndDs1OmhlYWQ8L3RpdGxlPgo8cGF0aCBmaWxsPSJub25lIiBzdHJva2U9InJlZCIgc3Ryb2tlLWRhc2hhcnJheT0iNSwyIiBkPSJNMjg3LC0xMDguNUMyNzAuODMsLTEwOC41IDI4NS45NiwtODcuNiAyNzksLTczIDI3NC4yMSwtNjIuOTQgMjY3LjI3LC01My4wNCAyNjAuMzYsLTQ0LjQ5Ii8+Cjxwb2x5Z29uIGZpbGw9InJlZCIgc3Ryb2tlPSJyZWQiIHBvaW50cz0iMjYyLjk0LC00Mi4xMyAyNTMuODEsLTM2Ljc1IDI1Ny42LC00Ni42NSAyNjIuOTQsLTQyLjEzIi8+CjwvZz4KPCEtLSAzMSYjNDU7Jmd0OzIxIC0tPgo8ZyBpZD0iZWRnZTE5IiBjbGFzcz0iZWRnZSI+Cjx0aXRsZT4zMTpwMSYjNDU7Jmd0OzIxOmhlYWQ8L3RpdGxlPgo8cGF0aCBmaWxsPSJub25lIiBzdHJva2U9ImJsYWNrIiBkPSJNMzQzLC04NC41QzM0OS4yMywtODQuNSAzNDUuNzMsLTc2LjMxIDM1MSwtNzMgNDMzLjgzLC0yMC45OCA0NzguOCwtNzAuODcgNTY3LjM4LC00MC4xOCIvPgo8cG9seWdvbiBmaWxsPSJibGFjayIgc3Ryb2tlPSJibGFjayIgcG9pbnRzPSI1NjguOCwtNDMuMzggNTc2Ljk1LC0zNi42MSA1NjYuMzYsLTM2LjgyIDU2OC44LC00My4zOCIvPgo8L2c+CjwhLS0gMzEmIzQ1OyZndDsyMiAtLT4KPGcgaWQ9ImVkZ2UxOCIgY2xhc3M9ImVkZ2UiPgo8dGl0bGU+MzE6cDAmIzQ1OyZndDsyMjpoZWFkPC90aXRsZT4KPHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSJibGFjayIgZD0iTTMwMSwtNzNDMzAxLC0zMS4yIDM0OC4xMiwtNTMuODYgMzg3LjU5LC00MC40OCIvPgo8cG9seWdvbiBmaWxsPSJibGFjayIgc3Ryb2tlPSJibGFjayIgcG9pbnRzPSIzODkuMDgsLTQzLjY1IDM5Ni45MSwtMzYuNTIgMzg2LjM0LC0zNy4yMSAzODkuMDgsLTQzLjY1Ii8+CjwvZz4KPCEtLSAzMiAtLT4KPGcgaWQ9Im5vZGUxNiIgY2xhc3M9Im5vZGUiPgo8dGl0bGU+MzI8L3RpdGxlPgo8cGF0aCBmaWxsPSJub25lIiBzdHJva2U9ImJsYWNrIiBkPSJNNTE2LC03My41QzUxNiwtNzMuNSA1NDYsLTczLjUgNTQ2LC03My41IDU1MiwtNzMuNSA1NTgsLTc5LjUgNTU4LC04NS41IDU1OCwtODUuNSA1NTgsLTEwNy41IDU1OCwtMTA3LjUgNTU4LC0xMTMuNSA1NTIsLTExOS41IDU0NiwtMTE5LjUgNTQ2LC0xMTkuNSA1MTYsLTExOS41IDUxNiwtMTE5LjUgNTEwLC0xMTkuNSA1MDQsLTExMy41IDUwNCwtMTA3LjUgNTA0LC0xMDcuNSA1MDQsLTg1LjUgNTA0LC04NS41IDUwNCwtNzkuNSA1MTAsLTczLjUgNTE2LC03My41Ii8+Cjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjUzMSIgeT0iLTEwNC4zIiBmb250LWZhbWlseT0iVGltZXMsc2VyaWYiIGZvbnQtc2l6ZT0iMTQuMDAiPiZsdDsmbHQ7PC90ZXh0Pgo8cG9seWxpbmUgZmlsbD0ibm9uZSIgc3Ryb2tlPSJibGFjayIgcG9pbnRzPSI1MDQsLTk2LjUgNTU4LC05Ni41ICIvPgo8dGV4dCB0ZXh0LWFuY2hvcj0ibWlkZGxlIiB4PSI1MTcuNSIgeT0iLTgxLjMiIGZvbnQtZmFtaWx5PSJUaW1lcyxzZXJpZiIgZm9udC1zaXplPSIxNC4wMCI+IDwvdGV4dD4KPHBvbHlsaW5lIGZpbGw9Im5vbmUiIHN0cm9rZT0iYmxhY2siIHBvaW50cz0iNTMxLC03My41IDUzMSwtOTYuNSAiLz4KPHRleHQgdGV4dC1hbmNob3I9Im1pZGRsZSIgeD0iNTQ0LjUiIHk9Ii04MS4zIiBmb250LWZhbWlseT0iVGltZXMsc2VyaWYiIGZvbnQtc2l6ZT0iMTQuMDAiPiA8L3RleHQ+CjwvZz4KPCEtLSAzMiYjNDU7Jmd0OzUgLS0+CjxnIGlkPSJlZGdlMjEiIGNsYXNzPSJlZGdlIj4KPHRpdGxlPjMyOnAwJiM0NTsmZ3Q7NTpoZWFkPC90aXRsZT4KPHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSJibGFjayIgZD0iTTUwMywtODQuNUM0OTYuNzcsLTg0LjUgNTAwLjI4LC03Ni4zIDQ5NSwtNzMgNDA5LjQ1LC0xOS41NCAzNjMuMTQsLTcxLjc0IDI3MS42NCwtNDAuMTciLz4KPHBvbHlnb24gZmlsbD0iYmxhY2siIHN0cm9rZT0iYmxhY2siIHBvaW50cz0iMjcyLjY0LC0zNi44MSAyNjIuMDUsLTM2LjYxIDI3MC4yMSwtNDMuMzcgMjcyLjY0LC0zNi44MSIvPgo8L2c+CjwhLS0gMzImIzQ1OyZndDsyNCAtLT4KPGcgaWQ9ImVkZ2UyMiIgY2xhc3M9ImVkZ2UiPgo8dGl0bGU+MzI6cDEmIzQ1OyZndDsyNDpoZWFkPC90aXRsZT4KPHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSJibGFjayIgZD0iTTU1OSwtODQuNUM1NjUuMjMsLTg0LjUgNTYyLjIsLTc2Ljk3IDU2NywtNzMgNTk0LjY0LC01MC4xNiA2MTAuNTgsLTU0Ljk5IDYzOS42LC00MS4zIi8+Cjxwb2x5Z29uIGZpbGw9ImJsYWNrIiBzdHJva2U9ImJsYWNrIiBwb2ludHM9IjY0MS4zMSwtNDQuMzYgNjQ4LjYsLTM2LjY2IDYzOC4xLC0zOC4xMyA2NDEuMzEsLTQ0LjM2Ii8+CjwvZz4KPCEtLSAzMiYjNDU7Jmd0OzIyIC0tPgo8ZyBpZD0iZWRnZTIwIiBjbGFzcz0iZWRnZSI+Cjx0aXRsZT4zMjpoZWFkJiM0NTsmZ3Q7MjI6aGVhZDwvdGl0bGU+CjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0icmVkIiBzdHJva2UtZGFzaGFycmF5PSI1LDIiIGQ9Ik01MDMsLTEwOC41QzQ4Ni44MywtMTA4LjUgNTAzLjc2LC04Ni42IDQ5NSwtNzMgNDkyLjI4LC02OC43OCA0NzQuMjcsLTU1LjE1IDQ1Ni45NCwtNDIuNTciLz4KPHBvbHlnb24gZmlsbD0icmVkIiBzdHJva2U9InJlZCIgcG9pbnRzPSI0NTguNzIsLTM5LjU0IDQ0OC41NiwtMzYuNTMgNDU0LjYzLC00NS4yMiA0NTguNzIsLTM5LjU0Ii8+CjwvZz4KPC9nPgo8L3N2Zz4K"/>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [19]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%%file</span> /tmp/shift.p
+<span class="n">fof</span><span class="p">(</span><span class="n">shift</span><span class="p">,</span> <span class="n">axiom</span><span class="p">,</span> <span class="err">!</span><span class="p">[</span><span class="n">X</span><span class="p">]</span> <span class="p">:</span> <span class="n">mul</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">two</span><span class="p">)</span> <span class="o">=</span> <span class="n">shift</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">one</span><span class="p">))</span><span class="o">.</span>
+
+<span class="n">fof</span><span class="p">(</span><span class="n">assoc</span><span class="p">,</span> <span class="n">axiom</span><span class="p">,</span> <span class="err">!</span><span class="p">[</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">,</span><span class="n">Z</span><span class="p">]:</span> <span class="n">div</span><span class="p">(</span><span class="n">mul</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">),</span> <span class="n">Z</span><span class="p">)</span> <span class="o">=</span> <span class="n">mul</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">div</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span><span class="n">Z</span><span class="p">)))</span><span class="o">.</span>
+<span class="n">fof</span><span class="p">(</span><span class="n">cancel</span><span class="p">,</span> <span class="n">axiom</span><span class="p">,</span> <span class="err">!</span><span class="p">[</span><span class="n">X</span><span class="p">]:</span> <span class="n">div</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">X</span><span class="p">)</span> <span class="o">=</span> <span class="n">one</span><span class="p">)</span><span class="o">.</span>
+<span class="n">fof</span><span class="p">(</span><span class="n">mul_one</span><span class="p">,</span> <span class="n">axiom</span><span class="p">,</span> <span class="err">!</span><span class="p">[</span><span class="n">X</span><span class="p">]:</span> <span class="n">mul</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">one</span><span class="p">)</span> <span class="o">=</span> <span class="n">X</span><span class="p">)</span><span class="o">.</span>
+
+<span class="n">fof</span><span class="p">(</span><span class="n">goal</span><span class="p">,</span> <span class="n">conjecture</span><span class="p">,</span> <span class="n">true</span> <span class="o">=</span> <span class="n">false</span><span class="p">)</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Overwriting /tmp/shift.p
+</pre>
+</div>
 </div>
 </div>
 </div>

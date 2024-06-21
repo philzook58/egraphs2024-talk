@@ -1,0 +1,36 @@
+digraph {
+	16:head -> 17:head [color=red style=dashed]
+	16 [label="{<head>*|{<p0>|<p1>}}" shape=Mrecord]
+	16:p0 -> 12:head
+	12 [label="{<head>a}" shape=Mrecord]
+	16:p1 -> 14:head
+	14 [label="{<head>2}" shape=Mrecord]
+	17 [label="{<head>\<\<|{<p0>|<p1>}}" shape=Mrecord]
+	17:p0 -> 12:head
+	12 [label="{<head>a}" shape=Mrecord]
+	17:p1 -> 13:head
+	13 [label="{<head>1}" shape=Mrecord]
+	18:head -> 12:head [color=red style=dashed]
+	18 [label="{<head>*|{<p0>|<p1>}}" shape=Mrecord]
+	18:p0 -> 12:head
+	12 [label="{<head>a}" shape=Mrecord]
+	18:p1 -> 13:head
+	13 [label="{<head>1}" shape=Mrecord]
+	12 [label="{<head>a}" shape=Mrecord]
+	19:head -> 13:head [color=red style=dashed]
+	19 [label="{<head>/|{<p0>|<p1>}}" shape=Mrecord]
+	19:p0 -> 14:head
+	14 [label="{<head>2}" shape=Mrecord]
+	19:p1 -> 14:head
+	14 [label="{<head>2}" shape=Mrecord]
+	13 [label="{<head>1}" shape=Mrecord]
+	20:head -> 12:head [color=red style=dashed]
+	20 [label="{<head>/|{<p0>|<p1>}}" shape=Mrecord]
+	20:p0 -> 17:head
+	17 [label="{<head>\<\<|{<p0>|<p1>}}" shape=Mrecord]
+	12 [label="{<head>a}" shape=Mrecord]
+	13 [label="{<head>1}" shape=Mrecord]
+	20:p1 -> 14:head
+	14 [label="{<head>2}" shape=Mrecord]
+	12 [label="{<head>a}" shape=Mrecord]
+}
