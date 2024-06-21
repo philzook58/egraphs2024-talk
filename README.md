@@ -6,7 +6,7 @@ Automated reasoning is an established field with a long history and many ideas. 
 - Union Finds are Atomic Ground Completion
 - E-Graphs are Ground Completion
 - Ground Superposition is a contextual E-graph
-- Lambda superposition holds clues for Lambda e-graphs
+- Lambda superposition holds clues / is a lambda e-graph
 
 Twee, Vampire, E-prover, and Zipperposition are capable of doing the same thing as egg if they supported the right interfaces.
 
