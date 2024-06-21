@@ -12,3 +12,5 @@ Twee, Vampire, E-prover, and Zipperposition are capable of doing the same thing 
 
 - Abstract  https://github.com/philzook58/egraphs2024-talk/blob/main/egraphs2024_abstract.pdf
 - Talk notebook https://github.com/philzook58/egraphs2024-talk/blob/main/egraphs_talk.ipynb
+
+Presented at PLDI EGRAPHS 2024 https://pldi24.sigplan.org/details/egraphs-2024-papers/13/E-graphs-and-Automated-Reasoning-Looking-back-to-look-forward
