@@ -7592,10 +7592,10 @@ $$ (a * 2) / 2 = a *(2 / 2) = a * 1 = a $$</p>
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h1 id="Basic-Completion">Basic Completion<a class="anchor-link" href="#Basic-Completion">¶</a></h1><ol>
 <li>Orient according to Term Order
-$$[A + 0 = A] \Rightarrow \{A + 0 \rightarrow A\}$$</li>
+$$[X * 2 = X \ll 1] \Rightarrow \{X * 2 \rightarrow X \ll 1\}$$</li>
 <li>Add critical pairs (CPs) as equations
-$$\{foo(bar(X)) \rightarrow biz(X);  bar(X) \rightarrow baz(X)\} \Rightarrow $$
-$$ [biz(X) = foo(baz(X))]$$</li>
+$$\{X * 2 \rightarrow X \ll 1;  (X*Y)/Y \rightarrow X\} \Rightarrow $$
+$$ [(X \ll 1) / 2 = X]$$</li>
 <li>Reduce Equations
 $$[a = b], \{a \rightarrow c\} \Rightarrow [c = b], \{a \rightarrow c\}$$</li>
 <li>Repeat</li>
@@ -7637,7 +7637,7 @@ $$[a = b], \{a \rightarrow c\} \Rightarrow [c = b], \{a \rightarrow c\}$$</li>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">%%file</span> /tmp/shift.p
@@ -7668,7 +7668,7 @@ $$[a = b], \{a \rightarrow c\} \Rightarrow [c = b], \{a \rightarrow c\}$$</li>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>twee<span class="w"> </span>/tmp/shift.p
@@ -7785,7 +7785,7 @@ RESULT: CounterSatisfiable (the conjecture is false).
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">%%file</span> /tmp/unionfind.p
@@ -7819,7 +7819,7 @@ RESULT: CounterSatisfiable (the conjecture is false).
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>twee<span class="w"> </span>/tmp/unionfind.p
@@ -7868,7 +7868,7 @@ RESULT: CounterSatisfiable (the conjecture is false).
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">R</span> <span class="o">=</span> <span class="p">[</span>
@@ -7889,10 +7889,25 @@ RESULT: CounterSatisfiable (the conjecture is false).
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[8]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[6]:</div>
 <div class="jp-RenderedSVG jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="image/svg+xml" tabindex="0">
 <img alt="No description has been provided for this image" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIKICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPgo8IS0tIEdlbmVyYXRlZCBieSBncmFwaHZpeiB2ZXJzaW9uIDIuNDMuMCAoMCkKIC0tPgo8IS0tIFRpdGxlOiAlMyBQYWdlczogMSAtLT4KPHN2ZyB3aWR0aD0iMzUwcHQiIGhlaWdodD0iMTE4cHQiCiB2aWV3Qm94PSIwLjAwIDAuMDAgMzUwLjAwIDExOC4wMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CjxnIGlkPSJncmFwaDAiIGNsYXNzPSJncmFwaCIgdHJhbnNmb3JtPSJzY2FsZSgxIDEpIHJvdGF0ZSgwKSB0cmFuc2xhdGUoNCAxMTQpIj4KPHRpdGxlPiUzPC90aXRsZT4KPHBvbHlnb24gZmlsbD0id2hpdGUiIHN0cm9rZT0idHJhbnNwYXJlbnQiIHBvaW50cz0iLTQsNCAtNCwtMTE0IDM0NiwtMTE0IDM0Niw0IC00LDQiLz4KPCEtLSA2IC0tPgo8ZyBpZD0ibm9kZTEiIGNsYXNzPSJub2RlIj4KPHRpdGxlPjY8L3RpdGxlPgo8cGF0aCBmaWxsPSJub25lIiBzdHJva2U9ImJsYWNrIiBkPSJNMTIsLTczLjVDMTIsLTczLjUgNDIsLTczLjUgNDIsLTczLjUgNDgsLTczLjUgNTQsLTc5LjUgNTQsLTg1LjUgNTQsLTg1LjUgNTQsLTk3LjUgNTQsLTk3LjUgNTQsLTEwMy41IDQ4LC0xMDkuNSA0MiwtMTA5LjUgNDIsLTEwOS41IDEyLC0xMDkuNSAxMiwtMTA5LjUgNiwtMTA5LjUgMCwtMTAzLjUgMCwtOTcuNSAwLC05Ny41IDAsLTg1LjUgMCwtODUuNSAwLC03OS41IDYsLTczLjUgMTIsLTczLjUiLz4KPHRleHQgdGV4dC1hbmNob3I9Im1pZGRsZSIgeD0iMjciIHk9Ii04Ny44IiBmb250LWZhbWlseT0iVGltZXMsc2VyaWYiIGZvbnQtc2l6ZT0iMTQuMDAiPmI8L3RleHQ+CjwvZz4KPCEtLSA1IC0tPgo8ZyBpZD0ibm9kZTIiIGNsYXNzPSJub2RlIj4KPHRpdGxlPjU8L3RpdGxlPgo8cGF0aCBmaWxsPSJub25lIiBzdHJva2U9ImJsYWNrIiBkPSJNMTIwLC0wLjVDMTIwLC0wLjUgMTUwLC0wLjUgMTUwLC0wLjUgMTU2LC0wLjUgMTYyLC02LjUgMTYyLC0xMi41IDE2MiwtMTIuNSAxNjIsLTI0LjUgMTYyLC0yNC41IDE2MiwtMzAuNSAxNTYsLTM2LjUgMTUwLC0zNi41IDE1MCwtMzYuNSAxMjAsLTM2LjUgMTIwLC0zNi41IDExNCwtMzYuNSAxMDgsLTMwLjUgMTA4LC0yNC41IDEwOCwtMjQuNSAxMDgsLTEyLjUgMTA4LC0xMi41IDEwOCwtNi41IDExNCwtMC41IDEyMCwtMC41Ii8+Cjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjEzNSIgeT0iLTE0LjgiIGZvbnQtZmFtaWx5PSJUaW1lcyxzZXJpZiIgZm9udC1zaXplPSIxNC4wMCI+YTwvdGV4dD4KPC9nPgo8IS0tIDYmIzQ1OyZndDs1IC0tPgo8ZyBpZD0iZWRnZTEiIGNsYXNzPSJlZGdlIj4KPHRpdGxlPjY6aGVhZCYjNDU7Jmd0OzU6aGVhZDwvdGl0bGU+CjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0icmVkIiBzdHJva2UtZGFzaGFycmF5PSI1LDIiIGQ9Ik01My40MywtNzMuMzhDNTMuNjIsLTczLjI2IDUzLjgxLC03My4xMyA1NCwtNzMgNzQuOTEsLTU4Ljg3IDgyLjI3LC01NC4yNyAxMDAuMTgsLTQyLjI2Ii8+Cjxwb2x5Z29uIGZpbGw9InJlZCIgc3Ryb2tlPSJyZWQiIHBvaW50cz0iMTAyLjIzLC00NS4xMSAxMDguNTcsLTM2LjYyIDk4LjMyLC0zOS4zIDEwMi4yMywtNDUuMTEiLz4KPC9nPgo8IS0tIDcgLS0+CjxnIGlkPSJub2RlMyIgY2xhc3M9Im5vZGUiPgo8dGl0bGU+NzwvdGl0bGU+CjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iYmxhY2siIGQ9Ik04NCwtNzMuNUM4NCwtNzMuNSAxMTQsLTczLjUgMTE0LC03My41IDEyMCwtNzMuNSAxMjYsLTc5LjUgMTI2LC04NS41IDEyNiwtODUuNSAxMjYsLTk3LjUgMTI2LC05Ny41IDEyNiwtMTAzLjUgMTIwLC0xMDkuNSAxMTQsLTEwOS41IDExNCwtMTA5LjUgODQsLTEwOS41IDg0LC0xMDkuNSA3OCwtMTA5LjUgNzIsLTEwMy41IDcyLC05Ny41IDcyLC05Ny41IDcyLC04NS41IDcyLC04NS41IDcyLC03OS41IDc4LC03My41IDg0LC03My41Ii8+Cjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9Ijk5IiB5PSItODcuOCIgZm9udC1mYW1pbHk9IlRpbWVzLHNlcmlmIiBmb250LXNpemU9IjE0LjAwIj5jPC90ZXh0Pgo8L2c+CjwhLS0gNyYjNDU7Jmd0OzUgLS0+CjxnIGlkPSJlZGdlMiIgY2xhc3M9ImVkZ2UiPgo8dGl0bGU+NzpoZWFkJiM0NTsmZ3Q7NTpoZWFkPC90aXRsZT4KPHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZWQiIHN0cm9rZS1kYXNoYXJyYXk9IjUsMiIgZD0iTTEwNy45LC03My40NkMxMTIuMDEsLTY1LjEyIDExNi45OCwtNTUuMDQgMTIxLjUzLC00NS44Ii8+Cjxwb2x5Z29uIGZpbGw9InJlZCIgc3Ryb2tlPSJyZWQiIHBvaW50cz0iMTI0Ljc5LC00Ny4xMSAxMjYuMDgsLTM2LjU5IDExOC41MiwtNDQuMDEgMTI0Ljc5LC00Ny4xMSIvPgo8L2c+CjwhLS0gOCAtLT4KPGcgaWQ9Im5vZGU0IiBjbGFzcz0ibm9kZSI+Cjx0aXRsZT44PC90aXRsZT4KPHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSJibGFjayIgZD0iTTE1NiwtNzMuNUMxNTYsLTczLjUgMTg2LC03My41IDE4NiwtNzMuNSAxOTIsLTczLjUgMTk4LC03OS41IDE5OCwtODUuNSAxOTgsLTg1LjUgMTk4LC05Ny41IDE5OCwtOTcuNSAxOTgsLTEwMy41IDE5MiwtMTA5LjUgMTg2LC0xMDkuNSAxODYsLTEwOS41IDE1NiwtMTA5LjUgMTU2LC0xMDkuNSAxNTAsLTEwOS41IDE0NCwtMTAzLjUgMTQ0LC05Ny41IDE0NCwtOTcuNSAxNDQsLTg1LjUgMTQ0LC04NS41IDE0NCwtNzkuNSAxNTAsLTczLjUgMTU2LC03My41Ii8+Cjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjE3MSIgeT0iLTg3LjgiIGZvbnQtZmFtaWx5PSJUaW1lcyxzZXJpZiIgZm9udC1zaXplPSIxNC4wMCI+ZDwvdGV4dD4KPC9nPgo8IS0tIDgmIzQ1OyZndDs1IC0tPgo8ZyBpZD0iZWRnZTMiIGNsYXNzPSJlZGdlIj4KPHRpdGxlPjg6aGVhZCYjNDU7Jmd0OzU6aGVhZDwvdGl0bGU+CjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0icmVkIiBzdHJva2UtZGFzaGFycmF5PSI1LDIiIGQ9Ik0xNjIuMSwtNzMuNDZDMTU3Ljk5LC02NS4xMiAxNTMuMDIsLTU1LjA0IDE0OC40NywtNDUuOCIvPgo8cG9seWdvbiBmaWxsPSJyZWQiIHN0cm9rZT0icmVkIiBwb2ludHM9IjE1MS40OCwtNDQuMDEgMTQzLjkyLC0zNi41OSAxNDUuMjEsLTQ3LjExIDE1MS40OCwtNDQuMDEiLz4KPC9nPgo8IS0tIDkgLS0+CjxnIGlkPSJub2RlNSIgY2xhc3M9Im5vZGUiPgo8dGl0bGU+OTwvdGl0bGU+CjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iYmxhY2siIGQ9Ik0yMjgsLTczLjVDMjI4LC03My41IDI1OCwtNzMuNSAyNTgsLTczLjUgMjY0LC03My41IDI3MCwtNzkuNSAyNzAsLTg1LjUgMjcwLC04NS41IDI3MCwtOTcuNSAyNzAsLTk3LjUgMjcwLC0xMDMuNSAyNjQsLTEwOS41IDI1OCwtMTA5LjUgMjU4LC0xMDkuNSAyMjgsLTEwOS41IDIyOCwtMTA5LjUgMjIyLC0xMDkuNSAyMTYsLTEwMy41IDIxNiwtOTcuNSAyMTYsLTk3LjUgMjE2LC04NS41IDIxNiwtODUuNSAyMTYsLTc5LjUgMjIyLC03My41IDIyOCwtNzMuNSIvPgo8dGV4dCB0ZXh0LWFuY2hvcj0ibWlkZGxlIiB4PSIyNDMiIHk9Ii04Ny44IiBmb250LWZhbWlseT0iVGltZXMsc2VyaWYiIGZvbnQtc2l6ZT0iMTQuMDAiPmU8L3RleHQ+CjwvZz4KPCEtLSA5JiM0NTsmZ3Q7NSAtLT4KPGcgaWQ9ImVkZ2U0IiBjbGFzcz0iZWRnZSI+Cjx0aXRsZT45OmhlYWQmIzQ1OyZndDs1OmhlYWQ8L3RpdGxlPgo8cGF0aCBmaWxsPSJub25lIiBzdHJva2U9InJlZCIgc3Ryb2tlLWRhc2hhcnJheT0iNSwyIiBkPSJNMjE2LjU3LC03My4zOEMyMTYuMzgsLTczLjI2IDIxNi4xOSwtNzMuMTMgMjE2LC03MyAxOTUuMDksLTU4Ljg3IDE4Ny43MywtNTQuMjcgMTY5LjgyLC00Mi4yNiIvPgo8cG9seWdvbiBmaWxsPSJyZWQiIHN0cm9rZT0icmVkIiBwb2ludHM9IjE3MS42OCwtMzkuMyAxNjEuNDMsLTM2LjYyIDE2Ny43NywtNDUuMTEgMTcxLjY4LC0zOS4zIi8+CjwvZz4KPCEtLSAxMSAtLT4KPGcgaWQ9Im5vZGU2IiBjbGFzcz0ibm9kZSI+Cjx0aXRsZT4xMTwvdGl0bGU+CjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iYmxhY2siIGQ9Ik0zMDAsLTczLjVDMzAwLC03My41IDMzMCwtNzMuNSAzMzAsLTczLjUgMzM2LC03My41IDM0MiwtNzkuNSAzNDIsLTg1LjUgMzQyLC04NS41IDM0MiwtOTcuNSAzNDIsLTk3LjUgMzQyLC0xMDMuNSAzMzYsLTEwOS41IDMzMCwtMTA5LjUgMzMwLC0xMDkuNSAzMDAsLTEwOS41IDMwMCwtMTA5LjUgMjk0LC0xMDkuNSAyODgsLTEwMy41IDI4OCwtOTcuNSAyODgsLTk3LjUgMjg4LC04NS41IDI4OCwtODUuNSAyODgsLTc5LjUgMjk0LC03My41IDMwMCwtNzMuNSIvPgo8dGV4dCB0ZXh0LWFuY2hvcj0ibWlkZGxlIiB4PSIzMTUiIHk9Ii04Ny44IiBmb250LWZhbWlseT0iVGltZXMsc2VyaWYiIGZvbnQtc2l6ZT0iMTQuMDAiPmc8L3RleHQ+CjwvZz4KPCEtLSAxMCAtLT4KPGcgaWQ9Im5vZGU3IiBjbGFzcz0ibm9kZSI+Cjx0aXRsZT4xMDwvdGl0bGU+CjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iYmxhY2siIGQ9Ik0zMDAsLTAuNUMzMDAsLTAuNSAzMzAsLTAuNSAzMzAsLTAuNSAzMzYsLTAuNSAzNDIsLTYuNSAzNDIsLTEyLjUgMzQyLC0xMi41IDM0MiwtMjQuNSAzNDIsLTI0LjUgMzQyLC0zMC41IDMzNiwtMzYuNSAzMzAsLTM2LjUgMzMwLC0zNi41IDMwMCwtMzYuNSAzMDAsLTM2LjUgMjk0LC0zNi41IDI4OCwtMzAuNSAyODgsLTI0LjUgMjg4LC0yNC41IDI4OCwtMTIuNSAyODgsLTEyLjUgMjg4LC02LjUgMjk0LC0wLjUgMzAwLC0wLjUiLz4KPHRleHQgdGV4dC1hbmNob3I9Im1pZGRsZSIgeD0iMzE1IiB5PSItMTQuOCIgZm9udC1mYW1pbHk9IlRpbWVzLHNlcmlmIiBmb250LXNpemU9IjE0LjAwIj5mPC90ZXh0Pgo8L2c+CjwhLS0gMTEmIzQ1OyZndDsxMCAtLT4KPGcgaWQ9ImVkZ2U1IiBjbGFzcz0iZWRnZSI+Cjx0aXRsZT4xMTpoZWFkJiM0NTsmZ3Q7MTA6aGVhZDwvdGl0bGU+CjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0icmVkIiBzdHJva2UtZGFzaGFycmF5PSI1LDIiIGQ9Ik0zMTUsLTczLjQ2QzMxNSwtNjUuMzggMzE1LC01NS42OCAzMTUsLTQ2LjY4Ii8+Cjxwb2x5Z29uIGZpbGw9InJlZCIgc3Ryb2tlPSJyZWQiIHBvaW50cz0iMzE4LjUsLTQ2LjU5IDMxNSwtMzYuNTkgMzExLjUsLTQ2LjU5IDMxOC41LC00Ni41OSIvPgo8L2c+CjwvZz4KPC9zdmc+Cg=="/>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>$$ b \rightarrow a $$
+$$  c \rightarrow a $$
+$$  d \rightarrow a $$
+$$  e \rightarrow a $$
+$$  g \rightarrow f $$</p>
 </div>
 </div>
 </div>
@@ -7901,17 +7916,18 @@ RESULT: CounterSatisfiable (the conjecture is false).
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">%%file</span> /tmp/unionfind.p
+<span class="o">%</span> <span class="n">Twee</span><span class="s1">'s "union find" is proof producing</span>
 <span class="n">cnf</span><span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">axiom</span><span class="p">,</span> <span class="n">a</span> <span class="o">=</span> <span class="n">b</span><span class="p">)</span><span class="o">.</span>
 <span class="n">cnf</span><span class="p">(</span><span class="n">ax2</span><span class="p">,</span> <span class="n">axiom</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">c</span><span class="p">)</span><span class="o">.</span>
 <span class="n">cnf</span><span class="p">(</span><span class="n">ax3</span><span class="p">,</span> <span class="n">axiom</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">d</span><span class="p">)</span><span class="o">.</span>
 <span class="n">cnf</span><span class="p">(</span><span class="n">ax4</span><span class="p">,</span> <span class="n">axiom</span><span class="p">,</span> <span class="n">d</span> <span class="o">=</span> <span class="n">e</span><span class="p">)</span><span class="o">.</span>
 <span class="n">cnf</span><span class="p">(</span><span class="n">ax5</span><span class="p">,</span> <span class="n">axiom</span><span class="p">,</span> <span class="n">f</span> <span class="o">=</span> <span class="n">g</span><span class="p">)</span><span class="o">.</span>
 
-<span class="n">cnf</span><span class="p">(</span><span class="n">false</span><span class="p">,</span> <span class="n">conjecture</span><span class="p">,</span> <span class="n">a</span> <span class="o">=</span> <span class="n">e</span><span class="p">)</span><span class="o">.</span> <span class="o">%</span> <span class="n">Show</span> <span class="n">proofs</span> <span class="n">a</span> <span class="o">=</span> <span class="n">e</span>
+<span class="n">cnf</span><span class="p">(</span><span class="n">false</span><span class="p">,</span> <span class="n">conjecture</span><span class="p">,</span> <span class="n">a</span> <span class="o">=</span> <span class="n">e</span><span class="p">)</span><span class="o">.</span>
 </pre></div>
 </div>
 </div>
@@ -7935,7 +7951,7 @@ RESULT: CounterSatisfiable (the conjecture is false).
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>twee<span class="w"> </span>/tmp/unionfind.p
@@ -8014,7 +8030,7 @@ RESULT: Theorem (the conjecture is true).
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Extending-To-Terms">Extending To Terms<a class="anchor-link" href="#Extending-To-Terms">¶</a></h1><ul>
+<h1 id="E-Graph-is-Ground-Term-Completion">E-Graph is Ground Term Completion<a class="anchor-link" href="#E-Graph-is-Ground-Term-Completion">¶</a></h1><ul>
 <li>Egraph = Completed Reduced Ground Rewrite System</li>
 <li>Ground completion "solves" ground equalities</li>
 <li>E-graph "solves" ground equalities</li>
@@ -8069,7 +8085,7 @@ RESULT: Theorem (the conjecture is true).
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">%%file</span> /tmp/groundshift.p
@@ -8103,7 +8119,7 @@ RESULT: Theorem (the conjecture is true).
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>twee<span class="w"> </span>/tmp/groundshift.p
@@ -8154,9 +8170,13 @@ RESULT: CounterSatisfiable (the conjecture is false).
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<center> <img alt="No description has been provided for this image" src="./egraph2.svg"/>
+<h1 id="WAKEUP!-THE-MOST-IMPORTANT-SLIDE!!!">WAKEUP! THE MOST IMPORTANT SLIDE!!!<a class="anchor-link" href="#WAKEUP!-THE-MOST-IMPORTANT-SLIDE!!!">¶</a></h1><center> <img alt="No description has been provided for this image" src="./egraph2.svg"/>
 <img alt="No description has been provided for this image" src="./egraphs_1.svg"/>
 </center>
+<p>$$  mul(a, two) \rightarrow shift(a, one) $$
+$$  mul(a, one) \rightarrow a $$
+$$ div(two, two) \rightarrow one $$
+$$  div(shift(a, one), two) \rightarrow a $$</p>
 </div>
 </div>
 </div>
@@ -8260,7 +8280,7 @@ $$e4 \rightarrow e1$$</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Bottom-up-ematching">Bottom up ematching<a class="anchor-link" href="#Bottom-up-ematching">¶</a></h2><ul>
+<h2 id="Bottom-up-E-matching">Bottom up E-matching<a class="anchor-link" href="#Bottom-up-E-matching">¶</a></h2><ul>
 <li>The simplest e-matching algorithm<ul>
 <li>Completely guess each pattern var</li>
 <li>Build term corresponding to pattern</li>
@@ -8285,7 +8305,9 @@ $$e4 \rightarrow e1$$</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Strategies">Strategies<a class="anchor-link" href="#Strategies">¶</a></h1><center> $\frac{A \lor B \quad \neg A \lor C}{B \lor C} $ </center>
+<h1 id="Strategies">Strategies<a class="anchor-link" href="#Strategies">¶</a></h1><font size="10">
+<center> $\frac{A \lor B \quad \neg A \lor C}{B \lor C} $ </center>
+</font>
 <ul>
 <li>Incomplete but pragmatic limitations on resolution<ul>
 <li>Set of Support - Rules vs EGraph</li>
@@ -8399,7 +8421,13 @@ $$e4 \rightarrow e1$$</p>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h1 id="Context">Context<a class="anchor-link" href="#Context">¶</a></h1><ul>
-<li>Ground Superposition<ul>
+<li>Twee<ul>
+<li>Efficient encodings of first-order Horn formulas in equational logic - Claessen &amp; Smallbone</li>
+<li>In Twee today.</li>
+<li>Similar to ASSUME nodes</li>
+</ul>
+</li>
+<li>Ground Superposition <em>is</em> a contextual egraph<ul>
 <li>Negative literal ~ context</li>
 <li>Terminating but possibly explosive</li>
 </ul>
@@ -8494,12 +8522,91 @@ $$e4 \rightarrow e1$$</p>
 </div>
 </div>
 </div>
+</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%%file</span> /tmp/context.p
+<span class="o">%</span> <span class="n">Twee</span> <span class="k">as</span> <span class="n">a</span> <span class="n">contexual</span> <span class="n">egraph</span><span class="o">/</span><span class="n">union</span> <span class="n">find</span>
+<span class="n">fof</span><span class="p">(</span><span class="n">shift</span><span class="p">,</span> <span class="n">axiom</span><span class="p">,</span> <span class="p">(</span><span class="n">a</span> <span class="o">=</span> <span class="n">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="n">c</span><span class="p">)</span><span class="o">.</span>
+<span class="n">fof</span><span class="p">(</span><span class="n">cancel</span><span class="p">,</span> <span class="n">axiom</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">d</span> <span class="p">)</span><span class="o">.</span>
+<span class="n">fof</span><span class="p">(</span><span class="n">cancel</span><span class="p">,</span> <span class="n">axiom</span><span class="p">,</span> <span class="n">e</span> <span class="o">=</span> <span class="n">f</span> <span class="p">)</span><span class="o">.</span>
+
+<span class="n">fof</span><span class="p">(</span><span class="n">goa</span><span class="p">,</span><span class="n">conjecture</span><span class="p">,</span> <span class="n">true</span> <span class="o">=</span> <span class="n">false</span><span class="p">)</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Overwriting /tmp/context.p
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>twee<span class="w"> </span>/tmp/context.p
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Here is the input problem:
+  Axiom 1 (cancel): e = f.
+  Axiom 2 (cancel): c = d.
+  Axiom 3 (ifeq_axiom): ifeq(X, X, Y, Z) = Y.
+  Axiom 4 (shift): ifeq(a, b, b, c) = c.
+  Goal 1 (goa): true = false.
+
+1. f -&gt; e
+2. c -&gt; d
+3. ifeq(X, X, Y, Z) -&gt; Y
+4. ifeq(a, b, b, d) -&gt; d
+
+Ran out of critical pairs. This means the conjecture is not true.
+Here is the final rewrite system:
+  c -&gt; d
+  f -&gt; e
+  ifeq(X, X, Y, Z) -&gt; Y
+  ifeq(a, b, b, d) -&gt; d
+
+RESULT: CounterSatisfiable (the conjecture is false).
+</pre>
+</div>
+</div>
+</div>
+</div>
 </div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">simplify1</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
@@ -8527,7 +8634,7 @@ $$e4 \rightarrow e1$$</p>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[14]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[12]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>('const', 7)</pre>
 </div>
@@ -8539,7 +8646,7 @@ $$e4 \rightarrow e1$$</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [15]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">UF</span><span class="p">():</span>
@@ -8607,7 +8714,7 @@ Src: <a href="https://events.model.in.tum.de/mod23/blanchette/Lecture3-Lambda-Su
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">%%file</span> /tmp/groundshift.p
@@ -8650,7 +8757,7 @@ Src: <a href="https://events.model.in.tum.de/mod23/blanchette/Lecture3-Lambda-Su
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [17]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [15]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>twee<span class="w"> </span>/tmp/groundshift.p
@@ -8723,7 +8830,7 @@ RESULT: CounterSatisfiable (the conjecture is false).
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">BV</span> <span class="o">=</span> <span class="n">DeclareSort</span><span class="p">(</span><span class="s2">"BV"</span><span class="p">)</span>
@@ -8759,7 +8866,7 @@ RESULT: CounterSatisfiable (the conjecture is false).
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[18]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[16]:</div>
 <div class="jp-RenderedSVG jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="image/svg+xml" tabindex="0">
 <img alt="No description has been provided for this image" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIKICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPgo8IS0tIEdlbmVyYXRlZCBieSBncmFwaHZpeiB2ZXJzaW9uIDIuNDMuMCAoMCkKIC0tPgo8IS0tIFRpdGxlOiAlMyBQYWdlczogMSAtLT4KPHN2ZyB3aWR0aD0iODU0cHQiIGhlaWdodD0iMTI4cHQiCiB2aWV3Qm94PSIwLjAwIDAuMDAgODU0LjAwIDEyOC4wMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CjxnIGlkPSJncmFwaDAiIGNsYXNzPSJncmFwaCIgdHJhbnNmb3JtPSJzY2FsZSgxIDEpIHJvdGF0ZSgwKSB0cmFuc2xhdGUoNCAxMjQpIj4KPHRpdGxlPiUzPC90aXRsZT4KPHBvbHlnb24gZmlsbD0id2hpdGUiIHN0cm9rZT0idHJhbnNwYXJlbnQiIHBvaW50cz0iLTQsNCAtNCwtMTI0IDg1MCwtMTI0IDg1MCw0IC00LDQiLz4KPCEtLSAxMiAtLT4KPGcgaWQ9Im5vZGUxIiBjbGFzcz0ibm9kZSI+Cjx0aXRsZT4xMjwvdGl0bGU+CjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iYmxhY2siIGQ9Ik0xMiwtNzguNUMxMiwtNzguNSA0MiwtNzguNSA0MiwtNzguNSA0OCwtNzguNSA1NCwtODQuNSA1NCwtOTAuNSA1NCwtOTAuNSA1NCwtMTAyLjUgNTQsLTEwMi41IDU0LC0xMDguNSA0OCwtMTE0LjUgNDIsLTExNC41IDQyLC0xMTQuNSAxMiwtMTE0LjUgMTIsLTExNC41IDYsLTExNC41IDAsLTEwOC41IDAsLTEwMi41IDAsLTEwMi41IDAsLTkwLjUgMCwtOTAuNSAwLC04NC41IDYsLTc4LjUgMTIsLTc4LjUiLz4KPHRleHQgdGV4dC1hbmNob3I9Im1pZGRsZSIgeD0iMjciIHk9Ii05Mi44IiBmb250LWZhbWlseT0iVGltZXMsc2VyaWYiIGZvbnQtc2l6ZT0iMTQuMDAiPmE8L3RleHQ+CjwvZz4KPCEtLSA1IC0tPgo8ZyBpZD0ibm9kZTIiIGNsYXNzPSJub2RlIj4KPHRpdGxlPjU8L3RpdGxlPgo8cGF0aCBmaWxsPSJub25lIiBzdHJva2U9ImJsYWNrIiBkPSJNMjIxLC0wLjVDMjIxLC0wLjUgMjUxLC0wLjUgMjUxLC0wLjUgMjU3LC0wLjUgMjYzLC02LjUgMjYzLC0xMi41IDI2MywtMTIuNSAyNjMsLTI0LjUgMjYzLC0yNC41IDI2MywtMzAuNSAyNTcsLTM2LjUgMjUxLC0zNi41IDI1MSwtMzYuNSAyMjEsLTM2LjUgMjIxLC0zNi41IDIxNSwtMzYuNSAyMDksLTMwLjUgMjA5LC0yNC41IDIwOSwtMjQuNSAyMDksLTEyLjUgMjA5LC0xMi41IDIwOSwtNi41IDIxNSwtMC41IDIyMSwtMC41Ii8+Cjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjIzNiIgeT0iLTE0LjgiIGZvbnQtZmFtaWx5PSJUaW1lcyxzZXJpZiIgZm9udC1zaXplPSIxNC4wMCI+ZTA8L3RleHQ+CjwvZz4KPCEtLSAxMiYjNDU7Jmd0OzUgLS0+CjxnIGlkPSJlZGdlMSIgY2xhc3M9ImVkZ2UiPgo8dGl0bGU+MTI6aGVhZCYjNDU7Jmd0OzU6aGVhZDwvdGl0bGU+CjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0icmVkIiBzdHJva2UtZGFzaGFycmF5PSI1LDIiIGQ9Ik01MS44NiwtNzguNDVDNTUuNDgsLTc2LjM3IDU5LjI1LC03NC40NyA2MywtNzMgMTIxLjkyLC00OS44NSAxNDUuNDksLTYyLjc4IDIwMC40NSwtNDAuNjEiLz4KPHBvbHlnb24gZmlsbD0icmVkIiBzdHJva2U9InJlZCIgcG9pbnRzPSIyMDIuMTEsLTQzLjcxIDIwOS45MywtMzYuNTcgMTk5LjM2LC0zNy4yNyAyMDIuMTEsLTQzLjcxIi8+CjwvZz4KPCEtLSAxNCAtLT4KPGcgaWQ9Im5vZGUzIiBjbGFzcz0ibm9kZSI+Cjx0aXRsZT4xNDwvdGl0bGU+CjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iYmxhY2siIGQ9Ik01ODgsLTc4LjVDNTg4LC03OC41IDYxOCwtNzguNSA2MTgsLTc4LjUgNjI0LC03OC41IDYzMCwtODQuNSA2MzAsLTkwLjUgNjMwLC05MC41IDYzMCwtMTAyLjUgNjMwLC0xMDIuNSA2MzAsLTEwOC41IDYyNCwtMTE0LjUgNjE4LC0xMTQuNSA2MTgsLTExNC41IDU4OCwtMTE0LjUgNTg4LC0xMTQuNSA1ODIsLTExNC41IDU3NiwtMTA4LjUgNTc2LC0xMDIuNSA1NzYsLTEwMi41IDU3NiwtOTAuNSA1NzYsLTkwLjUgNTc2LC04NC41IDU4MiwtNzguNSA1ODgsLTc4LjUiLz4KPHRleHQgdGV4dC1hbmNob3I9Im1pZGRsZSIgeD0iNjAzIiB5PSItOTIuOCIgZm9udC1mYW1pbHk9IlRpbWVzLHNlcmlmIiBmb250LXNpemU9IjE0LjAwIj4yPC90ZXh0Pgo8L2c+CjwhLS0gMjEgLS0+CjxnIGlkPSJub2RlNCIgY2xhc3M9Im5vZGUiPgo8dGl0bGU+MjE8L3RpdGxlPgo8cGF0aCBmaWxsPSJub25lIiBzdHJva2U9ImJsYWNrIiBkPSJNNTg4LC0wLjVDNTg4LC0wLjUgNjE4LC0wLjUgNjE4LC0wLjUgNjI0LC0wLjUgNjMwLC02LjUgNjMwLC0xMi41IDYzMCwtMTIuNSA2MzAsLTI0LjUgNjMwLC0yNC41IDYzMCwtMzAuNSA2MjQsLTM2LjUgNjE4LC0zNi41IDYxOCwtMzYuNSA1ODgsLTM2LjUgNTg4LC0zNi41IDU4MiwtMzYuNSA1NzYsLTMwLjUgNTc2LC0yNC41IDU3NiwtMjQuNSA1NzYsLTEyLjUgNTc2LC0xMi41IDU3NiwtNi41IDU4MiwtMC41IDU4OCwtMC41Ii8+Cjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjYwMyIgeT0iLTE0LjgiIGZvbnQtZmFtaWx5PSJUaW1lcyxzZXJpZiIgZm9udC1zaXplPSIxNC4wMCI+ZTE8L3RleHQ+CjwvZz4KPCEtLSAxNCYjNDU7Jmd0OzIxIC0tPgo8ZyBpZD0iZWRnZTIiIGNsYXNzPSJlZGdlIj4KPHRpdGxlPjE0OmhlYWQmIzQ1OyZndDsyMTpoZWFkPC90aXRsZT4KPHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZWQiIHN0cm9rZS1kYXNoYXJyYXk9IjUsMiIgZD0iTTYwMywtNzguNDFDNjAzLC02OS4wMyA2MDMsLTU3LjM1IDYwMywtNDYuOCIvPgo8cG9seWdvbiBmaWxsPSJyZWQiIHN0cm9rZT0icmVkIiBwb2ludHM9IjYwNi41LC00Ni43NiA2MDMsLTM2Ljc2IDU5OS41LC00Ni43NiA2MDYuNSwtNDYuNzYiLz4KPC9nPgo8IS0tIDIzIC0tPgo8ZyBpZD0ibm9kZTUiIGNsYXNzPSJub2RlIj4KPHRpdGxlPjIzPC90aXRsZT4KPHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSJibGFjayIgZD0iTTg0LC03OC41Qzg0LC03OC41IDExNCwtNzguNSAxMTQsLTc4LjUgMTIwLC03OC41IDEyNiwtODQuNSAxMjYsLTkwLjUgMTI2LC05MC41IDEyNiwtMTAyLjUgMTI2LC0xMDIuNSAxMjYsLTEwOC41IDEyMCwtMTE0LjUgMTE0LC0xMTQuNSAxMTQsLTExNC41IDg0LC0xMTQuNSA4NCwtMTE0LjUgNzgsLTExNC41IDcyLC0xMDguNSA3MiwtMTAyLjUgNzIsLTEwMi41IDcyLC05MC41IDcyLC05MC41IDcyLC04NC41IDc4LC03OC41IDg0LC03OC41Ii8+Cjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9Ijk5IiB5PSItOTIuOCIgZm9udC1mYW1pbHk9IlRpbWVzLHNlcmlmIiBmb250LXNpemU9IjE0LjAwIj5lMzwvdGV4dD4KPC9nPgo8IS0tIDIzJiM0NTsmZ3Q7NSAtLT4KPGcgaWQ9ImVkZ2UzIiBjbGFzcz0iZWRnZSI+Cjx0aXRsZT4yMzpoZWFkJiM0NTsmZ3Q7NTpoZWFkPC90aXRsZT4KPHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZWQiIHN0cm9rZS1kYXNoYXJyYXk9IjUsMiIgZD0iTTEyNS40MiwtNzguMzZDMTI1LjYxLC03OC4yNCAxMjUuODEsLTc4LjEyIDEyNiwtNzggMTU3Ljk4LC01OC4yMiAxNzEuMTMsLTU3LjYzIDIwMC43NiwtNDEuNjEiLz4KPHBvbHlnb24gZmlsbD0icmVkIiBzdHJva2U9InJlZCIgcG9pbnRzPSIyMDIuNTgsLTQ0LjYgMjA5LjU5LC0zNi42NSAxOTkuMTYsLTM4LjUgMjAyLjU4LC00NC42Ii8+CjwvZz4KPCEtLSAxMyAtLT4KPGcgaWQ9Im5vZGU2IiBjbGFzcz0ibm9kZSI+Cjx0aXRsZT4xMzwvdGl0bGU+CjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iYmxhY2siIGQ9Ik03MzIsLTc4LjVDNzMyLC03OC41IDc2MiwtNzguNSA3NjIsLTc4LjUgNzY4LC03OC41IDc3NCwtODQuNSA3NzQsLTkwLjUgNzc0LC05MC41IDc3NCwtMTAyLjUgNzc0LC0xMDIuNSA3NzQsLTEwOC41IDc2OCwtMTE0LjUgNzYyLC0xMTQuNSA3NjIsLTExNC41IDczMiwtMTE0LjUgNzMyLC0xMTQuNSA3MjYsLTExNC41IDcyMCwtMTA4LjUgNzIwLC0xMDIuNSA3MjAsLTEwMi41IDcyMCwtOTAuNSA3MjAsLTkwLjUgNzIwLC04NC41IDcyNiwtNzguNSA3MzIsLTc4LjUiLz4KPHRleHQgdGV4dC1hbmNob3I9Im1pZGRsZSIgeD0iNzQ3IiB5PSItOTIuOCIgZm9udC1mYW1pbHk9IlRpbWVzLHNlcmlmIiBmb250LXNpemU9IjE0LjAwIj4xPC90ZXh0Pgo8L2c+CjwhLS0gMjQgLS0+CjxnIGlkPSJub2RlNyIgY2xhc3M9Im5vZGUiPgo8dGl0bGU+MjQ8L3RpdGxlPgo8cGF0aCBmaWxsPSJub25lIiBzdHJva2U9ImJsYWNrIiBkPSJNNjYwLC0wLjVDNjYwLC0wLjUgNjkwLC0wLjUgNjkwLC0wLjUgNjk2LC0wLjUgNzAyLC02LjUgNzAyLC0xMi41IDcwMiwtMTIuNSA3MDIsLTI0LjUgNzAyLC0yNC41IDcwMiwtMzAuNSA2OTYsLTM2LjUgNjkwLC0zNi41IDY5MCwtMzYuNSA2NjAsLTM2LjUgNjYwLC0zNi41IDY1NCwtMzYuNSA2NDgsLTMwLjUgNjQ4LC0yNC41IDY0OCwtMjQuNSA2NDgsLTEyLjUgNjQ4LC0xMi41IDY0OCwtNi41IDY1NCwtMC41IDY2MCwtMC41Ii8+Cjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjY3NSIgeT0iLTE0LjgiIGZvbnQtZmFtaWx5PSJUaW1lcyxzZXJpZiIgZm9udC1zaXplPSIxNC4wMCI+ZTQ8L3RleHQ+CjwvZz4KPCEtLSAxMyYjNDU7Jmd0OzI0IC0tPgo8ZyBpZD0iZWRnZTQiIGNsYXNzPSJlZGdlIj4KPHRpdGxlPjEzOmhlYWQmIzQ1OyZndDsyNDpoZWFkPC90aXRsZT4KPHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZWQiIHN0cm9rZS1kYXNoYXJyYXk9IjUsMiIgZD0iTTczMC4zLC03OC40MUM3MjAuOTIsLTY4LjI0IDcwOS4wNSwtNTUuMzkgNjk4LjcyLC00NC4xOSIvPgo8cG9seWdvbiBmaWxsPSJyZWQiIHN0cm9rZT0icmVkIiBwb2ludHM9IjcwMS4yMSwtNDEuNzQgNjkxLjg2LC0zNi43NiA2OTYuMDcsLTQ2LjQ4IDcwMS4yMSwtNDEuNzQiLz4KPC9nPgo8IS0tIDI1IC0tPgo8ZyBpZD0ibm9kZTgiIGNsYXNzPSJub2RlIj4KPHRpdGxlPjI1PC90aXRsZT4KPHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSJibGFjayIgZD0iTTQ0NCwtNzguNUM0NDQsLTc4LjUgNDc0LC03OC41IDQ3NCwtNzguNSA0ODAsLTc4LjUgNDg2LC04NC41IDQ4NiwtOTAuNSA0ODYsLTkwLjUgNDg2LC0xMDIuNSA0ODYsLTEwMi41IDQ4NiwtMTA4LjUgNDgwLC0xMTQuNSA0NzQsLTExNC41IDQ3NCwtMTE0LjUgNDQ0LC0xMTQuNSA0NDQsLTExNC41IDQzOCwtMTE0LjUgNDMyLC0xMDguNSA0MzIsLTEwMi41IDQzMiwtMTAyLjUgNDMyLC05MC41IDQzMiwtOTAuNSA0MzIsLTg0LjUgNDM4LC03OC41IDQ0NCwtNzguNSIvPgo8dGV4dCB0ZXh0LWFuY2hvcj0ibWlkZGxlIiB4PSI0NTkiIHk9Ii05Mi44IiBmb250LWZhbWlseT0iVGltZXMsc2VyaWYiIGZvbnQtc2l6ZT0iMTQuMDAiPmU1PC90ZXh0Pgo8L2c+CjwhLS0gMjIgLS0+CjxnIGlkPSJub2RlOSIgY2xhc3M9Im5vZGUiPgo8dGl0bGU+MjI8L3RpdGxlPgo8cGF0aCBmaWxsPSJub25lIiBzdHJva2U9ImJsYWNrIiBkPSJNNDA4LC0wLjVDNDA4LC0wLjUgNDM4LC0wLjUgNDM4LC0wLjUgNDQ0LC0wLjUgNDUwLC02LjUgNDUwLC0xMi41IDQ1MCwtMTIuNSA0NTAsLTI0LjUgNDUwLC0yNC41IDQ1MCwtMzAuNSA0NDQsLTM2LjUgNDM4LC0zNi41IDQzOCwtMzYuNSA0MDgsLTM2LjUgNDA4LC0zNi41IDQwMiwtMzYuNSAzOTYsLTMwLjUgMzk2LC0yNC41IDM5NiwtMjQuNSAzOTYsLTEyLjUgMzk2LC0xMi41IDM5NiwtNi41IDQwMiwtMC41IDQwOCwtMC41Ii8+Cjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjQyMyIgeT0iLTE0LjgiIGZvbnQtZmFtaWx5PSJUaW1lcyxzZXJpZiIgZm9udC1zaXplPSIxNC4wMCI+ZTI8L3RleHQ+CjwvZz4KPCEtLSAyNSYjNDU7Jmd0OzIyIC0tPgo8ZyBpZD0iZWRnZTUiIGNsYXNzPSJlZGdlIj4KPHRpdGxlPjI1OmhlYWQmIzQ1OyZndDsyMjpoZWFkPC90aXRsZT4KPHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZWQiIHN0cm9rZS1kYXNoYXJyYXk9IjUsMiIgZD0iTTQ1MC42NSwtNzguNDFDNDQ2LjIzLC02OC44MyA0NDAuNzEsLTU2Ljg2IDQzNS43NiwtNDYuMTUiLz4KPHBvbHlnb24gZmlsbD0icmVkIiBzdHJva2U9InJlZCIgcG9pbnRzPSI0MzguOCwtNDQuMzggNDMxLjQzLC0zNi43NiA0MzIuNDQsLTQ3LjMxIDQzOC44LC00NC4zOCIvPgo8L2c+CjwhLS0gMjYgLS0+CjxnIGlkPSJub2RlMTAiIGNsYXNzPSJub2RlIj4KPHRpdGxlPjI2PC90aXRsZT4KPHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSJibGFjayIgZD0iTTgwNCwtNzguNUM4MDQsLTc4LjUgODM0LC03OC41IDgzNCwtNzguNSA4NDAsLTc4LjUgODQ2LC04NC41IDg0NiwtOTAuNSA4NDYsLTkwLjUgODQ2LC0xMDIuNSA4NDYsLTEwMi41IDg0NiwtMTA4LjUgODQwLC0xMTQuNSA4MzQsLTExNC41IDgzNCwtMTE0LjUgODA0LC0xMTQuNSA4MDQsLTExNC41IDc5OCwtMTE0LjUgNzkyLC0xMDguNSA3OTIsLTEwMi41IDc5MiwtMTAyLjUgNzkyLC05MC41IDc5MiwtOTAuNSA3OTIsLTg0LjUgNzk4LC03OC41IDgwNCwtNzguNSIvPgo8dGV4dCB0ZXh0LWFuY2hvcj0ibWlkZGxlIiB4PSI4MTkiIHk9Ii05Mi44IiBmb250LWZhbWlseT0iVGltZXMsc2VyaWYiIGZvbnQtc2l6ZT0iMTQuMDAiPmU2PC90ZXh0Pgo8L2c+CjwhLS0gMjYmIzQ1OyZndDsyNCAtLT4KPGcgaWQ9ImVkZ2U2IiBjbGFzcz0iZWRnZSI+Cjx0aXRsZT4yNjpoZWFkJiM0NTsmZ3Q7MjQ6aGVhZDwvdGl0bGU+CjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0icmVkIiBzdHJva2UtZGFzaGFycmF5PSI1LDIiIGQ9Ik03OTIuNTgsLTc4LjM2Qzc5Mi4zOSwtNzguMjQgNzkyLjE5LC03OC4xMiA3OTIsLTc4IDc1Ny42OCwtNTYuNzggNzQyLjg3LC01OC4wMyA3MTAuNTIsLTQxLjU0Ii8+Cjxwb2x5Z29uIGZpbGw9InJlZCIgc3Ryb2tlPSJyZWQiIHBvaW50cz0iNzExLjg3LC0zOC4yOSA3MDEuNCwtMzYuNjYgNzA4LjU3LC00NC40NyA3MTEuODcsLTM4LjI5Ii8+CjwvZz4KPCEtLSAyNyAtLT4KPGcgaWQ9Im5vZGUxMSIgY2xhc3M9Im5vZGUiPgo8dGl0bGU+Mjc8L3RpdGxlPgo8cGF0aCBmaWxsPSJub25lIiBzdHJva2U9ImJsYWNrIiBkPSJNMTU2LC03OC41QzE1NiwtNzguNSAxODYsLTc4LjUgMTg2LC03OC41IDE5MiwtNzguNSAxOTgsLTg0LjUgMTk4LC05MC41IDE5OCwtOTAuNSAxOTgsLTEwMi41IDE5OCwtMTAyLjUgMTk4LC0xMDguNSAxOTIsLTExNC41IDE4NiwtMTE0LjUgMTg2LC0xMTQuNSAxNTYsLTExNC41IDE1NiwtMTE0LjUgMTUwLC0xMTQuNSAxNDQsLTEwOC41IDE0NCwtMTAyLjUgMTQ0LC0xMDIuNSAxNDQsLTkwLjUgMTQ0LC05MC41IDE0NCwtODQuNSAxNTAsLTc4LjUgMTU2LC03OC41Ii8+Cjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjE3MSIgeT0iLTkyLjgiIGZvbnQtZmFtaWx5PSJUaW1lcyxzZXJpZiIgZm9udC1zaXplPSIxNC4wMCI+ZTc8L3RleHQ+CjwvZz4KPCEtLSAyNyYjNDU7Jmd0OzUgLS0+CjxnIGlkPSJlZGdlNyIgY2xhc3M9ImVkZ2UiPgo8dGl0bGU+Mjc6aGVhZCYjNDU7Jmd0OzU6aGVhZDwvdGl0bGU+CjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0icmVkIiBzdHJva2UtZGFzaGFycmF5PSI1LDIiIGQ9Ik0xODYuMDgsLTc4LjQxQzE5NC40NywtNjguMzQgMjA1LjA1LC01NS42MyAyMTQuMzIsLTQ0LjUyIi8+Cjxwb2x5Z29uIGZpbGw9InJlZCIgc3Ryb2tlPSJyZWQiIHBvaW50cz0iMjE3LjA3LC00Ni42OSAyMjAuNzgsLTM2Ljc2IDIxMS42OSwtNDIuMiAyMTcuMDcsLTQ2LjY5Ii8+CjwvZz4KPCEtLSAyOCAtLT4KPGcgaWQ9Im5vZGUxMiIgY2xhc3M9Im5vZGUiPgo8dGl0bGU+Mjg8L3RpdGxlPgo8cGF0aCBmaWxsPSJub25lIiBzdHJva2U9ImJsYWNrIiBkPSJNMzcyLC03My41QzM3MiwtNzMuNSA0MDIsLTczLjUgNDAyLC03My41IDQwOCwtNzMuNSA0MTQsLTc5LjUgNDE0LC04NS41IDQxNCwtODUuNSA0MTQsLTEwNy41IDQxNCwtMTA3LjUgNDE0LC0xMTMuNSA0MDgsLTExOS41IDQwMiwtMTE5LjUgNDAyLC0xMTkuNSAzNzIsLTExOS41IDM3MiwtMTE5LjUgMzY2LC0xMTkuNSAzNjAsLTExMy41IDM2MCwtMTA3LjUgMzYwLC0xMDcuNSAzNjAsLTg1LjUgMzYwLC04NS41IDM2MCwtNzkuNSAzNjYsLTczLjUgMzcyLC03My41Ii8+Cjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjM4NyIgeT0iLTEwNC4zIiBmb250LWZhbWlseT0iVGltZXMsc2VyaWYiIGZvbnQtc2l6ZT0iMTQuMDAiPio8L3RleHQ+Cjxwb2x5bGluZSBmaWxsPSJub25lIiBzdHJva2U9ImJsYWNrIiBwb2ludHM9IjM2MCwtOTYuNSA0MTQsLTk2LjUgIi8+Cjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjM3My41IiB5PSItODEuMyIgZm9udC1mYW1pbHk9IlRpbWVzLHNlcmlmIiBmb250LXNpemU9IjE0LjAwIj4gPC90ZXh0Pgo8cG9seWxpbmUgZmlsbD0ibm9uZSIgc3Ryb2tlPSJibGFjayIgcG9pbnRzPSIzODcsLTczLjUgMzg3LC05Ni41ICIvPgo8dGV4dCB0ZXh0LWFuY2hvcj0ibWlkZGxlIiB4PSI0MDAuNSIgeT0iLTgxLjMiIGZvbnQtZmFtaWx5PSJUaW1lcyxzZXJpZiIgZm9udC1zaXplPSIxNC4wMCI+IDwvdGV4dD4KPC9nPgo8IS0tIDI4JiM0NTsmZ3Q7NSAtLT4KPGcgaWQ9ImVkZ2U5IiBjbGFzcz0iZWRnZSI+Cjx0aXRsZT4yODpwMCYjNDU7Jmd0OzU6aGVhZDwvdGl0bGU+CjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iYmxhY2siIGQ9Ik0zNTksLTg0LjVDMzUyLjc3LC04NC41IDM1NS44NiwtNzYuODkgMzUxLC03MyAzMjAuNzMsLTQ4Ljc0IDMwMy4yMiwtNTUuNTggMjcxLjA4LC00MC45NyIvPgo8cG9seWdvbiBmaWxsPSJibGFjayIgc3Ryb2tlPSJibGFjayIgcG9pbnRzPSIyNzIuNjEsLTM3LjgzIDI2Mi4xLC0zNi41MSAyNjkuNDksLTQ0LjA5IDI3Mi42MSwtMzcuODMiLz4KPC9nPgo8IS0tIDI4JiM0NTsmZ3Q7MjEgLS0+CjxnIGlkPSJlZGdlMTAiIGNsYXNzPSJlZGdlIj4KPHRpdGxlPjI4OnAxJiM0NTsmZ3Q7MjE6aGVhZDwvdGl0bGU+CjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iYmxhY2siIGQ9Ik00MTUsLTg0LjVDNDIxLjIzLC04NC41IDQxNy44NSwtNzYuNSA0MjMsLTczIDQ3Ny45NSwtMzUuNjQgNTA4Ljk4LC02Mi4zMiA1NjcuNjcsLTQwLjM2Ii8+Cjxwb2x5Z29uIGZpbGw9ImJsYWNrIiBzdHJva2U9ImJsYWNrIiBwb2ludHM9IjU2OSwtNDMuNiA1NzYuOTQsLTM2LjU4IDU2Ni4zNSwtMzcuMTEgNTY5LC00My42Ii8+CjwvZz4KPCEtLSAyOCYjNDU7Jmd0OzIyIC0tPgo8ZyBpZD0iZWRnZTgiIGNsYXNzPSJlZGdlIj4KPHRpdGxlPjI4OmhlYWQmIzQ1OyZndDsyMjpoZWFkPC90aXRsZT4KPHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZWQiIHN0cm9rZS1kYXNoYXJyYXk9IjUsMiIgZD0iTTQxNSwtMTA4LjVDNDIxLjI3LC0xMDguNSA0MjIuODMsLTczLjM2IDQyMy4xMiwtNDciLz4KPHBvbHlnb24gZmlsbD0icmVkIiBzdHJva2U9InJlZCIgcG9pbnRzPSI0MjYuNjIsLTQ2LjczIDQyMy4xNywtMzYuNzEgNDE5LjYyLC00Ni42OSA0MjYuNjIsLTQ2LjczIi8+CjwvZz4KPCEtLSAyOSAtLT4KPGcgaWQ9Im5vZGUxMyIgY2xhc3M9Im5vZGUiPgo8dGl0bGU+Mjk8L3RpdGxlPgo8cGF0aCBmaWxsPSJub25lIiBzdHJva2U9ImJsYWNrIiBkPSJNMjI4LC03My41QzIyOCwtNzMuNSAyNTgsLTczLjUgMjU4LC03My41IDI2NCwtNzMuNSAyNzAsLTc5LjUgMjcwLC04NS41IDI3MCwtODUuNSAyNzAsLTEwNy41IDI3MCwtMTA3LjUgMjcwLC0xMTMuNSAyNjQsLTExOS41IDI1OCwtMTE5LjUgMjU4LC0xMTkuNSAyMjgsLTExOS41IDIyOCwtMTE5LjUgMjIyLC0xMTkuNSAyMTYsLTExMy41IDIxNiwtMTA3LjUgMjE2LC0xMDcuNSAyMTYsLTg1LjUgMjE2LC04NS41IDIxNiwtNzkuNSAyMjIsLTczLjUgMjI4LC03My41Ii8+Cjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjI0MyIgeT0iLTEwNC4zIiBmb250LWZhbWlseT0iVGltZXMsc2VyaWYiIGZvbnQtc2l6ZT0iMTQuMDAiPio8L3RleHQ+Cjxwb2x5bGluZSBmaWxsPSJub25lIiBzdHJva2U9ImJsYWNrIiBwb2ludHM9IjIxNiwtOTYuNSAyNzAsLTk2LjUgIi8+Cjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjIyOS41IiB5PSItODEuMyIgZm9udC1mYW1pbHk9IlRpbWVzLHNlcmlmIiBmb250LXNpemU9IjE0LjAwIj4gPC90ZXh0Pgo8cG9seWxpbmUgZmlsbD0ibm9uZSIgc3Ryb2tlPSJibGFjayIgcG9pbnRzPSIyNDMsLTczLjUgMjQzLC05Ni41ICIvPgo8dGV4dCB0ZXh0LWFuY2hvcj0ibWlkZGxlIiB4PSIyNTYuNSIgeT0iLTgxLjMiIGZvbnQtZmFtaWx5PSJUaW1lcyxzZXJpZiIgZm9udC1zaXplPSIxNC4wMCI+IDwvdGV4dD4KPC9nPgo8IS0tIDI5JiM0NTsmZ3Q7NSAtLT4KPGcgaWQ9ImVkZ2UxMSIgY2xhc3M9ImVkZ2UiPgo8dGl0bGU+Mjk6aGVhZCYjNDU7Jmd0OzU6aGVhZDwvdGl0bGU+CjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0icmVkIiBzdHJva2UtZGFzaGFycmF5PSI1LDIiIGQ9Ik0yMTUsLTEwOC41QzIwMi4wNSwtMTA4LjUgMjEzLjc4LC03Mi43MyAyMjQuMjEsLTQ2LjI5Ii8+Cjxwb2x5Z29uIGZpbGw9InJlZCIgc3Ryb2tlPSJyZWQiIHBvaW50cz0iMjI3LjU4LC00Ny4zIDIyOC4wOSwtMzYuNzEgMjIxLjA5LC00NC42NyAyMjcuNTgsLTQ3LjMiLz4KPC9nPgo8IS0tIDI5JiM0NTsmZ3Q7NSAtLT4KPGcgaWQ9ImVkZ2UxMiIgY2xhc3M9ImVkZ2UiPgo8dGl0bGU+Mjk6cDAmIzQ1OyZndDs1OmhlYWQ8L3RpdGxlPgo8cGF0aCBmaWxsPSJub25lIiBzdHJva2U9ImJsYWNrIiBkPSJNMjI5LC03M0MyMjksLTY0LjQxIDIyOS44NywtNTUuMTMgMjMwLjk5LC00Ni43Ii8+Cjxwb2x5Z29uIGZpbGw9ImJsYWNrIiBzdHJva2U9ImJsYWNrIiBwb2ludHM9IjIzNC40OCwtNDcgMjMyLjUsLTM2LjU5IDIyNy41NiwtNDUuOTYgMjM0LjQ4LC00NyIvPgo8L2c+CjwhLS0gMjkmIzQ1OyZndDsyNCAtLT4KPGcgaWQ9ImVkZ2UxMyIgY2xhc3M9ImVkZ2UiPgo8dGl0bGU+Mjk6cDEmIzQ1OyZndDsyNDpoZWFkPC90aXRsZT4KPHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSJibGFjayIgZD0iTTI3MSwtODQuNUMyNzcuMjMsLTg0LjUgMjczLjYzLC03Ni4xNSAyNzksLTczIDQxOC4yNSw4LjYxIDQ5MC4xNywtODkuMTcgNjM5Ljc4LC0zOS44MSIvPgo8cG9seWdvbiBmaWxsPSJibGFjayIgc3Ryb2tlPSJibGFjayIgcG9pbnRzPSI2NDAuOTgsLTQzLjA5IDY0OS4yOCwtMzYuNTEgNjM4LjY5LC0zNi40OCA2NDAuOTgsLTQzLjA5Ii8+CjwvZz4KPCEtLSAzMCAtLT4KPGcgaWQ9Im5vZGUxNCIgY2xhc3M9Im5vZGUiPgo8dGl0bGU+MzA8L3RpdGxlPgo8cGF0aCBmaWxsPSJub25lIiBzdHJva2U9ImJsYWNrIiBkPSJNNjYwLC03My41QzY2MCwtNzMuNSA2OTAsLTczLjUgNjkwLC03My41IDY5NiwtNzMuNSA3MDIsLTc5LjUgNzAyLC04NS41IDcwMiwtODUuNSA3MDIsLTEwNy41IDcwMiwtMTA3LjUgNzAyLC0xMTMuNSA2OTYsLTExOS41IDY5MCwtMTE5LjUgNjkwLC0xMTkuNSA2NjAsLTExOS41IDY2MCwtMTE5LjUgNjU0LC0xMTkuNSA2NDgsLTExMy41IDY0OCwtMTA3LjUgNjQ4LC0xMDcuNSA2NDgsLTg1LjUgNjQ4LC04NS41IDY0OCwtNzkuNSA2NTQsLTczLjUgNjYwLC03My41Ii8+Cjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjY3NSIgeT0iLTEwNC4zIiBmb250LWZhbWlseT0iVGltZXMsc2VyaWYiIGZvbnQtc2l6ZT0iMTQuMDAiPi88L3RleHQ+Cjxwb2x5bGluZSBmaWxsPSJub25lIiBzdHJva2U9ImJsYWNrIiBwb2ludHM9IjY0OCwtOTYuNSA3MDIsLTk2LjUgIi8+Cjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjY2MS41IiB5PSItODEuMyIgZm9udC1mYW1pbHk9IlRpbWVzLHNlcmlmIiBmb250LXNpemU9IjE0LjAwIj4gPC90ZXh0Pgo8cG9seWxpbmUgZmlsbD0ibm9uZSIgc3Ryb2tlPSJibGFjayIgcG9pbnRzPSI2NzUsLTczLjUgNjc1LC05Ni41ICIvPgo8dGV4dCB0ZXh0LWFuY2hvcj0ibWlkZGxlIiB4PSI2ODguNSIgeT0iLTgxLjMiIGZvbnQtZmFtaWx5PSJUaW1lcyxzZXJpZiIgZm9udC1zaXplPSIxNC4wMCI+IDwvdGV4dD4KPC9nPgo8IS0tIDMwJiM0NTsmZ3Q7MjEgLS0+CjxnIGlkPSJlZGdlMTUiIGNsYXNzPSJlZGdlIj4KPHRpdGxlPjMwOnAwJiM0NTsmZ3Q7MjE6aGVhZDwvdGl0bGU+CjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iYmxhY2siIGQ9Ik02NjEsLTczQzY2MSwtNjUuMTYgNjQ5LjYxLC01My41NyA2MzYuOTIsLTQzLjA4Ii8+Cjxwb2x5Z29uIGZpbGw9ImJsYWNrIiBzdHJva2U9ImJsYWNrIiBwb2ludHM9IjYzOC45NSwtNDAuMjMgNjI4Ljk1LC0zNi43NSA2MzQuNiwtNDUuNzEgNjM4Ljk1LC00MC4yMyIvPgo8L2c+CjwhLS0gMzAmIzQ1OyZndDsyMSAtLT4KPGcgaWQ9ImVkZ2UxNiIgY2xhc3M9ImVkZ2UiPgo8dGl0bGU+MzA6cDEmIzQ1OyZndDsyMTpoZWFkPC90aXRsZT4KPHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSJibGFjayIgZD0iTTY4OSwtNzNDNjg5LC00NS42NCA2NjIuNjYsLTUxLjcgNjM4LjI3LC00MS4zIi8+Cjxwb2x5Z29uIGZpbGw9ImJsYWNrIiBzdHJva2U9ImJsYWNrIiBwb2ludHM9IjYzOS45LC0zOC4yIDYyOS40MywtMzYuNjMgNjM2LjY0LC00NC4zOSA2MzkuOSwtMzguMiIvPgo8L2c+CjwhLS0gMzAmIzQ1OyZndDsyNCAtLT4KPGcgaWQ9ImVkZ2UxNCIgY2xhc3M9ImVkZ2UiPgo8dGl0bGU+MzA6aGVhZCYjNDU7Jmd0OzI0OmhlYWQ8L3RpdGxlPgo8cGF0aCBmaWxsPSJub25lIiBzdHJva2U9InJlZCIgc3Ryb2tlLWRhc2hhcnJheT0iNSwyIiBkPSJNNzAzLC0xMDguNUM3MTguNzgsLTEwOC41IDcwNS44MSwtODguMzIgNzAyLC03MyA2OTkuNywtNjMuNzcgNjk1LjY4LC01NC4yOCA2OTEuNDMsLTQ1Ljg3Ii8+Cjxwb2x5Z29uIGZpbGw9InJlZCIgc3Ryb2tlPSJyZWQiIHBvaW50cz0iNjk0LjQyLC00NC4wNSA2ODYuNjEsLTM2Ljg5IDY4OC4yNSwtNDcuMzYgNjk0LjQyLC00NC4wNSIvPgo8L2c+CjwhLS0gMzEgLS0+CjxnIGlkPSJub2RlMTUiIGNsYXNzPSJub2RlIj4KPHRpdGxlPjMxPC90aXRsZT4KPHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSJibGFjayIgZD0iTTMwMCwtNzMuNUMzMDAsLTczLjUgMzMwLC03My41IDMzMCwtNzMuNSAzMzYsLTczLjUgMzQyLC03OS41IDM0MiwtODUuNSAzNDIsLTg1LjUgMzQyLC0xMDcuNSAzNDIsLTEwNy41IDM0MiwtMTEzLjUgMzM2LC0xMTkuNSAzMzAsLTExOS41IDMzMCwtMTE5LjUgMzAwLC0xMTkuNSAzMDAsLTExOS41IDI5NCwtMTE5LjUgMjg4LC0xMTMuNSAyODgsLTEwNy41IDI4OCwtMTA3LjUgMjg4LC04NS41IDI4OCwtODUuNSAyODgsLTc5LjUgMjk0LC03My41IDMwMCwtNzMuNSIvPgo8dGV4dCB0ZXh0LWFuY2hvcj0ibWlkZGxlIiB4PSIzMTUiIHk9Ii0xMDQuMyIgZm9udC1mYW1pbHk9IlRpbWVzLHNlcmlmIiBmb250LXNpemU9IjE0LjAwIj4vPC90ZXh0Pgo8cG9seWxpbmUgZmlsbD0ibm9uZSIgc3Ryb2tlPSJibGFjayIgcG9pbnRzPSIyODgsLTk2LjUgMzQyLC05Ni41ICIvPgo8dGV4dCB0ZXh0LWFuY2hvcj0ibWlkZGxlIiB4PSIzMDEuNSIgeT0iLTgxLjMiIGZvbnQtZmFtaWx5PSJUaW1lcyxzZXJpZiIgZm9udC1zaXplPSIxNC4wMCI+IDwvdGV4dD4KPHBvbHlsaW5lIGZpbGw9Im5vbmUiIHN0cm9rZT0iYmxhY2siIHBvaW50cz0iMzE1LC03My41IDMxNSwtOTYuNSAiLz4KPHRleHQgdGV4dC1hbmNob3I9Im1pZGRsZSIgeD0iMzI4LjUiIHk9Ii04MS4zIiBmb250LWZhbWlseT0iVGltZXMsc2VyaWYiIGZvbnQtc2l6ZT0iMTQuMDAiPiA8L3RleHQ+CjwvZz4KPCEtLSAzMSYjNDU7Jmd0OzUgLS0+CjxnIGlkPSJlZGdlMTciIGNsYXNzPSJlZGdlIj4KPHRpdGxlPjMxOmhlYWQmIzQ1OyZndDs1OmhlYWQ8L3RpdGxlPgo8cGF0aCBmaWxsPSJub25lIiBzdHJva2U9InJlZCIgc3Ryb2tlLWRhc2hhcnJheT0iNSwyIiBkPSJNMjg3LC0xMDguNUMyNzAuODMsLTEwOC41IDI4NS45NiwtODcuNiAyNzksLTczIDI3NC4yMSwtNjIuOTQgMjY3LjI3LC01My4wNCAyNjAuMzYsLTQ0LjQ5Ii8+Cjxwb2x5Z29uIGZpbGw9InJlZCIgc3Ryb2tlPSJyZWQiIHBvaW50cz0iMjYyLjk0LC00Mi4xMyAyNTMuODEsLTM2Ljc1IDI1Ny42LC00Ni42NSAyNjIuOTQsLTQyLjEzIi8+CjwvZz4KPCEtLSAzMSYjNDU7Jmd0OzIxIC0tPgo8ZyBpZD0iZWRnZTE5IiBjbGFzcz0iZWRnZSI+Cjx0aXRsZT4zMTpwMSYjNDU7Jmd0OzIxOmhlYWQ8L3RpdGxlPgo8cGF0aCBmaWxsPSJub25lIiBzdHJva2U9ImJsYWNrIiBkPSJNMzQzLC04NC41QzM0OS4yMywtODQuNSAzNDUuNzMsLTc2LjMxIDM1MSwtNzMgNDMzLjgzLC0yMC45OCA0NzguOCwtNzAuODcgNTY3LjM4LC00MC4xOCIvPgo8cG9seWdvbiBmaWxsPSJibGFjayIgc3Ryb2tlPSJibGFjayIgcG9pbnRzPSI1NjguOCwtNDMuMzggNTc2Ljk1LC0zNi42MSA1NjYuMzYsLTM2LjgyIDU2OC44LC00My4zOCIvPgo8L2c+CjwhLS0gMzEmIzQ1OyZndDsyMiAtLT4KPGcgaWQ9ImVkZ2UxOCIgY2xhc3M9ImVkZ2UiPgo8dGl0bGU+MzE6cDAmIzQ1OyZndDsyMjpoZWFkPC90aXRsZT4KPHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSJibGFjayIgZD0iTTMwMSwtNzNDMzAxLC0zMS4yIDM0OC4xMiwtNTMuODYgMzg3LjU5LC00MC40OCIvPgo8cG9seWdvbiBmaWxsPSJibGFjayIgc3Ryb2tlPSJibGFjayIgcG9pbnRzPSIzODkuMDgsLTQzLjY1IDM5Ni45MSwtMzYuNTIgMzg2LjM0LC0zNy4yMSAzODkuMDgsLTQzLjY1Ii8+CjwvZz4KPCEtLSAzMiAtLT4KPGcgaWQ9Im5vZGUxNiIgY2xhc3M9Im5vZGUiPgo8dGl0bGU+MzI8L3RpdGxlPgo8cGF0aCBmaWxsPSJub25lIiBzdHJva2U9ImJsYWNrIiBkPSJNNTE2LC03My41QzUxNiwtNzMuNSA1NDYsLTczLjUgNTQ2LC03My41IDU1MiwtNzMuNSA1NTgsLTc5LjUgNTU4LC04NS41IDU1OCwtODUuNSA1NTgsLTEwNy41IDU1OCwtMTA3LjUgNTU4LC0xMTMuNSA1NTIsLTExOS41IDU0NiwtMTE5LjUgNTQ2LC0xMTkuNSA1MTYsLTExOS41IDUxNiwtMTE5LjUgNTEwLC0xMTkuNSA1MDQsLTExMy41IDUwNCwtMTA3LjUgNTA0LC0xMDcuNSA1MDQsLTg1LjUgNTA0LC04NS41IDUwNCwtNzkuNSA1MTAsLTczLjUgNTE2LC03My41Ii8+Cjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjUzMSIgeT0iLTEwNC4zIiBmb250LWZhbWlseT0iVGltZXMsc2VyaWYiIGZvbnQtc2l6ZT0iMTQuMDAiPiZsdDsmbHQ7PC90ZXh0Pgo8cG9seWxpbmUgZmlsbD0ibm9uZSIgc3Ryb2tlPSJibGFjayIgcG9pbnRzPSI1MDQsLTk2LjUgNTU4LC05Ni41ICIvPgo8dGV4dCB0ZXh0LWFuY2hvcj0ibWlkZGxlIiB4PSI1MTcuNSIgeT0iLTgxLjMiIGZvbnQtZmFtaWx5PSJUaW1lcyxzZXJpZiIgZm9udC1zaXplPSIxNC4wMCI+IDwvdGV4dD4KPHBvbHlsaW5lIGZpbGw9Im5vbmUiIHN0cm9rZT0iYmxhY2siIHBvaW50cz0iNTMxLC03My41IDUzMSwtOTYuNSAiLz4KPHRleHQgdGV4dC1hbmNob3I9Im1pZGRsZSIgeD0iNTQ0LjUiIHk9Ii04MS4zIiBmb250LWZhbWlseT0iVGltZXMsc2VyaWYiIGZvbnQtc2l6ZT0iMTQuMDAiPiA8L3RleHQ+CjwvZz4KPCEtLSAzMiYjNDU7Jmd0OzUgLS0+CjxnIGlkPSJlZGdlMjEiIGNsYXNzPSJlZGdlIj4KPHRpdGxlPjMyOnAwJiM0NTsmZ3Q7NTpoZWFkPC90aXRsZT4KPHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSJibGFjayIgZD0iTTUwMywtODQuNUM0OTYuNzcsLTg0LjUgNTAwLjI4LC03Ni4zIDQ5NSwtNzMgNDA5LjQ1LC0xOS41NCAzNjMuMTQsLTcxLjc0IDI3MS42NCwtNDAuMTciLz4KPHBvbHlnb24gZmlsbD0iYmxhY2siIHN0cm9rZT0iYmxhY2siIHBvaW50cz0iMjcyLjY0LC0zNi44MSAyNjIuMDUsLTM2LjYxIDI3MC4yMSwtNDMuMzcgMjcyLjY0LC0zNi44MSIvPgo8L2c+CjwhLS0gMzImIzQ1OyZndDsyNCAtLT4KPGcgaWQ9ImVkZ2UyMiIgY2xhc3M9ImVkZ2UiPgo8dGl0bGU+MzI6cDEmIzQ1OyZndDsyNDpoZWFkPC90aXRsZT4KPHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSJibGFjayIgZD0iTTU1OSwtODQuNUM1NjUuMjMsLTg0LjUgNTYyLjIsLTc2Ljk3IDU2NywtNzMgNTk0LjY0LC01MC4xNiA2MTAuNTgsLTU0Ljk5IDYzOS42LC00MS4zIi8+Cjxwb2x5Z29uIGZpbGw9ImJsYWNrIiBzdHJva2U9ImJsYWNrIiBwb2ludHM9IjY0MS4zMSwtNDQuMzYgNjQ4LjYsLTM2LjY2IDYzOC4xLC0zOC4xMyA2NDEuMzEsLTQ0LjM2Ii8+CjwvZz4KPCEtLSAzMiYjNDU7Jmd0OzIyIC0tPgo8ZyBpZD0iZWRnZTIwIiBjbGFzcz0iZWRnZSI+Cjx0aXRsZT4zMjpoZWFkJiM0NTsmZ3Q7MjI6aGVhZDwvdGl0bGU+CjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0icmVkIiBzdHJva2UtZGFzaGFycmF5PSI1LDIiIGQ9Ik01MDMsLTEwOC41QzQ4Ni44MywtMTA4LjUgNTAzLjc2LC04Ni42IDQ5NSwtNzMgNDkyLjI4LC02OC43OCA0NzQuMjcsLTU1LjE1IDQ1Ni45NCwtNDIuNTciLz4KPHBvbHlnb24gZmlsbD0icmVkIiBzdHJva2U9InJlZCIgcG9pbnRzPSI0NTguNzIsLTM5LjU0IDQ0OC41NiwtMzYuNTMgNDU0LjYzLC00NS4yMiA0NTguNzIsLTM5LjU0Ii8+CjwvZz4KPC9nPgo8L3N2Zz4K"/>
 </div>
@@ -8771,7 +8878,7 @@ RESULT: CounterSatisfiable (the conjecture is false).
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [19]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [17]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">%%file</span> /tmp/shift.p
